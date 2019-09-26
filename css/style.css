@@ -1,0 +1,23 @@
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+#header-left{
+    float: left;
+    width: 100%;
+    padding-left: 10px;
+}
+
+
+#header-right{
+    float: right;
+    width: 45%;
+}
+#primary-nav {
+    padding-left: 0;
+}
+
+#primary-nav li{
+    display: inline;
+    border: 1px solid white;
+    padding: 3px;
+}
