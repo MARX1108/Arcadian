@@ -1,10 +1,16 @@
-body{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+body
+{
+    margin: 0;
+    font-family: JosefinSans-Regular;
+    background-color: #ffffff;
+    
 }
+
 
 /* header section--------------------------------------------------------------- */
 #header
 {
+    padding: 2% 0% 0% 0%;
     width: 100%;
     text-align: center;
 }
@@ -12,27 +18,75 @@ body{
 #header  h1
 {
     display: inline-block;
-    padding: 0 20% 0 5%;
+    padding: 0 15% 0 5%;
 }
 
-
-#header  form
+#header form
 {
-    /* float: right; */
     display: inline-block;
-    padding: 0 5% 0 20%;
+    padding: 0 5% 0 15%;
 }
 
 #primary-nav 
 {
     display: inline-block;
+    
 }
-
-
 
 #primary-nav li{
     display: inline;
     padding: 3px;
+    text-decoration: aqua;
+    font-family: JosefinSans-Regular;
+
+
 }
 
 /* body section--------------------------------------------------------------- */
+.main
+{
+    widows: 100%;
+    padding: 2%;
+    background-color: #f2f2f8;
+}
+.main > ul > li
+{
+    
+    display: inline;
+    padding: 2% 2% 10% 2%;
+}
+
+/* footer section--------------------------------------------------------------- */
+#footer
+{
+    width: 100%;
+    padding: 3% 2% 3% 2%;
+    
+    background-image: linear-gradient(-151deg, #C2CBFD 17%, #8191FC 94%);
+}
+
+#footer div
+{
+    text-align: center;
+    font-family: JosefinSans-Light;
+    color: #F5F6FF;
+}
+
+#copyright > a
+{
+    color: #F5F6FF;
+    /* font-family: JosefinSans-Bold; */
+    font-family: JosefinSans-Regular;
+    padding: 0% 2% 0% 2%;
+    text-decoration: aqua;
+}
+
+#circle_001
+{
+    content:  " ";
+    height:   40px;
+    width:    40px;
+    position: relative;
+    border-radius: 50%;
+    background: rgba(169,179,248,0.70);
+}
