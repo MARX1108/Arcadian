@@ -47,7 +47,7 @@ body
 {
     widows: 100%;
     padding: 2%;
-    background-color: #f2f2f8;
+    background-color: #F7F8FF;
 }
 .main > ul > li
 {
@@ -60,7 +60,7 @@ body
 #footer
 {
     width: 100%;
-    padding: 3% 2% 3% 2%;
+    padding: 3% 0% 3% 0%;
     
     background-image: linear-gradient(-151deg, #C2CBFD 17%, #8191FC 94%);
 }
