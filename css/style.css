@@ -1,19 +1,28 @@
 body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
+
 #header-left{
     float: left;
     width: 100%;
     padding-left: 10px;
 }
 
-
-#header-right{
-    float: right;
-    width: 45%;
+#header-bottom{
+    width: 100%;
+    
 }
+
+#search-bar{
+    float: right;
+    height: 20%;
+    width: 20%;
+}
+
 #primary-nav {
+    
     padding-left: 0;
+    border-bottom: 2px solid #b2b0ff;
 }
 
 #primary-nav li{
