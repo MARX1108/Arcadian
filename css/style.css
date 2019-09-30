@@ -1,33 +1,26 @@
-body
-{
+body {
     margin: 0;
     font-family: JosefinSans-Regular;
     background-color: #ffffff;
-    
 }
 
-
 /* header section--------------------------------------------------------------- */
-#header
-{
+#header {
     padding: 2% 0 0 0;
     width: 100%;
     text-align: center;
 }
 
-#header  h1
-{
+#header h1 {
     display: inline-block;
     padding: 0 10% 0 5%;
 }
 
-#header form
-{
+#header form {
     display: inline-block;
     padding: 0 5% 0 10%;
 }
-#header form>input
-{
+#header form > input {
     font-family: JosefinSans-SemiBold;
     color: rgb(139, 150, 235);
     padding: 5px 1px 5px 1px;
@@ -35,32 +28,25 @@ body
     border-radius: 8px;
     text-align: center;
 }
-::placeholder
-{
+::placeholder {
     font-family: JosefinSans-SemiBold;
-    color: #ABB3EE;
+    color: #abb3ee;
 }
 
-#header form>button
-{
+#header form > button {
     font-family: JosefinSans-SemiBold;
-    color: #8191FC;
-    background: #F2F3FF;
+    color: #8191fc;
+    background: #f2f3ff;
     border-radius: 8px;
     padding: 5px 8px 5px 8px;
     border: 1px solid rgb(255, 255, 255);
-
 }
 
-
-
-#primary-nav 
-{
+#primary-nav {
     display: inline-block;
 }
 
-#primary-nav > li 
-{
+#primary-nav > li {
     padding: 5px;
     font-size: 120%;
     display: inline;
@@ -68,45 +54,35 @@ body
     font-family: JosefinSans-Regular;
 }
 
-#primary-nav > li > a
-{
+#primary-nav > li > a {
     color: rgb(182, 192, 255);
     text-decoration: aqua;
     font-family: JosefinSans-Regular;
 }
 
-
-
 /* body section--------------------------------------------------------------- */
-.main
-{
+.main {
     padding: 2%;
-    background-color: #F7F8FF;
+    background-color: #f7f8ff;
 }
-.main > #top
-{
+.main > #top {
     display: block;
 }
 
-
-.main > .content >li
-{
+.main > .content > li {
     display: inline;
     padding: 2% 2% 10% 2%;
 }
 
-#news
-{
-    background-color: #F7F8FF;
+#news {
+    background-color: #f7f8ff;
     padding: 2% 6% 2% 6%;
     color: rgb(120, 112, 222);
 }
 
-#news  #topnews
-{
-
+#news #topnews {
     background-color: #ffffff;
-    box-shadow: 0 10px 20px 0 rgba(227,231,255,0.25);
+    box-shadow: 0 10px 20px 0 rgba(227, 231, 255, 0.25);
     border-radius: 8px;
     display: inline-block;
     float: left;
@@ -115,70 +91,59 @@ body
     background-repeat: no-repeat;
 
     padding: 4% 52% 11% 15%;
-/*    height: 120%;*/
+    /*    height: 120%;*/
 }
-#news > #signin
-{
+#news > #signin {
     text-align: center;
     /* margin: 1% 1% 1% 1%; */
     /* padding: 3% 0% 10% 1%; */
-    box-shadow: 0 10px 20px 0 rgba(227,231,255,0.25);
+    box-shadow: 0 10px 20px 0 rgba(227, 231, 255, 0.25);
     border-radius: 8px;
 
     background-color: #ffffff;
-    color:rgb(86, 106, 236);
+    color: rgb(86, 106, 236);
     width: 20%;
     display: inline-block;
     margin: 0% 0% 0% 5%;
     /* float: right; */
     padding: 3% 3% 5% 3%;
     font-size: 130%;
-
 }
 
-#news > #signin > div > input
-{
+#news > #signin > div > input {
     text-align: center;
     color: rgb(111, 101, 245);
     border: 1px solid rgb(242, 243, 255);
     border-radius: 8px;
 }
 
-#new > #signin > div
-{   
+#new > #signin > div {
     padding: 2% 2% 2% 2%;
 }
 
-.main > ul > li > img
-{
+.main > ul > li > img {
     box-shadow: 0 10px 20px 0 rgba(171, 183, 255, 0.25);
     border-radius: 8px;
 }
 
 /* footer section--------------------------------------------------------------- */
-#footer
-{
+#footer {
     width: 100%;
     padding: 3% 0% 3% 0%;
-    
-    background-image: linear-gradient(-151deg, #C2CBFD 17%, #8191FC 94%);
+
+    background-image: linear-gradient(-151deg, #c2cbfd 17%, #8191fc 94%);
 }
 
-#footer div
-{
+#footer div {
     text-align: center;
     font-family: JosefinSans-Light;
-    color: #F5F6FF;
+    color: #f5f6ff;
 }
 
-#copyright > a
-{
-    color: #F5F6FF;
+#copyright > a {
+    color: #f5f6ff;
     /* font-family: JosefinSans-Bold; */
     font-family: JosefinSans-Regular;
     padding: 0% 2% 0% 2%;
     text-decoration: aqua;
-    
 }
-
-

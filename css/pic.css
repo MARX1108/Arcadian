@@ -1,16 +1,15 @@
 body {
     margin: 0;
     font-family: JosefinSans-Regular;
-    background-color: #ffffff;
-    background-color: #f7f8ff;
+    background-color: #24212b;
 }
 
 /* header section--------------------------------------------------------------- */
 #header {
+    background-color: #ffffff;
     padding: 2% 0 0 0;
     width: 100%;
     text-align: center;
-    background-color: #ffffff;
 }
 
 #header h1 {
@@ -63,49 +62,151 @@ body {
 }
 
 /* body section--------------------------------------------------------------- */
-#content-left,
-#content-right,
-#secondary-nav {
-    background-color: #f7f8ff;
+.main {
+    padding: 2%;
+    background-color: #24212b;
 }
 
-#content-left {
+#author_info {
     float: left;
-    width: 60%;
+    color: aliceblue;
+    width: 15%;
+    margin-left: 5%;
+}
+#author_info > img {
+    display: inline;
+    float: left;
+    width: 25%;
+}
+#author_info > div {
+    float: right;
+}
+#title {
+    float: right;
+    color: aliceblue;
+    margin-right: 5%;
 }
 
-#content-left .post {
-    /*      float: left;*/
-    /*      width: 50px;*/
-    padding: 5% 6% 5% 5%;
-    width: 80%;
+#name {
+    font-family: JosefinSans-Bold;
+    font-size: 150%;
+}
+
+#occp {
+    color: darkgray;
+}
+
+#pic {
+    clear: both;
+    padding: 40% 40% 40% 40%;
     margin: 5% 5% 5% 5%;
-    text-align: left;
-    background-color: #ffffff;
-    box-shadow: 0 10px 20px 0 rgba(227, 231, 255, 0.25);
+    background-image: url(../assets/pic.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     border-radius: 8px;
 }
 
-#content-left .post > p {
+#comment_left {
+    margin-left: 2%;
+    width: 55%;
+    float: left;
+    background-color: #24212b;
+}
+
+#comment_right {
+    width: 20%;
+    color: #6e79c2;
+    float: right;
+    background-color: #ffffff;
+    margin-top: 3%;
+    margin-right: 5%;
+    padding: 2% 2% 2% 2%;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px 0 rgba(5, 5, 49, 0.88);
+}
+
+#comment_right > #tag {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #a7b1f0;
+}
+#comment_sec > #comment_left > .post {
+    /*      float: left;*/
+    /*      width: 50px;*/
+    padding: 5% 6% 5% 5%;
+    width: 100%;
+    margin: 5% 5% 5% 5%;
+    text-align: left;
+    background-color: #ffffff;
+    box-shadow: 0 10px 20px 0 rgba(5, 5, 49, 0.88);
+    border-radius: 8px;
+}
+
+#comment_sec > #comment_left > .post > p {
     /*      float: left;*/
     /*      width: 50px;*/
     color: #a3a8c6;
     text-decoration: aqua;
 }
 
-#content-left .post > p > a {
+#comment_sec > #comment_left > .post > p > a {
     color: #4e4281;
     text-decoration: aqua;
     font-family: JosefinSans-Bold;
 }
 
-#content-left > #post_win {
+#post_win > button {
+    float: right;
+    padding: 9px 8px 8px 8px;
+    margin: 4px 2px 2px 2px;
     border: #ffffff;
-    padding: 5% 6% 8% 5%;
+    background: rgba(227, 231, 255, 0.25);
     border-radius: 8px;
 }
+#post_win {
+    border: #ffffff;
+    padding: 5% 5% 5% 5%;
+    border-radius: 8px;
+    color: #9da8f5;
+}
 
-#content-left > #post_win > textarea {
+#post_win > #upload {
+    background: #6cd8f2;
+    font-family: JosefinSans-Bold;
+    /*    font-size: 100%;*/
+    color: #ffffff;
+}
+#post_win > #post {
+    background: #9da8f5;
+    font-family: JosefinSans-Bold;
+    /*    font-size: 100%;*/
+    color: #ffffff;
+}
+
+#post_win > #sign_in {
+    background: #9da8f5;
+    font-family: JosefinSans-Bold;
+    /*    font-size: 100%;*/
+    color: #ffffff;
+    /*
+    position: absolute;
+    margin-left:25%
+*/
+    /*    vertical-align: middle;*/
+}
+
+#post_win > #sign_up {
+    background: #6cd8f2;
+    font-family: JosefinSans-Bold;
+    /*    font-size: 100%;*/
+    color: #ffffff;
+    /*
+    position: absolute;
+    margin-left:20%
+*/
+}
+
+#post_win > textarea {
+    font-size: 120%;
     resize: none;
     width: 100%;
     padding: 5% 0% 5% 2%;
@@ -116,99 +217,12 @@ body {
     font-family: JosefinSans-Regular;
 }
 
-#content-left > #post_win > button {
-    float: right;
-    padding: 9px 8px 8px 8px;
-    margin: 4px 2px 2px 2px;
-    border: #ffffff;
-    background: rgba(227, 231, 255, 0.25);
-    border-radius: 8px;
-}
-
-#content-left > #post_win > #upload {
-    background: #6cd8f2;
-    font-family: JosefinSans-Bold;
-    /*    font-size: 100%;*/
-    color: #ffffff;
-}
-
-#content-left > #post_win > #post {
-    background: #9da8f5;
-    font-family: JosefinSans-Bold;
-    /*    font-size: 100%;*/
-    color: #ffffff;
-}
-
-#secondary-nav {
-    /*    position: absolute;*/
-    width: 10%;
-    float: left;
-    padding: 5% 5% 20% 5%;
-    text-align: left;
-    list-style: none;
-    background-color: #ffffff;
-    box-shadow: 0 10px 20px 0 rgba(227, 231, 255, 0.25);
-    border-radius: 8px;
-}
-#secondary-nav > li > a {
-    color: rgb(182, 192, 255);
-    text-decoration: aqua;
-    font-family: JosefinSans-Regular;
-}
-
-#secondary-nav > li {
-    padding: 5px 5px 20px 5px;
-}
-
-#content-left .post .post_pic {
-    /*    background-image: url(../assets/002.png);*/
-    /*    background-image: contain;*/
-    width: 90%;
-}
-#content-left .post .post_pic > li {
-    /*    background-image: url(../assets/002.png);*/
-    /*    background-image: contain;*/
-    display: inline;
-    list-style: none;
-}
-
-#content-left .post .post_pic > li > img {
-    /*    background-image: url(../assets/002.png);*/
-    /*    background-image: contain;*/
-    width: 30%;
-    margin: 5px;
-    box-shadow: 0 10px 10px 0 rgba(151, 164, 244, 0.25);
-    border-radius: 8px;
-}
-
-#content-left .post > #time_stamp {
-    /*      float: left;*/
-    /*      width: 50px;*/
-    text-align: right;
-}
-
-#content-right {
-    display: inline-block;
-    background-color: #ffffff;
-    float: right;
-    width: 10%;
-
-    padding: 4% 4% 4% 4%;
-    margin: 1% 1% 1% 1%;
-
-    box-shadow: 0 10px 20px 0 rgba(227, 231, 255, 0.25);
-    border-radius: 8px;
-    color: #a3a8c6;
-}
-
-#content-right h2 {
-    color: #46508e;
-}
 /* footer section--------------------------------------------------------------- */
 #footer {
     clear: both;
     width: 100%;
     padding: 3% 0% 3% 0%;
+
     background-image: linear-gradient(-151deg, #c2cbfd 17%, #8191fc 94%);
 }
 
