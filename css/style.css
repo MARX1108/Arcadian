@@ -90,9 +90,10 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
 
-    padding: 4% 52% 11% 15%;
-    /*    height: 120%;*/
+    width: 69%;
 }
+
+
 #news > #signin {
     text-align: center;
     /* margin: 1% 1% 1% 1%; */
@@ -111,11 +112,43 @@ body {
 }
 
 #news > #signin > div > input {
-    text-align: center;
-    color: rgb(111, 101, 245);
+    text-align: left;
+    padding: 4px;
+    margin-top: 4px;
+    color: #ffffff;
     border: 1px solid rgb(242, 243, 255);
-    border-radius: 8px;
+    border-radius: 4px;
+    background: #9da8f5;
 }
+
+#news > #signin > div > input::placeholder{
+    color: #ffffff;
+}
+
+#news > #signin > div > button
+{
+    padding: 5px 6px 5px 6px;
+    margin: 10px 5px 2px 5px;
+    border: #ffffff;
+    background: rgba(227, 231, 255, 0.25);
+    border-radius: 2px;
+    background: #6cd8f2;
+
+
+}
+
+#news > #signin > div > #btn-signin{
+    background: #6cd8f2;
+    font-family: JosefinSans-Bold;
+    color: #ffffff;
+}
+
+#news > #signin > div > #btn-signup{
+    background: #9da8f5;
+    font-family: JosefinSans-Bold;
+    color: #ffffff;
+}
+
 
 #new > #signin > div {
     padding: 2% 2% 2% 2%;
@@ -125,6 +158,10 @@ body {
     box-shadow: 0 10px 20px 0 rgba(171, 183, 255, 0.25);
     border-radius: 8px;
 }
+
+
+
+
 
 /* footer section--------------------------------------------------------------- */
 #footer {
@@ -147,3 +184,22 @@ body {
     padding: 0% 2% 0% 2%;
     text-decoration: aqua;
 }
+
+/* animation section--------------------------------------------------------------- */
+
+.main .content {
+    color:  #127676;
+    -webkit-animation: fadein 1.5s linear forwards;
+    animation: fadein 1.5s linear forwards;
+}
+
+@-webkit-keyframes fadein {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadein {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+

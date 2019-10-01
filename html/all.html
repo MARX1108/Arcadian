@@ -6,6 +6,8 @@
         <!-- fix Chrome device emulator -->
         <title>Arcadian</title>
         <link rel="stylesheet" href="../css/style.css" />
+        <script src = "../js/jquery.js"></script>
+        <script src = "../js/topnews.js"></script>
     </head>
 
     <body>
@@ -30,12 +32,16 @@
         </div>
         <!----------------------------- body content section  ----------------------------->
         <div id="news">
-            <div id="topnews"></div>
+            <div id="topnews">
+<!--                <img src= "../assets/all_topnews.png">-->
+            </div>
             <div id="signin">
                 <p>Welcome Back!</p>
                 <div>
                     <input type="text" placeholder=" Email" />
                     <input type="text" placeholder=" Password" />
+                    <button id = "btn-signin">sign in</button>
+                    <button  id = "btn-signup">sign up</button>
                 </div>
             </div>
         </div>

@@ -169,13 +169,13 @@ body {
     color: #9da8f5;
 }
 
-#post_win > #upload {
+#post_win > #btn-upload {
     background: #6cd8f2;
     font-family: JosefinSans-Bold;
     /*    font-size: 100%;*/
     color: #ffffff;
 }
-#post_win > #post {
+#post_win > #btn-post {
     background: #9da8f5;
     font-family: JosefinSans-Bold;
     /*    font-size: 100%;*/
@@ -217,6 +217,13 @@ body {
     font-family: JosefinSans-Regular;
 }
 
+
+#success{
+    background: #ffffff;
+
+}
+
+
 /* footer section--------------------------------------------------------------- */
 #footer {
     clear: both;
@@ -238,4 +245,23 @@ body {
     font-family: JosefinSans-Regular;
     padding: 0% 2% 0% 2%;
     text-decoration: aqua;
+}
+
+/*----animation-------------------------------------------------------------------------------*/
+
+#success {
+    background-color: aquamarine !important;
+    color:  #127676;
+    -webkit-animation: fadeinout 4s linear forwards;
+    animation: fadeinout 4s linear forwards;
+}
+
+@-webkit-keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
 }
