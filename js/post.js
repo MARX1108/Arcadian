@@ -7,7 +7,14 @@ $(document).ready(function() {
         setTimeout(function() {
             $("#success").remove();
         }, 4000);
-        console.log("remove");
+
+        $("#post_win > textarea").css(
+            {
+                "background":"#e7e8e8"
+            }
+        );
+
+        // console.log("remove");
     });
 });
 

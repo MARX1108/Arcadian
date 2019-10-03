@@ -62,6 +62,129 @@ body {
     font-family: JosefinSans-Regular;
 }
 
+@media screen and (min-width: 1000px) {
+    #header h1 {
+        padding: 0 15% 0 5%;
+        font-size: 250%
+    }
+
+    #header form {
+        padding: 0 5% 0 15%;
+    }
+
+    #header form::placeholder {
+        font-size: 120%;
+    }
+    #header form > input {
+        padding: 5px 1px 3px 1px;
+        border: 2px solid rgb(242, 243, 255);
+        border-radius: 8px;
+        font-size: 80%;
+    }
+
+    #header form > button {
+        /* color: #127676;  */
+        border-radius: 8px;
+        padding: 5px 8px 2px 8px;
+        border: 1px solid rgb(255, 255, 255);
+        font-size: 80%;
+    }
+
+    #primary-nav > li {
+        padding: 5px;
+        font-size: 120%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    #header form::placeholder {
+        font-size: 120%;
+    }
+    #header form > input {
+        padding: 5px 1px 3px 1px;
+        border: 2px solid rgb(242, 243, 255);
+        border-radius: 8px;
+        font-size: 100%;
+    }
+
+    #header form > button {
+        /* color: #127676;  */
+        border-radius: 8px;
+        padding: 5px 8px 2px 8px;
+        border: 1px solid rgb(255, 255, 255);
+        font-size: 100%;
+    }
+
+    #primary-nav > li {
+        padding: 5px;
+        font-size: 150%;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 780px)
+{
+    #header h1 {
+        padding: 0 10% 0 5%;
+    }
+
+    #header form {
+        padding: 0 5% 0 10%;
+    }
+
+    #header form > input {
+        padding: 5px 1px 5px 1px;
+        border: 2px solid rgb(242, 243, 255);
+        border-radius: 8px;
+    }
+
+    #header form > button {
+        /* color: #127676;  */
+        border-radius: 8px;
+        padding: 5px 8px 5px 8px;
+        border: 1px solid rgb(255, 255, 255);
+    }
+
+    #primary-nav > li {
+        padding: 5px;
+        font-size: 120%;
+    }
+
+}
+
+@media screen and (max-width: 780px)
+{
+    #header h1 {
+        /* width: 100%; */
+/*        padding: 0 10% 0 5%;*/
+    }
+
+    #header form {
+        padding: 0 5% 0 10%;
+    }
+
+    #header form > input {
+        padding: 5px 1px 5px 1px;
+        border: 2px solid rgb(242, 243, 255);
+        border-radius: 8px;
+    }
+
+    #header form > button {
+        /* color: #127676;  */
+        border-radius: 8px;
+        padding: 5px 8px 5px 8px;
+        border: 1px solid rgb(255, 255, 255);
+    }
+
+    #primary-nav > li {
+        padding: 5px;
+        font-size: 120%;
+    }
+
+    #primary-nav {
+        padding-right: 5%;
+    }
+}
+
 /* body section--------------------------------------------------------------- */
 .main {
     padding: 2%;
@@ -75,12 +198,13 @@ body {
     margin-left: 5%;
 }
 #author_info > img {
+    width: 40%;
     display: inline;
     float: left;
-    width: 25%;
 }
 #author_info > div {
     float: right;
+    margin-right: 6%;
 }
 #title {
     float: right;
@@ -91,10 +215,12 @@ body {
 #name {
     font-family: JosefinSans-Bold;
     font-size: 150%;
+    margin-bottom: 0%;
 }
 
 #occp {
     color: darkgray;
+    margin-top: 0%;
 }
 
 #pic {
@@ -223,13 +349,93 @@ body {
     background: #ffffff;
 
 }
+@media screen and (max-width: 500px)
+{
+    #author_info {
+        float: none;
+        color: aliceblue;
+        width: 90%;
+        margin-left: 5%;
+    }
+    #author_info > img
+    {
+        float: none;
+        width: 40%;
+        margin: 5% 30% 0% 30%;
+    }
+    #author_info > div {
+        float: none;
+        width: 40%;
+        margin: 0% 30% 0% 30%;
+    }
 
+    #name {
+        font-family: JosefinSans-Bold;
+        font-size: 150%;
+        text-align: center;
+        margin: 0%;
+    }
+    #occp {
+        color: darkgray;
+        margin: 0%;
+        text-align: center;
+    }
+    #title {
+        float: right;
+        color: aliceblue;
+        font-size: 140%;
+        font-family: JosefinSans-Bold;
+        text-align: center;
+        margin-right: 5%;
+    }
+
+    #comment_right{
+        width: 80%;
+    color: #6e79c2;
+    float: none;
+    background-color: #ffffff;
+    margin-top: 3%;
+    margin-right: 7%;
+    margin-left: 7%;
+    padding: 2% 3% 2% 3%;
+    }
+
+    #comment_left {
+        margin-left: 2%;
+        width: 80%;
+    }
+    #post_win {
+        border: #ffffff;
+        padding: 7% 5% 18% 5% !important;
+        border-radius: 8px;
+        color: #9da8f5;
+    }
+
+    #post_win > #sign_in {
+        background: #9da8f5;
+        font-family: JosefinSans-Bold;
+        /* font-size: 100%; */
+        margin: 4% 28% 2% 3%;
+        color: #ffffff;
+        /* vertical-align: middle; */
+    }
+
+    #post_win > #sign_up {
+        background: #6cd8f2;
+        font-family: JosefinSans-Bold;
+        margin: 4% 0% 2% 3%;
+        /* font-size: 100%; */
+        color: #ffffff;
+    }
+
+
+}
 
 /* footer section--------------------------------------------------------------- */
 #footer {
+    clear: both;
     width: 100%;
     padding: 3% 0% 3% 0%;
-
     background-image: linear-gradient(-151deg, #c2cbfd 17%, #8191fc 94%);
 }
 
@@ -246,7 +452,16 @@ body {
     padding: 0% 2% 0% 2%;
     text-decoration: aqua;
 }
-
+@media screen and (max-width: 500px)
+{
+    #footer {
+        clear: both;
+        width: 100%;
+        margin-top: 6%;
+        padding: 7% 0% 7% 0%;
+        background-image: linear-gradient(-151deg, #c2cbfd 17%, #8191fc 94%);
+    }
+}
 /*----animation-------------------------------------------------------------------------------*/
 
 #success {

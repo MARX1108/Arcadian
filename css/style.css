@@ -53,11 +53,10 @@ body {
     color: #abb3ee;
 }
 
-
 @media screen and (min-width: 1000px) {
     #header h1 {
         padding: 0 15% 0 5%;
-        font-size: 250%
+        font-size: 250%;
     }
 
     #header form {
@@ -113,8 +112,7 @@ body {
     }
 }
 
-@media screen and (max-width: 1000px) and (min-width: 780px)
-{
+@media screen and (max-width: 1000px) and (min-width: 780px) {
     #header h1 {
         padding: 0 10% 0 5%;
     }
@@ -140,14 +138,12 @@ body {
         padding: 5px;
         font-size: 120%;
     }
-
 }
 
-@media screen and (max-width: 780px)
-{
+@media screen and (max-width: 780px) {
     #header h1 {
         width: 100%;
-        padding: 0 10% 0 5%;
+        /*        padding: 0 10% 0 5%;*/
     }
 
     #header form {
@@ -170,9 +166,14 @@ body {
     #primary-nav > li {
         padding: 5px;
         font-size: 120%;
+    }
+
+    #primary-nav {
+        padding-right: 5%;
     }
 }
 /* body section--------------------------------------------------------------- */
+
 .main {
     padding: 2%;
     background-color: #f7f8ff;
@@ -199,9 +200,8 @@ body {
     display: inline-block;
     float: left;
     background-image: url("../assets/all_topnews.png");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-
     width: 69%;
 }
 
@@ -256,13 +256,163 @@ body {
     font-family: JosefinSans-Bold;
     color: #ffffff;
 }
+#news > #signin > div > #btn-signin {
+    background: #6cd8f2;
+    font-family: JosefinSans-Bold;
+    color: #ffffff;
+}
 
+#news > #signin > div > #btn-signup {
+    background: #9da8f5;
+    font-family: JosefinSans-Bold;
+    color: #ffffff;
+}
 #new > #signin > div {
     padding: 2% 2% 2% 2%;
 }
+.main > .content > li {
+    display: inline;
+    border-radius: 8px;
+    /*        padding: 5% 2% 10% 2%;*/
+}
+.main > ul > li > a > img {
+    width: 20%;
+    box-shadow: 0 10px 20px 0 rgba(173, 181, 228, 0.25);
 
-.main > ul > li > img {
-    box-shadow: 0 10px 20px 0 rgba(171, 183, 255, 0.25);
+    /*            padding: 2%;*/
+}
+
+@media screen and (min-width: 1000px) {
+    #news > #signin > div > input {
+        width: 80%;
+
+        text-align: left;
+        padding: 4% 0% 4% 0%;
+        font-size: 70%;
+        margin-top: 4px;
+        color: #ffffff;
+        border: 1px solid rgb(242, 243, 255);
+        border-radius: 4px;
+        background: #9da8f5;
+    }
+
+    #news > #signin > div > button {
+        padding: 1% 5% 2% 5%;
+        font-size: 60%;
+        margin: 2% 6% 4% 6%;
+        border: #ffffff;
+        background: rgba(227, 231, 255, 0.25);
+        border-radius: 4px;
+        background: #6cd8f2;
+    }
+}
+@media screen and (min-width: 1200px) {
+    #news > #signin > div > input {
+        width: 80%;
+
+        text-align: left;
+        padding: 4% 0% 4% 0%;
+        font-size: 70%;
+        margin-top: 4px;
+        color: #ffffff;
+        border: 1px solid rgb(242, 243, 255);
+        border-radius: 4px;
+        background: #9da8f5;
+    }
+
+    #news > #signin > div > button {
+        padding: 2% 5% 4% 5%;
+        font-size: 70%;
+        margin: 2% 6% 4% 6%;
+        border: #ffffff;
+        background: rgba(227, 231, 255, 0.25);
+        border-radius: 8px;
+        background: #6cd8f2;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #news #topnews {
+        background-color: #ffffff;
+        box-shadow: 0 10px 20px 0 rgba(227, 231, 255, 0.25);
+        border-radius: 8px;
+        background-image: url(../assets/all_topnews.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+    }
+    #news > #signin {
+        text-align: center;
+        /* margin: 1% 1% 1% 1%; */
+        /* padding: 3% 0% 10% 1%; */
+        box-shadow: 0 10px 20px 0 rgba(227, 231, 255, 0.25);
+        border-radius: 8px;
+        background-color: #ffffff;
+        color: rgb(86, 106, 236);
+        width: 90%;
+        margin: 1% 1% 1% 1%;
+        /* float: right; */
+        /*        padding: 3% 3% 5% 3%;*/
+        font-size: 130%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #news #topnews {
+        display: block;
+        background-image: url("../assets/all_topnews.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        padding: 20% 0% 20% 0%;
+    }
+    #news > #signin > div > input {
+        width: 80%;
+        text-align: left;
+        padding: 2% 0% 2% 0%;
+        /*        font-size: 70%;*/
+        margin-top: 4px;
+        color: #ffffff;
+        border: 1px solid rgb(242, 243, 255);
+        border-radius: 4px;
+        background: #9da8f5;
+    }
+
+    #news > #signin > div > button {
+        padding: 1% 5% 2% 5%;
+        /*        font-size: 60%;*/
+        margin: 2% 6% 4% 6%;
+        border: #ffffff;
+        background: rgba(227, 231, 255, 0.25);
+        border-radius: 4px;
+        background: #6cd8f2;
+    }
+
+    .main > .content > li {
+        display: inline;
+        box-shadow: 0 10px 20px 0 rgba(227, 231, 255, 0.25);
+        border-radius: 8px;
+        /*        padding: 5% 2% 10% 2%;*/
+    }
+
+    .main > ul > li > a > img {
+        /* width:35%; */
+        min-width: 35%;
+        /*            padding: 2%;*/
+        margin: 2%;
+    }
+}
+
+#signin_prompt {
+    /*      float: left;*/
+    /*      width: 50px;*/
+    padding: 2% 2% 2% 2%;
+    width: 80%;
+    /* margin: 2% 2% 2% 2%; */
+    text-align: left;
+    background-color: aquamarine !important;
+    color: #127676;
+    box-shadow: 0 10px 20px 0 rgba(227, 231, 255, 0.25);
     border-radius: 8px;
 }
 
@@ -270,7 +420,6 @@ body {
 #footer {
     width: 100%;
     padding: 3% 0% 3% 0%;
-
     background-image: linear-gradient(-151deg, #c2cbfd 17%, #8191fc 94%);
 }
 
@@ -288,9 +437,19 @@ body {
     text-decoration: aqua;
 }
 
+@media screen and (max-width: 500px) {
+    #footer {
+        clear: both;
+        width: 100%;
+        padding: 7% 0% 7% 0%;
+        background-image: linear-gradient(-151deg, #c2cbfd 17%, #8191fc 94%);
+    }
+}
 /* animation section--------------------------------------------------------------- */
 
-.main .content {
+.main,
+.content,
+#signin_prompt {
     color: #127676;
     -webkit-animation: fadein 1.5s linear forwards;
     animation: fadein 1.5s linear forwards;
