@@ -302,7 +302,7 @@ body {
     border-radius: 8px;
 }
 
-#content-left .post > #time_stamp {
+#content-left .post > .time_stamp {
     /*      float: left;*/
     /*      width: 50px;*/
     text-align: right;
