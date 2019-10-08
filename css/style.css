@@ -14,29 +14,30 @@ body {
     display: inline-block;
 }
 
-#header form > input {
+#header form>input {
     font-family: JosefinSans-SemiBold;
     color: rgb(139, 150, 235);
     /* color: #127676; */
     text-align: center;
 }
 
-#header form > button {
+#header form>button {
     font-family: JosefinSans-SemiBold;
     color: #8191fc;
     background: #f2f3ff;
 }
+
 #primary-nav {
     display: inline-block;
 }
 
-#primary-nav > li {
+#primary-nav>li {
     display: inline;
     /* padding: 3px; */
     font-family: JosefinSans-Regular;
 }
 
-#primary-nav > li > a {
+#primary-nav>li>a {
     color: rgb(182, 192, 255);
     text-decoration: aqua;
     font-family: JosefinSans-Regular;
@@ -66,14 +67,15 @@ body {
     #header form::placeholder {
         font-size: 120%;
     }
-    #header form > input {
+
+    #header form>input {
         padding: 5px 1px 3px 1px;
         border: 2px solid rgb(242, 243, 255);
         border-radius: 8px;
         font-size: 80%;
     }
 
-    #header form > button {
+    #header form>button {
         /* color: #127676;  */
         border-radius: 8px;
         padding: 5px 8px 2px 8px;
@@ -81,7 +83,7 @@ body {
         font-size: 80%;
     }
 
-    #primary-nav > li {
+    #primary-nav>li {
         padding: 5px;
         font-size: 120%;
     }
@@ -91,14 +93,15 @@ body {
     #header form::placeholder {
         font-size: 120%;
     }
-    #header form > input {
+
+    #header form>input {
         padding: 5px 1px 3px 1px;
         border: 2px solid rgb(242, 243, 255);
         border-radius: 8px;
         font-size: 100%;
     }
 
-    #header form > button {
+    #header form>button {
         /* color: #127676;  */
         border-radius: 8px;
         padding: 5px 8px 2px 8px;
@@ -106,7 +109,7 @@ body {
         font-size: 100%;
     }
 
-    #primary-nav > li {
+    #primary-nav>li {
         padding: 5px;
         font-size: 150%;
     }
@@ -121,20 +124,20 @@ body {
         padding: 0 5% 0 10%;
     }
 
-    #header form > input {
+    #header form>input {
         padding: 5px 1px 5px 1px;
         border: 2px solid rgb(242, 243, 255);
         border-radius: 8px;
     }
 
-    #header form > button {
+    #header form>button {
         /* color: #127676;  */
         border-radius: 8px;
         padding: 5px 8px 5px 8px;
         border: 1px solid rgb(255, 255, 255);
     }
 
-    #primary-nav > li {
+    #primary-nav>li {
         padding: 5px;
         font-size: 120%;
     }
@@ -143,27 +146,26 @@ body {
 @media screen and (max-width: 780px) {
     #header h1 {
         width: 100%;
-        /*        padding: 0 10% 0 5%;*/
     }
 
     #header form {
         padding: 0 5% 0 10%;
     }
 
-    #header form > input {
+    #header form>input {
         padding: 5px 1px 5px 1px;
         border: 2px solid rgb(242, 243, 255);
         border-radius: 8px;
     }
 
-    #header form > button {
+    #header form>button {
         /* color: #127676;  */
         border-radius: 8px;
         padding: 5px 8px 5px 8px;
         border: 1px solid rgb(255, 255, 255);
     }
 
-    #primary-nav > li {
+    #primary-nav>li {
         padding: 5px;
         font-size: 120%;
     }
@@ -172,17 +174,19 @@ body {
         padding-right: 5%;
     }
 }
+
 /* body section--------------------------------------------------------------- */
 
 .main {
     padding: 2%;
     background-color: #f7f8ff;
 }
-.main > #top {
+
+.main>#top {
     display: block;
 }
 
-.main > .content > li {
+.main>.content>li {
     display: inline;
     padding: 2% 2% 10% 2%;
 }
@@ -200,12 +204,13 @@ body {
     display: inline-block;
     float: left;
     background-image: url("../assets/all_topnews.png");
+    /* source: https://thefurrow.tv/project/vouchers */
     background-size: cover;
     background-repeat: no-repeat;
     width: 69%;
 }
 
-#news > #signin {
+#news>#signin {
     text-align: center;
     /* margin: 1% 1% 1% 1%; */
     /* padding: 3% 0% 10% 1%; */
@@ -222,7 +227,7 @@ body {
     font-size: 130%;
 }
 
-#news > #signin > div > input {
+#news>#signin>div>input {
     text-align: left;
     padding: 4px;
     margin-top: 4px;
@@ -232,11 +237,11 @@ body {
     background: #9da8f5;
 }
 
-#news > #signin > div > input::placeholder {
+#news>#signin>div>input::placeholder {
     color: #ffffff;
 }
 
-#news > #signin > div > button {
+#news>#signin>div>button {
     padding: 5px 6px 5px 6px;
     margin: 10px 5px 2px 5px;
     border: #ffffff;
@@ -245,37 +250,41 @@ body {
     background: #6cd8f2;
 }
 
-#news > #signin > div > #btn-signin {
+#news>#signin>div>#btn-signin {
     background: #6cd8f2;
     font-family: JosefinSans-Bold;
     color: #ffffff;
 }
 
-#news > #signin > div > #btn-signup {
+#news>#signin>div>#btn-signup {
     background: #9da8f5;
     font-family: JosefinSans-Bold;
     color: #ffffff;
 }
-#news > #signin > div > #btn-signin {
+
+#news>#signin>div>#btn-signin {
     background: #6cd8f2;
     font-family: JosefinSans-Bold;
     color: #ffffff;
 }
 
-#news > #signin > div > #btn-signup {
+#news>#signin>div>#btn-signup {
     background: #9da8f5;
     font-family: JosefinSans-Bold;
     color: #ffffff;
 }
-#new > #signin > div {
+
+#new>#signin>div {
     padding: 2% 2% 2% 2%;
 }
-.main > .content > li {
+
+.main>.content>li {
     display: inline;
     border-radius: 8px;
     /*        padding: 5% 2% 10% 2%;*/
 }
-.main > ul > li > a > img {
+
+.main>ul>li>a>img {
     width: 20%;
     box-shadow: 0 10px 20px 0 rgba(173, 181, 228, 0.25);
 
@@ -283,7 +292,7 @@ body {
 }
 
 @media screen and (min-width: 1000px) {
-    #news > #signin > div > input {
+    #news>#signin>div>input {
         width: 80%;
 
         text-align: left;
@@ -296,7 +305,7 @@ body {
         background: #9da8f5;
     }
 
-    #news > #signin > div > button {
+    #news>#signin>div>button {
         padding: 1% 5% 2% 5%;
         font-size: 60%;
         margin: 2% 6% 4% 6%;
@@ -306,8 +315,9 @@ body {
         background: #6cd8f2;
     }
 }
+
 @media screen and (min-width: 1200px) {
-    #news > #signin > div > input {
+    #news>#signin>div>input {
         width: 80%;
 
         text-align: left;
@@ -320,7 +330,7 @@ body {
         background: #9da8f5;
     }
 
-    #news > #signin > div > button {
+    #news>#signin>div>button {
         padding: 2% 5% 4% 5%;
         font-size: 70%;
         margin: 2% 6% 4% 6%;
@@ -341,7 +351,8 @@ body {
         background-repeat: no-repeat;
         width: 100%;
     }
-    #news > #signin {
+
+    #news>#signin {
         text-align: center;
         /* margin: 1% 1% 1% 1%; */
         /* padding: 3% 0% 10% 1%; */
@@ -366,7 +377,8 @@ body {
         width: 100%;
         padding: 20% 0% 20% 0%;
     }
-    #news > #signin > div > input {
+
+    #news>#signin>div>input {
         width: 80%;
         text-align: left;
         padding: 2% 0% 2% 0%;
@@ -378,7 +390,7 @@ body {
         background: #9da8f5;
     }
 
-    #news > #signin > div > button {
+    #news>#signin>div>button {
         padding: 1% 5% 2% 5%;
         /*        font-size: 60%;*/
         margin: 2% 6% 4% 6%;
@@ -388,14 +400,14 @@ body {
         background: #6cd8f2;
     }
 
-    .main > .content > li {
+    .main>.content>li {
         display: inline;
         box-shadow: 0 10px 20px 0 rgba(227, 231, 255, 0.25);
         border-radius: 8px;
         /*        padding: 5% 2% 10% 2%;*/
     }
 
-    .main > ul > li > a > img {
+    .main>ul>li>a>img {
         /* width:35%; */
         min-width: 35%;
         /*            padding: 2%;*/
@@ -429,7 +441,7 @@ body {
     color: #f5f6ff;
 }
 
-#copyright > a {
+#copyright>a {
     color: #f5f6ff;
     /* font-family: JosefinSans-Bold; */
     font-family: futura-Bold;
@@ -445,6 +457,7 @@ body {
         background-image: linear-gradient(-151deg, #c2cbfd 17%, #8191fc 94%);
     }
 }
+
 /* animation section--------------------------------------------------------------- */
 
 .main,
@@ -459,6 +472,7 @@ body {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
@@ -468,6 +482,7 @@ body {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
