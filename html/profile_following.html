@@ -1,124 +1,89 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <!-- fix Chrome device emulator -->
-        <title>Arcadian</title>
-        <link rel="stylesheet" href="../css/profile.css" />
-        <script src = "../js/jquery.js"></script>
-        <script src = "../js/topnews.js"></script>
-    </head>
+<html lang="en">
 
-    <body>
-        <!----------------------------- header  ----------------------------->
-        <div id="header">
-            <h1>Arc<a style="color: rgb(143, 158, 255);">a</a>dian</h1>
-            <ul id="primary-nav">
-                <li><a href="./all.html">All</a></li>
-                <li><a href="./discover.html">Discover</a></li>
-                <li>
-                    <a
-                        href="#"
-                        style="color: rgb(86, 106, 236); font-family: JosefinSans-Bold;"
-                        >Profile</a
-                    >
-                    <!--                               border-bottom: 3px solid #01CEFF-->
-                </li>
-            </ul>
-            <form id="search-bar">
-                <input type="text" placeholder=" Search Something" />
-                <button>Search</button>
-            </form>
-        </div>
-        <!----------------------------- body content section  ----------------------------->
-        <div class="main">
-            <ul id="secondary-nav">
-                <li class="selected">
-                    <a
-                        href="#"
-                        style="color: #01CEFF; font-family: JosefinSans-Bold"
-                        >Following</a
-                    >
-                </li>
-                <li><a href="./profile_timeline.html">Timeline</a></li>
-                <li><a href="./profile_gallery.html">Gallery</a></li>
-            </ul>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- fix Chrome device emulator -->
+    <title>Arcadian</title>
+    <link rel="stylesheet" href="../css/profile.css" />
+    <script src="../js/jquery.js"></script>
+    <script src="../js/topnews.js"></script>
+</head>
 
-            <div id="content-left">
-                <div class="post" id="post_win">
-                    <textarea
-                        form="testformid"
-                        placeholder=" Post Something"
-                    ></textarea>
-                    <button id="post">Post</button>
-                    <button id="upload">Upload</button>
-                </div>
+<body>
+    <div id="header">
+        <h1>Arc<a style="color: rgb(143, 158, 255);">a</a>dian</h1>
+        <ul id="primary-nav">
+            <li><a href="./all.html">All</a></li>
+            <li><a href="./discover.html">Discover</a></li>
+            <li>
+                <a href="#" style="color: rgb(86, 106, 236); font-family: JosefinSans-Bold;">Profile</a>
+            </li>
+        </ul>
+        <form id="search-bar">
+            <input type="text" placeholder=" Search Something" />
+            <button>Search</button>
+        </form>
+    </div>
+    <div class="main">
+        <ul id="secondary-nav">
+            <li class="selected">
+                <a href="#" style="color: #01CEFF; font-family: JosefinSans-Bold">Following</a>
+            </li>
+            <li><a href="./profile_timeline.html">Timeline</a></li>
+            <li><a href="./profile_gallery.html">Gallery</a></li>
+        </ul>
 
-                <div class="post">
-                    <p><a href="#">Mashal</a> @Mashel1999</p>
-
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Vivamus dapibus lectus vel arcu egestas, id ornare
-                        libero iaculis.
-                    </p>
-                    <p id="time_stamp">5 minutes ago</p>
-                </div>
-
-                <div class="post">
-                    <p><a href="#">jsmith</a> @Mashel1999</p>
-
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Vivamus dapibus lectus vel arcu egestas, id ornare
-                        libero iaculis.
-                    </p>
-                    <p id="time_stamp">5 minutes ago</p>
-                </div>
-
-                <div class="post">
-                    <p><a href="#">jsmith</a> @Mashel1999</p>
-
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Vivamus dapibus lectus vel arcu egestas, id ornare
-                        libero iaculis.
-                    </p>
-                    <p id="time_stamp">5 minutes ago</p>
-                </div>
+        <div id="content-left">
+            <div class="post" id="post_win">
+                <textarea placeholder=" Post Something"></textarea>
+                <button id="post">Post</button>
+                <button id="upload">Upload</button>
             </div>
 
-            <div id="content-right">
-                <h2>Welcome to VT Social News</h2>
+            <div class="post">
+                <p><a href="#">Song</a> @songsong</p>
 
                 <p>
-                    Integer non metus lectus. Aenean nec sagittis justo. Cras
-                    euismod nulla id diam sagittis, a semper purus malesuada.
-                    Maecenas a lacinia lectus. Aliquam erat volutpat.
+                    Amzing work,what software do u use to create this kind of illustration？
                 </p>
-
-                <img
-                    src="/assets/004.png"
-                    alt="Ad for VT master's degree"
-                    width="200"
-                />
-                <!-- source: https://pbs.twimg.com/profile_images/1004769023500824576/q9c1EJ-w_400x400.jpg -->
-
-                <img
-                    src="/assets/005.png"
-                    alt="Ad for VT master's degree"
-                    width="200"
-                />
+                <p class="time_stamp">5 minutes ago</p>
             </div>
-            <!-- #content-right -->
+
+            <div class="post">
+                <p><a href="#">Rmoain</a> @rrrrrmoain</p>
+
+                <p>
+                    Outstanding colors! Best work! 💚🖤 Nice to connect mutually! Thank you!
+                </p>
+                <p class="time_stamp">10 minutes ago</p>
+            </div>
+
+            <div class="post">
+                <p><a href="#">Yunus Tuncel</a> @yunes</p>
+
+                <p>
+                    The urban-vibe in this project is amazing!
+                </p>
+                <p class="time_stamp">23 minutes ago</p>
+            </div>
         </div>
 
-        <!------------------------------ footer ----------------------------->
-        <div id="footer">
-            <div id="copyright">@2019 Arcadian <a href="#">Contact Us</a></div>
-        </div>
-    </body>
+        <div id="content-right">
+            <h2>Welcome to Arcadian</h2>
 
-    <footer></footer>
+            <p>
+                Arcadian is a user-generate-content online community which targets college students who are interested
+                in learn graphic design, and aims to facilitate a art-based social community where people can share they
+                work, critic each other, meet new people and look for inspirations
+            </p>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div id="copyright">@2019 Arcadian <a href="#">Contact Us</a></div>
+    </div>
+</body>
+
 </html>

@@ -22,7 +22,8 @@ body {
     display: inline-block;
     padding: 0 5% 0 10%;
 }
-#header form > input {
+
+#header form>input {
     font-family: JosefinSans-SemiBold;
     color: rgb(139, 150, 235);
     padding: 5px 1px 5px 1px;
@@ -30,12 +31,13 @@ body {
     border-radius: 8px;
     text-align: center;
 }
+
 ::placeholder {
     font-family: JosefinSans-SemiBold;
     color: #abb3ee;
 }
 
-#header form > button {
+#header form>button {
     font-family: JosefinSans-SemiBold;
     color: #8191fc;
     background: #f2f3ff;
@@ -48,7 +50,7 @@ body {
     display: inline-block;
 }
 
-#primary-nav > li {
+#primary-nav>li {
     padding: 5px;
     font-size: 120%;
     display: inline;
@@ -56,7 +58,7 @@ body {
     font-family: JosefinSans-Regular;
 }
 
-#primary-nav > li > a {
+#primary-nav>li>a {
     color: rgb(182, 192, 255);
     text-decoration: aqua;
     font-family: JosefinSans-Regular;
@@ -75,14 +77,15 @@ body {
     #header form::placeholder {
         font-size: 120%;
     }
-    #header form > input {
+
+    #header form>input {
         padding: 5px 1px 3px 1px;
         border: 2px solid rgb(242, 243, 255);
         border-radius: 8px;
         font-size: 80%;
     }
 
-    #header form > button {
+    #header form>button {
         /* color: #127676;  */
         border-radius: 8px;
         padding: 5px 8px 2px 8px;
@@ -90,7 +93,7 @@ body {
         font-size: 80%;
     }
 
-    #primary-nav > li {
+    #primary-nav>li {
         padding: 5px;
         font-size: 120%;
     }
@@ -100,14 +103,15 @@ body {
     #header form::placeholder {
         font-size: 120%;
     }
-    #header form > input {
+
+    #header form>input {
         padding: 5px 1px 3px 1px;
         border: 2px solid rgb(242, 243, 255);
         border-radius: 8px;
         font-size: 100%;
     }
 
-    #header form > button {
+    #header form>button {
         /* color: #127676;  */
         border-radius: 8px;
         padding: 5px 8px 2px 8px;
@@ -115,14 +119,13 @@ body {
         font-size: 100%;
     }
 
-    #primary-nav > li {
+    #primary-nav>li {
         padding: 5px;
         font-size: 150%;
     }
 }
 
-@media screen and (max-width: 1000px) and (min-width: 780px)
-{
+@media screen and (max-width: 1000px) and (min-width: 780px) {
     #header h1 {
         padding: 0 10% 0 5%;
     }
@@ -131,51 +134,50 @@ body {
         padding: 0 5% 0 10%;
     }
 
-    #header form > input {
+    #header form>input {
         padding: 5px 1px 5px 1px;
         border: 2px solid rgb(242, 243, 255);
         border-radius: 8px;
     }
 
-    #header form > button {
+    #header form>button {
         /* color: #127676;  */
         border-radius: 8px;
         padding: 5px 8px 5px 8px;
         border: 1px solid rgb(255, 255, 255);
     }
 
-    #primary-nav > li {
+    #primary-nav>li {
         padding: 5px;
         font-size: 120%;
     }
 
 }
 
-@media screen and (max-width: 780px)
-{
+@media screen and (max-width: 780px) {
     #header h1 {
         /* width: 100%; */
-/*        padding: 0 10% 0 5%;*/
+        /*        padding: 0 10% 0 5%;*/
     }
 
     #header form {
         padding: 0 5% 0 10%;
     }
 
-    #header form > input {
+    #header form>input {
         padding: 5px 1px 5px 1px;
         border: 2px solid rgb(242, 243, 255);
         border-radius: 8px;
     }
 
-    #header form > button {
+    #header form>button {
         /* color: #127676;  */
         border-radius: 8px;
         padding: 5px 8px 5px 8px;
         border: 1px solid rgb(255, 255, 255);
     }
 
-    #primary-nav > li {
+    #primary-nav>li {
         padding: 5px;
         font-size: 120%;
     }
@@ -197,15 +199,18 @@ body {
     width: 15%;
     margin-left: 5%;
 }
-#author_info > img {
+
+#author_info>img {
     width: 40%;
     display: inline;
     float: left;
 }
-#author_info > div {
+
+#author_info>div {
     float: right;
     margin-right: 6%;
 }
+
 #title {
     float: right;
     color: aliceblue;
@@ -228,6 +233,7 @@ body {
     padding: 40% 40% 40% 40%;
     margin: 5% 5% 5% 5%;
     background-image: url(../assets/pic.jpg);
+    /* source:  https://medium.muz.li/weekly-design-inspiration-226-5fde64157729 */
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 8px;
@@ -252,13 +258,13 @@ body {
     box-shadow: 0 10px 20px 0 rgba(5, 5, 49, 0.88);
 }
 
-#comment_right > #tag {
+#comment_right>#tag {
     padding-bottom: 10px;
     border-bottom: 1px solid #a7b1f0;
 }
-#comment_sec > #comment_left > .post {
-    /*      float: left;*/
-    /*      width: 50px;*/
+
+#comment_sec>#comment_left>.post {
+
     padding: 5% 6% 5% 5%;
     width: 100%;
     margin: 5% 5% 5% 5%;
@@ -268,20 +274,19 @@ body {
     border-radius: 8px;
 }
 
-#comment_sec > #comment_left > .post > p {
-    /*      float: left;*/
-    /*      width: 50px;*/
+#comment_sec>#comment_left>.post>p {
+
     color: #a3a8c6;
     text-decoration: aqua;
 }
 
-#comment_sec > #comment_left > .post > p > a {
+#comment_sec>#comment_left>.post>p>a {
     color: #4e4281;
     text-decoration: aqua;
     font-family: JosefinSans-Bold;
 }
 
-#post_win > button {
+#post_win>button {
     float: right;
     padding: 9px 8px 8px 8px;
     margin: 4px 2px 2px 2px;
@@ -289,6 +294,7 @@ body {
     background: rgba(227, 231, 255, 0.25);
     border-radius: 8px;
 }
+
 #post_win {
     border: #ffffff;
     padding: 5% 5% 5% 5%;
@@ -296,20 +302,21 @@ body {
     color: #9da8f5;
 }
 
-#post_win > #btn-upload {
+#post_win>#btn-upload {
     background: #6cd8f2;
     font-family: JosefinSans-Bold;
     /*    font-size: 100%;*/
     color: #ffffff;
 }
-#post_win > #btn-post {
+
+#post_win>#btn-post {
     background: #9da8f5;
     font-family: JosefinSans-Bold;
     /*    font-size: 100%;*/
     color: #ffffff;
 }
 
-#post_win > #sign_in {
+#post_win>#sign_in {
     background: #9da8f5;
     font-family: JosefinSans-Bold;
     /*    font-size: 100%;*/
@@ -321,7 +328,7 @@ body {
     /*    vertical-align: middle;*/
 }
 
-#post_win > #sign_up {
+#post_win>#sign_up {
     background: #6cd8f2;
     font-family: JosefinSans-Bold;
     /*    font-size: 100%;*/
@@ -332,7 +339,7 @@ body {
 */
 }
 
-#post_win > textarea {
+#post_win>textarea {
     font-size: 120%;
     resize: none;
     width: 100%;
@@ -345,25 +352,26 @@ body {
 }
 
 
-#success{
+#success {
     background: #ffffff;
 
 }
-@media screen and (max-width: 500px)
-{
+
+@media screen and (max-width: 500px) {
     #author_info {
         float: none;
         color: aliceblue;
         width: 90%;
         margin-left: 5%;
     }
-    #author_info > img
-    {
+
+    #author_info>img {
         float: none;
         width: 40%;
         margin: 5% 30% 0% 30%;
     }
-    #author_info > div {
+
+    #author_info>div {
         float: none;
         width: 40%;
         margin: 0% 30% 0% 30%;
@@ -375,11 +383,13 @@ body {
         text-align: center;
         margin: 0%;
     }
+
     #occp {
         color: darkgray;
         margin: 0%;
         text-align: center;
     }
+
     #title {
         float: right;
         color: aliceblue;
@@ -389,21 +399,22 @@ body {
         margin-right: 5%;
     }
 
-    #comment_right{
+    #comment_right {
         width: 80%;
-    color: #6e79c2;
-    float: none;
-    background-color: #ffffff;
-    margin-top: 3%;
-    margin-right: 7%;
-    margin-left: 7%;
-    padding: 2% 3% 2% 3%;
+        color: #6e79c2;
+        float: none;
+        background-color: #ffffff;
+        margin-top: 3%;
+        margin-right: 7%;
+        margin-left: 7%;
+        padding: 2% 3% 2% 3%;
     }
 
     #comment_left {
         margin-left: 2%;
         width: 80%;
     }
+
     #post_win {
         border: #ffffff;
         padding: 7% 5% 18% 5% !important;
@@ -411,7 +422,7 @@ body {
         color: #9da8f5;
     }
 
-    #post_win > #sign_in {
+    #post_win>#sign_in {
         background: #9da8f5;
         font-family: JosefinSans-Bold;
         /* font-size: 100%; */
@@ -420,7 +431,7 @@ body {
         /* vertical-align: middle; */
     }
 
-    #post_win > #sign_up {
+    #post_win>#sign_up {
         background: #6cd8f2;
         font-family: JosefinSans-Bold;
         margin: 4% 0% 2% 3%;
@@ -445,15 +456,15 @@ body {
     color: #f5f6ff;
 }
 
-#copyright > a {
+#copyright>a {
     color: #f5f6ff;
     /* font-family: JosefinSans-Bold; */
     font-family: futura-Bold;
     padding: 0% 2% 0% 2%;
     text-decoration: aqua;
 }
-@media screen and (max-width: 500px)
-{
+
+@media screen and (max-width: 500px) {
     #footer {
         clear: both;
         width: 100%;
@@ -462,23 +473,38 @@ body {
         background-image: linear-gradient(-151deg, #c2cbfd 17%, #8191fc 94%);
     }
 }
+
 /*----animation-------------------------------------------------------------------------------*/
 
 #success {
     background-color: aquamarine !important;
-    color:  #127676;
+    color: #127676;
     -webkit-animation: fadeinout 4s linear forwards;
     animation: fadeinout 4s linear forwards;
 }
 
 @-webkit-keyframes fadeinout {
-  0%,100% { opacity: 0; }
-  50% { opacity: 1; }
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeinout {
-  0%,100% { opacity: 0; }
-  50% { opacity: 1; }
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 /*------------------------font-----------------------------------------------------------------*/
@@ -489,7 +515,7 @@ body {
 @font-face {
     font-family: 'JosefinSans-Bold';
     src: url('josefinsans-bold-webfont.woff2') format('woff2'),
-         url('josefinsans-bold-webfont.woff') format('woff');
+        url('josefinsans-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -501,7 +527,7 @@ body {
 @font-face {
     font-family: 'JosefinSans-Bold-Italic';
     src: url('josefinsans-bolditalic-webfont.woff2') format('woff2'),
-         url('josefinsans-bolditalic-webfont.woff') format('woff');
+        url('josefinsans-bolditalic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -513,7 +539,7 @@ body {
 @font-face {
     font-family: 'JosefinSans-Italic';
     src: url('josefinsans-italic-webfont.woff2') format('woff2'),
-         url('josefinsans-italic-webfont.woff') format('woff');
+        url('josefinsans-italic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -525,7 +551,7 @@ body {
 @font-face {
     font-family: 'JosefinSans-Light';
     src: url('josefinsans-light-webfont.woff2') format('woff2'),
-         url('josefinsans-light-webfont.woff') format('woff');
+        url('josefinsans-light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -537,7 +563,7 @@ body {
 @font-face {
     font-family: 'JosefinSans-Light_Italic';
     src: url('josefinsans-lightitalic-webfont.woff2') format('woff2'),
-         url('josefinsans-lightitalic-webfont.woff') format('woff');
+        url('josefinsans-lightitalic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -549,7 +575,7 @@ body {
 @font-face {
     font-family: 'JosefinSans-Regular';
     src: url('josefinsans-regular-webfont.woff2') format('woff2'),
-         url('josefinsans-regular-webfont.woff') format('woff');
+        url('josefinsans-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -561,7 +587,7 @@ body {
 @font-face {
     font-family: 'JosefinSans-Semibold';
     src: url('josefinsans-semibold-webfont.woff2') format('woff2'),
-         url('josefinsans-semibold-webfont.woff') format('woff');
+        url('josefinsans-semibold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -573,7 +599,7 @@ body {
 @font-face {
     font-family: 'JosefinSans-Semibold-Italic';
     src: url('josefinsans-semibolditalic-webfont.woff2') format('woff2'),
-         url('josefinsans-semibolditalic-webfont.woff') format('woff');
+        url('josefinsans-semibolditalic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -585,7 +611,7 @@ body {
 @font-face {
     font-family: 'JosefinSans-Thin';
     src: url('josefinsans-thin-webfont.woff2') format('woff2'),
-         url('josefinsans-thin-webfont.woff') format('woff');
+        url('josefinsans-thin-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -597,7 +623,7 @@ body {
 @font-face {
     font-family: 'JosefinSans-Thin-Italic';
     src: url('josefinsans-thinitalic-webfont.woff2') format('woff2'),
-         url('josefinsans-thinitalic-webfont.woff') format('woff');
+        url('josefinsans-thinitalic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -606,7 +632,7 @@ body {
 @font-face {
     font-family: 'futura';
     src: url('futura_medium_bt-webfont.woff2') format('woff2'),
-         url('futura_medium_bt-webfont.woff') format('woff');
+        url('futura_medium_bt-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -618,7 +644,7 @@ body {
 @font-face {
     font-family: 'futura-Bold';
     src: url('futura_heavy_font-webfont.woff2') format('woff2'),
-         url('futura_heavy_font-webfont.woff') format('woff');
+        url('futura_heavy_font-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
