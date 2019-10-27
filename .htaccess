@@ -1,0 +1,15 @@
+Options -Indexes
+
+RewriteEngine on
+
+# News controller
+RewriteRule ^news$ app/controller/NewsController.php?route=list
+RewriteRule ^news/submit$ app/controller/NewsController.php?route=add
+RewriteRule ^news/submit/process$ app/controller/NewsController.php?route=addProcess
+RewriteRule ^news/(\d+)$ app/controller/NewsController.php?route=detail&storyID=$1
+
+# Site controller
+RewriteRule ^$ app/controller/SiteController.php?route=home
+RewriteRule ^login$ app/controller/SiteController.php?route=login
+RewriteRule ^login/process$ app/controller/SiteController.php?route=loginProcess
+RewriteRule ^logout$ app/controller/SiteController.php?route=logout
