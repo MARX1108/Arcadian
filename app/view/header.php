@@ -13,13 +13,15 @@
 <body>
     <!-- header-->
     <div id="header">
-        <h1>Arc<a style="color: rgb(143, 158, 255);">a</a>dian</h1>
+        <h1>Arc<a id = "logo" >a</a>dian</h1>
         <ul id="primary-nav">
             <li>
-                <a href="<?= BASE_URL ?>/home" style="color: rgb(86, 106, 236); font-family: JosefinSans-Bold">All</a>
+                <a href="<?= BASE_URL ?>/home" id = "<?=$all_state?>"  class = "current_nav">All</a>
             </li>
-            <li><a href="<?= BASE_URL ?>/discover">Discover</a></li>
-            <li><a href="<?= BASE_URL ?>/profile/timeline">Profile</a></li>
+            <li>
+                <a href="<?= BASE_URL ?>/discover" id = "<?=$discover_state?>">Discover</a></li>
+            <li>
+                <a href="<?= BASE_URL ?>/profile/timeline" id = "<?=$profile_state?>">Profile</a></li>
         </ul>
         <form id="search-bar">
             <input type="text" placeholder=" Search Something" />

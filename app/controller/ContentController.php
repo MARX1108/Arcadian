@@ -40,6 +40,9 @@ class ContentController {
     $pageTitle = 'News';
 
     $script = 'news';
+    $all_state = "active_tab";
+    $discover_state = "";
+    $profile_state = "";
 
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/home.php';
@@ -48,6 +51,11 @@ class ContentController {
 
   public function discover() 
   {
+    $all_state = "";
+    $discover_state = "active_tab";
+    $profile_state = "";
+
+
     $stylesheet = "style.css";
     $stories = PictureStory::loadAllStories();
 
@@ -57,19 +65,45 @@ class ContentController {
     include_once SYSTEM_PATH.'/view/footer.php';
   }
 
-  public function profile_timeline() {
+
+  public function profile_timeline() 
+  {
+    $all_state = "";
+    $discover_state = "";
+    $profile_state = "active_tab";
+
 
     $stories = PictureStory::loadAllStories();
-    $stylesheet = "profile.css";
+    if(isset($_SESSION['username']))
+    {
+      $stylesheet = "profile.css";
+    }
+    else
+    {
+      $stylesheet = "lock.css";
+    }
+
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/timeline.php';
     include_once SYSTEM_PATH.'/view/footer.php';
   }
 
 
-  public function profile_following() {
-
-    $stylesheet = "profile.css";
+  public function profile_following() 
+  {
+    $all_state = "";
+    $discover_state = "";
+    $profile_state = "active_tab";
+    
+    if(isset($_SESSION['username']))
+    {
+      $stylesheet = "profile.css";
+    }
+    else
+    {
+      $stylesheet = "lock.css";
+    }
+    
     $stories = PictureStory::loadAllStories();
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/following.php';

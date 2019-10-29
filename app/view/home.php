@@ -12,7 +12,7 @@
                 <?php if(isset($_SESSION['username'])): ?>
                 <p>Welcome, <strong><?= $_SESSION['username'] ?></strong> 
                 </br>
-                <a id="btn-signup" href="<?= BASE_URL ?>/logout" style = "text-decoration: none; ">Log Out</a></p>
+                <a id="btn-signup" href="<?= BASE_URL ?>/logout" >Log Out</a></p>
                 <?php else: ?>
                 <p>Welcome Back!</p>
                 

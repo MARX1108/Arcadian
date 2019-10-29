@@ -4,6 +4,17 @@ body {
     background-color: #ffffff;
 }
 
+#logo
+{
+    color: rgb(143, 158, 255);
+}
+
+#active_tab
+{
+    color: rgb(86, 106, 236) !important; 
+    font-family: JosefinSans-Bold !important; 
+}
+
 /* header section--------------------------------------------------------------- */
 
 #header h1 {
@@ -26,7 +37,10 @@ body {
     color: #8191fc;
     background: #f2f3ff;
 }
-
+#btn-signup
+{
+    text-decoration: none;;
+}
 #primary-nav {
     display: inline-block;
 }

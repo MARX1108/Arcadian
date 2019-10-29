@@ -1,25 +1,5 @@
 $(document).ready(function() {
 
-    // $("#delete").click(function(){
-    //     // alert("test");
-    //     if(confirm("Are you sure you want to delete this?")){
-
-    //     }
-    //     else{
-    //         document.reload();
-    //     }
-    // });
-
-    // $(".delete").click(function(){
-    //     // alert("test");
-    //     if(confirm("Are you sure you want to delete this?")){
-
-    //     }
-    //     else{
-    //         document.reload();
-    //     }
-    // });
-
     checkSize();
 });
 

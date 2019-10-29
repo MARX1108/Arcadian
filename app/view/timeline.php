@@ -7,7 +7,7 @@
         </li>
         <!-- <li><a href="./profile_timeline.html">Timeline</a></li> -->
         <li>
-            <a href="#" style="color: #01CEFF; font-family: JosefinSans-Bold">Timeline</a>
+            <a href="#" id = "current_tab">Timeline</a>
         </li>
     </ul>
 
@@ -42,8 +42,8 @@
         <p><a href="#"><?=$story->title?></a> by <?=$story->author?></p>
             <ul class="post_pic">
             <a href="<?= BASE_URL ?>/detail/<?= $story->id ?>"><img src="<?= $story->img_url ?>" width = "80%" alt="<?=$story->title?>" /></a>
-            <p style=" color: #4f4382; width: 80%;">Description: </br><?=$story->description?></p>
-            <p style=" color: #4f4382; width: 80%;">Tags: </br><?=$story->tags?></p>
+            <p >Description: </br><?=$story->description?></p>
+            <p>Tags: </br><?=$story->tags?></p>
             <form id="post" method="POST" action="<?= BASE_URL ?>/detail/<?= $story->id ?>/edit">
                 <button class="edit" type="submit" name = "edit_request" value = "true">Edit</button>    
                 <button class="delete" type="button" id = "delete" name = "delete_request" value = "true" onclick = "delete_('<?= $story->id ?>', '<?= BASE_URL ?>')"> Delete</button>    
@@ -67,17 +67,12 @@
     <!-- #content-right -->
 
     <?php else: ?>
-    <div class="main" style=" padding: 20% 33% 20% 39%; ">
+    <div class="main">
     <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> --> 
-    <img src="<?= BASE_URL ?>/public/assets/padlock.png" alt="" width = "15%" 
-    style = "margin-left: 31%;" href="<?= BASE_URL ?>/home" > 
+    <img src="<?= BASE_URL ?>/public/assets/padlock.png" alt="" width = "15%"  href="<?= BASE_URL ?>/home" > 
     </br>
     
-    <a id="btn-signin" href="<?= BASE_URL ?>/home" 
-        style="text-decoration: none; 
-        color: #448eff;
-        font-size: 100%; width: 100%; text-align: center;
-        margin-left: 22%;">
+    <a id="btn-signin" href="<?= BASE_URL ?>/home" >
         Click Here To Sign in</a>
         <?php endif; ?>
     </div>
