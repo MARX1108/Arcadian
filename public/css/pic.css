@@ -156,7 +156,7 @@ body {
 
 @media screen and (max-width: 780px) {
     #header h1 {
-        /* width: 100%; */
+        width: 85%;
         /*        padding: 0 10% 0 5%;*/
     }
 
@@ -192,15 +192,38 @@ body {
     padding: 2%;
     background-color: #24212b;
 }
+#content{
+    margin-left:10%;
+}
 
 #author_info {
     float: left;
     color: aliceblue;
-    width: 15%;
-    margin-left: 5%;
+    width: 70%;
+    margin-left: 10%;
 }
 
-#author_info>img {
+ #title{
+    font-size: 160%;
+    width: 100%;
+    padding-top: 1%;
+    margin: 0;
+    float: left;
+    color: aliceblue;
+    background-color: #24212b;
+    border: #24212b;
+}
+
+#title::placeholder
+{
+    font-size: 160%;
+    color: #ffffff;
+    font-family: JosefinSans-Semibold-Italic;
+}
+
+
+
+/* #author_info>img {
     width: 40%;
     display: inline;
     float: left;
@@ -209,32 +232,31 @@ body {
 #author_info>div {
     float: right;
     margin-right: 6%;
-}
+} */
 
-#title {
-    float: right;
-    color: aliceblue;
-    margin-right: 5%;
-}
 
 #name {
+    width: 80%;
     font-family: JosefinSans-Bold;
-    font-size: 150%;
+    font-size: 120%;
     margin-bottom: 0%;
 }
 
 #occp {
     color: darkgray;
+    font-size: 100%;
     margin-top: 0%;
+    clear: both;
+    width: 20%;
 }
 
 #pic {
     clear: both;
-    padding: 40% 40% 40% 40%;
+    padding: 40% 40% 28% 40%;
     margin: 5% 5% 5% 5%;
     background-image: url(../assets/pic.jpg);
     /* source:  https://medium.muz.li/weekly-design-inspiration-226-5fde64157729 */
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     border-radius: 8px;
 }
@@ -258,14 +280,27 @@ body {
     box-shadow: 0 10px 20px 0 rgba(5, 5, 49, 0.88);
 }
 
-#comment_right>#tag {
+#tag {
+    font-size: 100%;
     padding-bottom: 10px;
+    border:#ffffff;
     border-bottom: 1px solid #a7b1f0;
+}
+#tag_input {
+    font-size: 100%;
+    padding-bottom: 10px;
+    border:#ffffff;
+}
+
+#tag_input::placeholder {
+    font-size: 100%;
+    padding-bottom: 10px;
+    border:#ffffff;
 }
 
 #comment_sec>#comment_left>.post {
 
-    padding: 5% 6% 5% 5%;
+    padding: 6% 6% 7% 5%;
     width: 100%;
     margin: 5% 5% 5% 5%;
     text-align: left;

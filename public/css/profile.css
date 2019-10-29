@@ -226,7 +226,8 @@ body {
     border-radius: 8px;
 }
 
-#content-left > #post_win > textarea {
+#post_win > #description
+{
     resize: none;
     width: 100%;
     padding: 5% 0% 5% 2%;
@@ -237,19 +238,66 @@ body {
     font-family: JosefinSans-Regular;
 }
 
-#content-left > #post_win > button {
-    float: right;
-    padding: 9px 8px 8px 8px;
-    margin: 4px 2px 2px 2px;
+#post_win > label {
+    display: block;
+    width: 50%;
+    padding: 1% 2% 1% 0%;
     border: #ffffff;
-    background: rgba(227, 231, 255, 0.25);
+    color: #5d66ad;
+    /* background: rgba(227, 231, 255, 0.25); */
     border-radius: 8px;
+    font-family: JosefinSans-Bold;
 }
 
-#content-left > #post_win > #upload {
+#post_win > input {
+    padding: 0.5% 1% 0.5% 0%;
+    color: #8191fc;
+    font-size: 90%;
+    font-family: JosefinSans-Regular;
+    border: #8191fc;
+}
+
+#post_win > input::placeholder {
+    padding: 0.5% 1% 0.5% 0%;
+    color: #a4b0fb;
+    font-size: 100%;
+    font-family: JosefinSans-Regular;
+}
+
+#upload {
     background: #6cd8f2;
     font-family: JosefinSans-Bold;
     /*    font-size: 100%;*/
+    border: #6cd8f2;
+    padding: 1% 2% 1% 2%;
+    border-radius: 8px;
+    color: #ffffff;
+}
+
+.edit{
+    /* float: left; */
+    /* display: inline-block; */
+    /* margin-left: 3%; */
+    background: #6cd8f2;
+    font-family: JosefinSans-Bold;
+       font-size: 110%;
+    border: #6cd8f2;
+    padding: 1% 2% 1% 2%;
+    border-radius: 8px;
+    color: #ffffff;
+}
+
+.delete{
+    /* float: left; */
+    /* display: inline-block; */
+    /* margin-left: 3%; */
+    margin-top: 1%;
+    background: #f26c89;
+    font-family: JosefinSans-Bold;
+    font-size: 110%;
+    border: #f26c89;
+    padding: 1% 2% 1% 2%;
+    border-radius: 8px;
     color: #ffffff;
 }
 

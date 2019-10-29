@@ -1,9 +1,22 @@
-Options -Indexes
+#Options -Indexes
 
 RewriteEngine on
 
 # News controller
-RewriteRule ^news$ app/controller/NewsController.php?route=list
+RewriteRule ^home$ app/controller/ContentController.php?route=all
+RewriteRule ^discover$ app/controller/ContentController.php?route=discover
+RewriteRule ^profile/timeline$ app/controller/ContentController.php?route=profile_timeline
+RewriteRule ^profile/following$ app/controller/ContentController.php?route=profile_following
+RewriteRule ^profile/submit$ app/controller/ContentController.php?route=submit
+
+RewriteRule ^detail/(\d+)$ app/controller/ContentController.php?route=detail&storyID=$1
+RewriteRule ^detail/(\d+)/edit$ app/controller/ContentController.php?route=detail&storyID=$1&edit=true
+RewriteRule ^detail/(\d+)/delete$ app/controller/ContentController.php?route=detail&storyID=$1&delete=true
+RewriteRule ^save_editing_process/(\d+)$ app/controller/ContentController.php?route=save_editing_process&storyID=$1
+
+
+
+
 RewriteRule ^news/submit$ app/controller/NewsController.php?route=add
 RewriteRule ^news/submit/process$ app/controller/NewsController.php?route=addProcess
 RewriteRule ^news/(\d+)$ app/controller/NewsController.php?route=detail&storyID=$1

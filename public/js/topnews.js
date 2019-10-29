@@ -1,41 +1,55 @@
 $(document).ready(function() {
-    $("#btn-signin").click(function() {
-        //       $(''<div> you successfully post a comment </div>").insertAfter( "#post_win" );
-        var height = $("#topnews").innerHeight();
-        var weight = 0.90;
-        $("#signin").remove();
-        $("#news > #topnews").css({
-            "padding-top":  height + "px",
-            width:
-                $(document).width()* weight,
-            "float":"none"
-                });
 
-        $( "<p id = 'signin_prompt'>You successfully signed in! )</p>"
-                ).insertBefore("#topnews");
+    // $("#delete").click(function(){
+    //     // alert("test");
+    //     if(confirm("Are you sure you want to delete this?")){
 
-        $("#signin_prompt").css({
-                    width:
-                        $(document).width()*0.8,
-                        });
+    //     }
+    //     else{
+    //         document.reload();
+    //     }
+    // });
 
-    });
+    // $(".delete").click(function(){
+    //     // alert("test");
+    //     if(confirm("Are you sure you want to delete this?")){
+
+    //     }
+    //     else{
+    //         document.reload();
+    //     }
+    // });
+
     checkSize();
-
-
-
-//
-//
-//$("#header > #search-bar > input").focus(function() {
-//        $("#primary-nav").hide();
-//        $("#header form > input").css({ "padding-top": 5+"%",
-//                                      "padding-left": 30+"%", "padding-right": 30+"%",  "padding-bottom": 5+"%" });
-//        $("#primary-nav").show();
-//
-//});
-//
 });
 
+
+function delete_(id, BASE_URL){
+    // alert("test");
+    if(confirm("Are you sure you want to delete this?"))
+    {
+        url = BASE_URL+"/detail/"+id+"/edit";
+
+        $.ajax({
+            url: BASE_URL+'/app/controller/ContentController.php',
+            data: {
+                route: 'detail',
+                delete_request: 'true',
+                storyID: id
+            },
+            method: 'post',
+            dataType: 'json',
+            error: function (xhr, status, error) {
+                alert(xhr.responseText);
+            }
+        });
+
+        window.location.replace(BASE_URL+"/profile/timeline");
+    }
+    else{
+        return false;
+    }
+}
 
 $(window).resize(function() {
       checkSize();
@@ -79,3 +93,14 @@ function checkSize(){
             "padding-top": 10%
         });
 });*/
+
+
+$("#delete").click(function(){
+    alert("test");
+    if(confirm("Are you sure you want to delete this?")){
+        // $("#delete").attr("href", "<?= BASE_URL ?>/detail/<?= $story->id ?>/delete");
+    }
+    else{
+        return false;
+    }
+});
