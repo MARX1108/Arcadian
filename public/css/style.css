@@ -14,11 +14,18 @@ body {
     color: rgb(86, 106, 236) !important; 
     font-family: JosefinSans-Bold !important; 
 }
+.card
+{
+    border-radius: 10px !important;
+    border: none !important;
+    box-shadow: 0 10px 20px 0 rgba(173, 181, 228, 0.144);
+}
 
 /* header section--------------------------------------------------------------- */
 
 #header h1 {
     display: inline-block;
+    font-family: JosefinSans-Regular;
 }
 
 #header form {
@@ -214,7 +221,7 @@ body {
     color: rgb(120, 112, 222);
 }
 
-#news #topnews {
+#topnews {
     background-color: #ffffff;
     box-shadow: 0 10px 20px 0 rgba(227, 231, 255, 0.25);
     border-radius: 8px;
@@ -290,6 +297,19 @@ body {
     border-radius: 8px;
     /*        padding: 5% 2% 10% 2%;*/
 }
+
+.pic_story{
+    
+    border-radius: 10px !important;
+    border: none !important;
+}
+
+.pic{
+    border-radius: 10px !important;
+}
+
+
+
 
 .main>ul>li>a>img {
     width: 20%;
