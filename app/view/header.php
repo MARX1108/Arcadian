@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- fix Chrome device emulator -->
     <title>Arcadian</title>
+    <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/global.css" />
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/<?=$stylesheet?>" />
 
     <script src="<?= BASE_URL ?>/public/js/jquery.js"></script>

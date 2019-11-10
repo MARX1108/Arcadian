@@ -1,21 +1,6 @@
-body {
-    margin: 0;
-    font-family: JosefinSans-Regular;
-    background-color: #ffffff;
+body{
     background-color: #f7f8ff;
 }
-
-#logo
-{
-    color: rgb(143, 158, 255);
-}
-
-#active_tab
-{
-    color: rgb(86, 106, 236) !important; 
-    font-family: JosefinSans-Bold !important; 
-}
-
 /* header section--------------------------------------------------------------- */
 #header{
     background: #ffffff;

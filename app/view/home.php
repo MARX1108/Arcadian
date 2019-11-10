@@ -13,31 +13,40 @@
             <div class="card-body container">
                 <div id="signin">
 
-                    <!-- <div> -->
+                    <!-- Sign in /Sign up messages -->
                     <form id="login" method="POST" action="<?= BASE_URL ?>/login/process">
-
+                        <div class = "container text-center">
                         <?php if(isset($_SESSION['username'])): ?>
-                        <p>Welcome, <strong><?= $_SESSION['username'] ?></strong>
-                            </br>
-                            <a id="btn-signup" href="<?= BASE_URL ?>/logout">Log Out</a></p>
+                        <p class="h2 justify-content-center mt-5 mb-4"> <Strong> Welcome, <?= $_SESSION['username'] ?></strong></p>
+                        <a id="btn-signup" class = "mt-4" href="<?= BASE_URL ?>/logout">Log Out</a>
                         <?php else: ?>
-                        <p>Welcome Back!</p>
-
+                        <p class="h3 mb-3 text-left"> <Strong>Welcome Back! </Strong></p>
 
                         <?php if(isset($_SESSION['msg'])): ?>
-                        <div class="success">
-                            <?= $_SESSION['msg'] ?>
+                        <div class="success mb-2 text-left">
+                            <Strong>
+                                <?= $_SESSION['msg'] ?>
+                            </Strong>
                         </div>
                         <?php unset($_SESSION['msg']); ?>
                         <?php endif; ?>
+                        </div>
+                        <!-- Sign in /Sign up card -->
+                        <div class = "container ">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="mb-0">Email address</label>
+                            <input id="un" name="un" type="text" placeholder=" Username" class="form-control" />
+                        </div>
 
-                        <input id="un" name="un" type="text" placeholder=" Username" />
-                        <input id="pw" name="pw" type="text" placeholder=" Password" />
-                        <button id="btn-signin">sign in</button>
-                        <button id="btn-signup" disabled>sign up</button>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" class="mb-0">Password</label>
+                            <input id="pw" name="pw" type="text" placeholder=" Password" class="form-control" />
+                        </div>
+
+                        <button id="btn-signin" class="btn btn-primary ml-0 my-0 py-2">sign in</button>
+                        <button id="btn-signup" class="btn btn-primary ml-0 my-0 py-2" disabled>sign up</button>
+                        </div>
                         <?php endif; ?>
-
-
                     </form>
 
                     <!-- </div> -->

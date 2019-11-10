@@ -1,25 +1,3 @@
-body {
-    margin: 0;
-    font-family: JosefinSans-Regular;
-    background-color: #ffffff;
-}
-
-#logo
-{
-    color: rgb(143, 158, 255);
-}
-
-#active_tab
-{
-    color: rgb(86, 106, 236) !important; 
-    font-family: JosefinSans-Bold !important; 
-}
-.card
-{
-    border-radius: 10px !important;
-    border: none !important;
-    box-shadow: 0 10px 20px 0 rgba(173, 181, 228, 0.144);
-}
 
 /* header section--------------------------------------------------------------- */
 
