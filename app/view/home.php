@@ -16,8 +16,12 @@
                     <!-- Sign in /Sign up messages -->
                     <form id="login" method="POST" action="<?= BASE_URL ?>/login/process">
                         <div class = "container text-center">
-                        <?php if(isset($_SESSION['username'])): ?>
+                        <?php if(isset($_SESSION['loggedInUserID']) && $_SESSION['loggedInUserRole'] == 0): ?>
                         <p class="h2 justify-content-center mt-5 mb-4"> <Strong> Welcome, <?= $_SESSION['username'] ?></strong></p>
+                        <a id="btn-signup" class = "mt-4" href="<?= BASE_URL ?>/logout">Log Out</a>
+                        <?php elseif(isset($_SESSION['loggedInUserID']) && $_SESSION['loggedInUserRole'] == 1):  ?>
+                        <p class="h2 justify-content-center mt-5 mb-4"> <Strong> Dear <?= $_SESSION['username'] ?>, you can access admin page here</strong></p>
+                        <a id="btn-signup" class = "mt-4" href="<?= BASE_URL ?>/admin">Admin</a>
                         <a id="btn-signup" class = "mt-4" href="<?= BASE_URL ?>/logout">Log Out</a>
                         <?php else: ?>
                         <p class="h3 mb-3 text-left"> <Strong>Welcome Back! </Strong></p>
@@ -83,4 +87,5 @@
         <?php endforeach; ?>
         </ul>
 
+    </div>
     </div>

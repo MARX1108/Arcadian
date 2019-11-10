@@ -14,6 +14,7 @@ RewriteRule ^detail/(\d+)/edit$ app/controller/ContentController.php?route=detai
 RewriteRule ^detail/(\d+)/delete$ app/controller/ContentController.php?route=detail&storyID=$1&delete=true
 RewriteRule ^save_editing_process/(\d+)$ app/controller/ContentController.php?route=save_editing_process&storyID=$1
 
+RewriteRule ^admin$ app/controller/ContentController.php?route=admin
 
 
 

@@ -30,21 +30,27 @@ class SiteController {
       
     $username = $_POST['un'];
     $password = $_POST['pw'];
-    if($username == ADMIN_USERNAME && $password == ADMIN_PASSWORD) {
-      //  echo 'correct';
-      // session_start();
-      $_SESSION['username'] = $username;
+    $user = User::loadByUsername($username);
+
+    if($user == null) {
+      $_SESSION['msg'] = 'Login failed. Username does not exits.';
+      header('Location: '.BASE_URL.'/home'); exit();
+    } elseif($user->password != $password) {
+      $_SESSION['msg'] = 'Login failed. Your password is incorrect.';
+      header('Location: '.BASE_URL.'/home'); exit();
+    } else {
+
+      $_SESSION['username'] = $user->username;
+      $_SESSION['loggedInUserID'] = $user->id;
+      $_SESSION['loggedInUserRole'] = $user->role;
       $_SESSION['msg'] = 'Login successful!';
       header('Location: '.BASE_URL.'/profile/timeline'); exit();
-    } else {
-      //  echo 'incorrect';
-      $_SESSION['msg'] = 'Login failed. Your username or password is incorrect.';
-      header('Location: '.BASE_URL.'/home'); exit();
     }
+
   }
 
   public function logout(){
-    unset($_SESSION['username']); // unset session variable
+    unset($_SESSION['loggedInUserID']); // unset session variable
     session_destroy(); // destroy session
     header('Location: '.BASE_URL.'/home'); exit(); // redirect to login page
   }

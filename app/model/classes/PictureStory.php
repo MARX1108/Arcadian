@@ -12,7 +12,7 @@ class PictureStory {
     public $donate;
     public $description;
     public $date_created;
-
+    public $creator_id;
     const DB_TABLE = "news_list";
 
     public static function loadAllStories()
@@ -54,6 +54,7 @@ class PictureStory {
           $st -> donate =  $row['donate'];
           $st -> description =  $row['description'];
           $st -> date_created =  $row['date_created'];
+          $st -> creator_id =  $row['creator_id'];
           return $st;
         }
         else {
@@ -81,18 +82,20 @@ class PictureStory {
           $img_url = mysqli_real_escape_string($GLOBALS['conn'], $story->img_url);
           $url = mysqli_real_escape_string($GLOBALS['conn'], $story->url);
           $tags = mysqli_real_escape_string($GLOBALS['conn'], $story->tags);
+          $creator_id = mysqli_real_escape_string($GLOBALS['conn'], $story->creator_id);
 
-          $query = "INSERT INTO `news_list`(`author`, `title`, `img_url`, `url`, `tags`, `description`) 
+          $query = "INSERT INTO `news_list`(`author`, `title`, `img_url`, `url`, `tags`, `description`, `creator_id`) 
           VALUES ('$author',
             '$title',
             '$img_url',
             '$url',
             '$tags',
-            '$description')";
+            '$description',
+            '$creator_id')";
 
           $result = $GLOBALS['conn']->query($query);
           // echo("Error description: " . mysqli_error($con));
-          echo($query);
+          echo($query); 
           if($result) {
             $storyID = $GLOBALS['conn']->insert_id;
             $ns = self::loadByID($storyID);

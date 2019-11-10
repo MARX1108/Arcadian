@@ -1,7 +1,6 @@
 <?php
 
 include_once '../global.php';
-// include_once '../model/classes/PictureStory.php';
 
 $route = $_GET['route'];
 
@@ -31,8 +30,28 @@ if ($route == 'all') {
 elseif ($route == 'save_editing_process') {
   $nc->save_editing_process();
 }
+elseif ($route == 'admin')
+{
+  $nc->admin();
+}
 
 class ContentController {
+  public function admin() {
+
+    $stories = PictureStory::loadAllStories();
+    $stylesheet = "style.css";
+    $pageTitle = 'News';
+
+    $script = 'news';
+    $all_state = "active_tab";
+    $discover_state = "";
+    $profile_state = "";
+
+    include_once SYSTEM_PATH.'/view/header.php';
+    include_once SYSTEM_PATH.'/view/admin.php';
+    include_once SYSTEM_PATH.'/view/footer.php';
+  }
+
   public function all() {
 
     $stories = PictureStory::loadAllStories();
@@ -154,7 +173,7 @@ class ContentController {
     $img_url = $_POST['img_url'];
     $description = $_POST['description'];
     $tags = $_POST['tags'];
-
+    $creator_id = $_SESSION['loggedInUserID'];
     $story = new PictureStory();
 
 
@@ -162,14 +181,15 @@ class ContentController {
     $story-> url = $url;
     $story-> img_url = $img_url;
 
-    // if($description == "") $description = "He/She didn't leave any descriptions";
     $story-> description = $description;
+    $story-> creator_id = $creator_id;
     
     if($tags == "") $tags = "#This-is-no-tag tag";
     $story-> tags = $tags;
 
     $story->author = $_SESSION['username'];
     $story = PictureStory::insertStory($story);
+
     header('Location: '.BASE_URL.'/detail/'.$story->id); exit();
 
   }

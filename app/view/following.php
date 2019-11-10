@@ -4,9 +4,9 @@
 
     <div class="card col-md-2 mr-5 p-4 mt-4 text-center">
         <ul class="h5 my-3">
-        <p><a href="<?= BASE_URL ?>/profile/following" class = " my-5 sub_nar ">Following</a></p>
+        <p><a href="<?= BASE_URL ?>/profile/following" class = " my-5 sub_nar " id="current_tab">Following</a></p>
         
-        <p><a href="#" id="current_tab" class = "my-5 sub_nar " >Timeline</a></p>
+        <p><a href="<?= BASE_URL ?>/profile/timeline"  class = "my-5 sub_nar " >Timeline</a></p>
 
         <p><a href="<?= BASE_URL ?>/profile/following" class = " my-5 sub_nar ">Setting</a></p>
         </ul>
@@ -35,8 +35,7 @@
         </form>
 
         <?php foreach($stories as $story): ?>
-        <?php if(strcmp(($story->author), $_SESSION['username'])!= 0):?>
-        <div class="post card m-2 p-4">
+        <?php if(strcmp(($story->creator_id), $_SESSION['loggedInUserID']) != 0):?>        <div class="post card m-2 p-4">
             <ul class="post_pic">
                 <p ><a href="#" class = "h3 mb-2 pic_title"><?=$story->title?></a> </br> by <?=$story->author?> </p>
                 

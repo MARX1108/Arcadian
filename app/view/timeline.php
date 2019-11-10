@@ -35,7 +35,7 @@
         </form>
 
         <?php foreach($stories as $story): ?>
-        <?php if(strcmp(($story->author), $_SESSION['username'])== 0):?>
+        <?php if(strcmp(($story->creator_id), $_SESSION['loggedInUserID'])== 0):?>
         <div class="post card m-2 p-4">
             <ul class="post_pic">
                 <p ><a href="#" class = "h3 mb-2 pic_title"><?=$story->title?></a> </br> by <?=$story->author?> </p>
