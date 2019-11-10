@@ -1,70 +1,83 @@
 <?php if(isset($_SESSION['username'])): ?>
-<div class="main">
-    <ul id="secondary-nav">
-        <li class="selected">
-            <a href="#" id = "current_tab">Following</a>
-        </li>
-        <li><a href="<?= BASE_URL ?>/profile/timeline">Timeline</a></li>
-        <!-- <li><a href="./profile_gallery.html">Gallery</a></li> -->
-    </ul>
-    <div id="content-left">
+
+<div class="main row">
+
+    <div class="card col-md-2 mr-5 p-4 mt-4 text-center">
+        <ul class="h5 my-3">
+        <p><a href="<?= BASE_URL ?>/profile/following" class = " my-5 sub_nar ">Following</a></p>
+        
+        <p><a href="#" id="current_tab" class = "my-5 sub_nar " >Timeline</a></p>
+
+        <p><a href="<?= BASE_URL ?>/profile/following" class = " my-5 sub_nar ">Setting</a></p>
+        </ul>
+    </div>
+
+    <div class="card col-md-6 p-1 mx-2  mt-4 mr-5" id="middle_container">
+
         <form id="post" method="POST" action="<?= BASE_URL ?>/profile/submit">
-        <div class="post" id="post_win">
-            <label for="title">Title</label>
-            <input id="title" name="title" type="text" placeholder="Title goes here">
+            <div class="post card mb-4 p-4" id="post_win">
+                <label for="title" class="h5 ml-2 ">Title</label>
+                <input id="title" name="title" type="text" placeholder="Titles goes here" class="form-control">
 
-            <label for="url">URL (optional)</label>
-            <input id="url" name="url" type="text" placeholder="URL goes here">
+                <label for="url" class="h5  ml-2 mt-2">URL (required)</label>
+                <input id="url" name="url" type="text" placeholder="URL goes here" class="form-control">
 
-            <label for="tags">Tags (optional)</label>
-            <input id="url" name="tags" type="text" placeholder="Tags goes here">
+                <label for="tags" class="h5  ml-2 mt-2">Tags </label>
+                <input id="url" name="tags" type="text" placeholder="Tags goes here" class="form-control">
 
-            <label for="img_url">URL of Your Art Work (required)</label>
-            <input id="img_url" name="img_url" type="text" placeholder="URL of Your Art Work (required)">
-            
-            <textarea id="description" name="description" placeholder="Description goes here"></textarea>
+                <label for="img_url" class="h5 ml-2 mt-2">URL of Your Art Work (required)</label>
+                <input id="img_url" name="img_url" type="text" placeholder="URL of Your Art Work" class="form-control">
 
-            <button id="upload" type="submit">Post</button>
-
-        </div>
+                <textarea id="description" name="description" placeholder="Description goes here."
+                    class="form-control my-4 mt-2"></textarea>
+                <button id="upload" type="submit" class="btn btn-primary">Post</button>
+            </div>
         </form>
 
         <?php foreach($stories as $story): ?>
-        <?php if(strcmp(($story->author), $_SESSION['username']) != 0):?>
-        <div class="post">
-            <p><a href="#"><?=$story->title?></a> by <?=$story->author?></p>
-
+        <?php if(strcmp(($story->author), $_SESSION['username'])!= 0):?>
+        <div class="post card m-2 p-4">
             <ul class="post_pic">
-                <a href="<?= BASE_URL ?>/detail/<?= $story->id ?>"><img src="<?= $story->img_url ?>" width = "80%" alt="<?=$story->title?>" /></a>
-                <p>Description: </br><?=$story->description?></p>
-                <p>Tags: </br><?=$story->tags?></p>
+                <p ><a href="#" class = "h3 mb-2 pic_title"><?=$story->title?></a> </br> by <?=$story->author?> </p>
+                
+                <a href="<?= BASE_URL ?>/detail/<?= $story->id ?>">
+                        <img src="<?= $story->img_url ?>" width="80%"
+                        alt="<?=$story->title?>" /></a>
 
+                <p class = "mt-1"><Strong class = "mt-3 h5">Description: </br></Strong><?=$story->description?></p>
+                <p class = "mt-1"><Strong class = "mt-3 h5">Tags: </br></Strong><?=$story->tags?></p>
+                <form id="post" method="POST" action="<?= BASE_URL ?>/detail/<?= $story->id ?>/edit">
+                    <button class="edit btn btn-primary" type="submit" name="edit_request" value="true">Edit</button>
+                    <button class="delete btn btn-primary" type="button" id="delete" name="delete_request" value="true"
+                        onclick="delete_('<?= $story->id ?>', '<?= BASE_URL ?>')"> Delete</button>
+                </form>
+                <p class="time_stamp text-right"><?=$story->date_created?></p>
             </ul>
-            <p class="time_stamp"><?=$story->date_created?></p>
+            
         </div>
-            <?php endif; ?>
+        <?php endif; ?>
         <?php endforeach; ?>
 
+
     </div>
-
-    <div id="content-right">
+    <div class="card col-md-3 mt-4 ml-auto p-5">
         <h2>Welcome to Arcadian</h2>
-
         <p>
             Arcadian is a user-generate-content online community which targets college students who are interested
             in learn graphic design, and aims to facilitate a art-based social community where people can share they
             work, critic each other, meet new people and look for inspirations
         </p>
     </div>
+    <!-- #content-right -->
 
     <?php else: ?>
-    <div class="main" >
+    <div class="main container text-center">
+        <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> -->
+        <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> -->
+        <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> -->
+        <img src="<?= BASE_URL ?>/public/assets/padlock.png" alt="" width="10%" href="<?= BASE_URL ?>/home">
+        </br>
 
-    <img id = "lock" src="<?= BASE_URL ?>/public/assets/padlock.png" alt="" width = "15%" 
-     href="<?= BASE_URL ?>/home" > 
-    </br>
-    
-    <a id="btn-signin" href="<?= BASE_URL ?>/home" >
-        Click Here To Sign in</a>
+        <a href="<?= BASE_URL ?>/home" class="mt-4">Click Here To Sign in</a>
         <?php endif; ?>
     </div>

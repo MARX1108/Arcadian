@@ -2,19 +2,20 @@
 
 <div class="main row">
 
-    <div class="card col-md-2 mr-5 p-1 mt-4">
-        <li class="selected">
-            <a href="<?= BASE_URL ?>/profile/following">Following</a>
-        </li>
-        <li>
-            <a href="#" id="current_tab">Timeline</a>
-        </li>
+    <div class="card col-md-2 mr-5 p-4 mt-4 text-center">
+        <ul class="h5 my-3">
+        <p><a href="<?= BASE_URL ?>/profile/following" class = " my-5 sub_nar ">Following</a></p>
+        
+        <p><a href="#" id="current_tab" class = "my-5 sub_nar " >Timeline</a></p>
+
+        <p><a href="<?= BASE_URL ?>/profile/following" class = " my-5 sub_nar ">Setting</a></p>
+        </ul>
     </div>
 
-    <div class="card col-md-6 p-1  m-2 mr-5" id="middle_container">
+    <div class="card col-md-6 p-1 mx-2  mt-4 mr-5" id="middle_container">
 
         <form id="post" method="POST" action="<?= BASE_URL ?>/profile/submit">
-            <div class="post card my-4 p-4" id="post_win">
+            <div class="post card mb-4 p-4" id="post_win">
                 <label for="title" class="h5 ml-2 ">Title</label>
                 <input id="title" name="title" type="text" placeholder="Titles goes here" class="form-control">
 
@@ -27,7 +28,7 @@
                 <label for="img_url" class="h5 ml-2 mt-2">URL of Your Art Work (required)</label>
                 <input id="img_url" name="img_url" type="text" placeholder="URL of Your Art Work" class="form-control">
 
-                <textarea id="description" name="description" placeholder="Description goes here. "
+                <textarea id="description" name="description" placeholder="Description goes here."
                     class="form-control my-4 mt-2"></textarea>
                 <button id="upload" type="submit" class="btn btn-primary">Post</button>
             </div>
@@ -36,27 +37,30 @@
         <?php foreach($stories as $story): ?>
         <?php if(strcmp(($story->author), $_SESSION['username'])== 0):?>
         <div class="post card m-2 p-4">
-
-            <p><a href="#"><?=$story->title?></a> by <?=$story->author?></p>
             <ul class="post_pic">
-                <a href="<?= BASE_URL ?>/detail/<?= $story->id ?>"><img src="<?= $story->img_url ?>" width="80%"
+                <p ><a href="#" class = "h3 mb-2 pic_title"><?=$story->title?></a> </br> by <?=$story->author?> </p>
+                
+                <a href="<?= BASE_URL ?>/detail/<?= $story->id ?>">
+                        <img src="<?= $story->img_url ?>" width="80%"
                         alt="<?=$story->title?>" /></a>
-                <p>Description: </br><?=$story->description?></p>
-                <p>Tags: </br><?=$story->tags?></p>
+
+                <p class = "mt-1"><Strong class = "mt-3 h5">Description: </br></Strong><?=$story->description?></p>
+                <p class = "mt-1"><Strong class = "mt-3 h5">Tags: </br></Strong><?=$story->tags?></p>
                 <form id="post" method="POST" action="<?= BASE_URL ?>/detail/<?= $story->id ?>/edit">
-                    <button class="edit" type="submit" name="edit_request" value="true">Edit</button>
-                    <button class="delete" type="button" id="delete" name="delete_request" value="true"
+                    <button class="edit btn btn-primary" type="submit" name="edit_request" value="true">Edit</button>
+                    <button class="delete btn btn-primary" type="button" id="delete" name="delete_request" value="true"
                         onclick="delete_('<?= $story->id ?>', '<?= BASE_URL ?>')"> Delete</button>
                 </form>
+                <p class="time_stamp text-right"><?=$story->date_created?></p>
             </ul>
-            <p class="time_stamp"><?=$story->date_created?></p>
+            
         </div>
         <?php endif; ?>
         <?php endforeach; ?>
 
 
     </div>
-    <div class="card col-md-3 mt-4 ml-auto p-3">
+    <div class="card col-md-3 mt-4 ml-auto p-5">
         <h2>Welcome to Arcadian</h2>
         <p>
             Arcadian is a user-generate-content online community which targets college students who are interested
