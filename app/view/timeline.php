@@ -4,16 +4,25 @@
 
     <div class="card col-md-2 mr-5 p-4 mt-4 text-center">
         <ul class="h5 my-3">
-        <p><a href="<?= BASE_URL ?>/profile/following" class = " my-5 sub_nar ">Following</a></p>
+        <p class="h2 justify-content-center mt-5 mb-4"> <Strong> <?= ($user -> username) ?></strong></p>
+        <p class="h10 justify-content-center mt-1 mb-1 mr-auto"> <Strong> ID: <?= ($user -> username)?></strong></p>
+        <p class="h10 justify-content-center mt-1 mb-5 mr-auto"> <Strong> Email: <?= ($user -> email) ?></strong></p>
+
+        <p class = "pt-5"><a href="<?= BASE_URL ?>/profile/following" class = " my-5 sub_nar">Following</a></p>
         
         <p><a href="#" id="current_tab" class = "my-5 sub_nar " >Timeline</a></p>
 
-        <p><a href="<?= BASE_URL ?>/profile/following" class = " my-5 sub_nar ">Setting</a></p>
+        <p><a href="<?= BASE_URL ?>/profile/myProfile" class = " my-5 sub_nar ">MyProfile</a></p>
+        
+        <?php if(isset($_SESSION['loggedInUserID']) && $_SESSION['loggedInUserRole'] == 1):  ?>
+        <a id="btn-signup" class = "mt-4 sub_nar" href="<?= BASE_URL ?>/admin">Admin</a>
+        <?php endif; ?>
+        <p class = "pt-5 mt-5"><a id="btn-signup" class = "mt-5" href="<?= BASE_URL ?>/logout">Log Out</a></p>
         </ul>
     </div>
 
     <div class="card col-md-6 p-1 mx-2  mt-4 mr-5" id="middle_container">
-
+        <div><?= $notification ?></div>
         <form id="post" method="POST" action="<?= BASE_URL ?>/profile/submit">
             <div class="post card mb-4 p-4" id="post_win">
                 <label for="title" class="h5 ml-2 ">Title</label>
@@ -49,7 +58,7 @@
                 <form id="post" method="POST" action="<?= BASE_URL ?>/detail/<?= $story->id ?>/edit">
                     <button class="edit btn btn-primary" type="submit" name="edit_request" value="true">Edit</button>
                     <button class="delete btn btn-primary" type="button" id="delete" name="delete_request" value="true"
-                        onclick="delete_('<?= $story->id ?>', '<?= BASE_URL ?>')"> Delete</button>
+                        onclick="delete_('<?= $story->id ?>', '<?= BASE_URL ?>', '<?= $story->creator_id?>')"> Delete</button>
                 </form>
                 <p class="time_stamp text-right"><?=$story->date_created?></p>
             </ul>

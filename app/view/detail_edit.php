@@ -23,6 +23,8 @@
                     <textarea name = "img_url" placeholder="Type Your New Image-Url Here. Current img_url: <?=$story->img_url?>"></textarea>
                 </div>
 
+                <input name = "creator_id" value = "<?=$story->creator_id?>" hidden>
+
                 <div class="card ml-5 p-3 mb-3 col-md-offset-2" id="post_win">
                     <textarea id="post_box" name = "description" placeholder="Type Your New Description Here. Current Description: <?=$story->description?>"></textarea>
                     <button id="btn-upload" type = "submit">Confirm Change</button>

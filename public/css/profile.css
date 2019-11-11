@@ -207,6 +207,12 @@ p{
     color: #5d66ad !important; 
 }
 
+.h10
+{
+    color: #979797 !important; 
+    font-size: 80%;
+}
+
 #post_win > input::placeholder {
     padding: 0.5% 1% 0.5% 0%;
     color: #a4b0fb;

@@ -76,7 +76,7 @@ class PictureStory {
           } 
           
 
-          $description = mysqli_real_escape_string($GLOBALS['conn'], $story->description);
+          $description =  
           $author = mysqli_real_escape_string($GLOBALS['conn'], $story->author);
           $title = mysqli_real_escape_string($GLOBALS['conn'], $story->title);
           $img_url = mysqli_real_escape_string($GLOBALS['conn'], $story->img_url);
@@ -147,8 +147,8 @@ class PictureStory {
 
         public static function deleteStory($storyID)
        {
-          $delete_query = "DELETE FROM `news_list` WHERE `id` = '$storyID'";
-          $result = $GLOBALS['conn']->query($delete_query);
+          $delete_query = "DELETE FROM `news_list` WHERE `id` = '$storyID'; ";
+          $result =  $GLOBALS['conn']->query($delete_query);
         }
 
       

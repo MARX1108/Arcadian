@@ -4,18 +4,19 @@ $(document).ready(function() {
 });
 
 
-function delete_(id, BASE_URL){
+function delete_(id, BASE_URL, userid){
     // alert("test");
     if(confirm("Are you sure you want to delete this?"))
     {
         url = BASE_URL+"/detail/"+id+"/edit";
-
+        // alert(url);
         $.ajax({
             url: BASE_URL+'/app/controller/ContentController.php',
             data: {
                 route: 'detail',
                 delete_request: 'true',
-                storyID: id
+                storyID: id,
+                userid: userid
             },
             method: 'post',
             dataType: 'json',

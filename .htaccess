@@ -8,6 +8,8 @@ RewriteRule ^discover$ app/controller/ContentController.php?route=discover
 RewriteRule ^profile/timeline$ app/controller/ContentController.php?route=profile_timeline
 RewriteRule ^profile/following$ app/controller/ContentController.php?route=profile_following
 RewriteRule ^profile/submit$ app/controller/ContentController.php?route=submit
+RewriteRule ^profile/myProfile$ app/controller/ContentController.php?route=myProfile
+RewriteRule ^profile/confirm_profile_change/(\d+)$ app/controller/ContentController.php?route=confirm_profile_change&user_ID=$1
 
 RewriteRule ^detail/(\d+)$ app/controller/ContentController.php?route=detail&storyID=$1
 RewriteRule ^detail/(\d+)/edit$ app/controller/ContentController.php?route=detail&storyID=$1&edit=true
