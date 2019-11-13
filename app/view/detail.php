@@ -3,7 +3,7 @@
         <div id="sub_header" class = "container">
             <div id="author_info">
                 <h1 class = "h1"><?= $story->title ?></h1>
-                <h2 class = "h3">By <?= $story->author ?></h2>
+                <h2 class = "h3">By <a href = '<?= BASE_URL ?>/user/<?= $user->username ?>'><?= $story->author ?></a></h2>
             </div>
         </div>
 

@@ -73,4 +73,55 @@ class User {
     }
   }
 
+  public static function update_Username($id, $newUserName)
+  {
+    $newUserName = mysqli_real_escape_string($GLOBALS['conn'], $newUserName);
+    $query = "UPDATE `user` 
+    SET `username`='$newUserName'WHERE id = '$id'";
+    $result = $GLOBALS['conn']->query($query);
+
+    $ev = new Event();
+    $ev->event_type = Event::EVENT_TYPE['admin_update_username'];
+    $ev->user_1_id = $id;
+    $ev = Event::insertEvent($ev);
+  }
+
+  public static function update_role($id, $role)
+  {
+    if($role == "1 - site admin") $role = 1;
+    elseif ($role == "0 - regular user") $role = 0;
+    $query = "UPDATE `user` 
+    SET `role`='$role'WHERE id = '$id'";
+    $result = $GLOBALS['conn']->query($query);
+
+
+    $ev = new Event();
+    $ev->event_type = Event::EVENT_TYPE['admin_update_role'];
+    $ev->user_1_id = $id;
+    $ev = Event::insertEvent($ev);
+
+}
+
+    public static function update_profile($user)
+    {
+
+        $id = $user-> id;
+        $password = $user-> password;
+        $firstname = $user-> firstname;
+        $lastname = $user-> lastname;
+        $email = $user-> email;
+        $class_standing = $user-> class_standing;
+
+        $query = "UPDATE `user` 
+        SET 
+        `password`='$password',
+        `firstname`='$firstname',
+        `lastname`='$lastname',
+        `email`='$email',
+        `class_standing`='$class_standing' WHERE id = '$id'";
+        //  echo $query;   
+        $result = $GLOBALS['conn']->query($query);
+        return $result;
+    }
+
 }

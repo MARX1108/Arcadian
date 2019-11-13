@@ -63,13 +63,12 @@
 
 
 
+
     </div>
     <div class="card col-md-3 mt-4 ml-auto p-5">
-        <h2>Welcome to Arcadian</h2>
+    <h2>Activity Feed</h2>
         <p>
-            Arcadian is a user-generate-content online community which targets college students who are interested
-            in learn graphic design, and aims to facilitate a art-based social community where people can share they
-            work, critic each other, meet new people and look for inspirations
+            <?=$content?>
         </p>
     </div>
     <!-- #content-right -->
@@ -85,3 +84,5 @@
         <a href="<?= BASE_URL ?>/home" class="mt-4">Click Here To Sign in</a>
         <?php endif; ?>
     </div>
+
+

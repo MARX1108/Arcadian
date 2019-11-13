@@ -484,7 +484,7 @@
 .main,
 .content,
 #signin_prompt {
-    color: #127676;
+    color: #8191fc;
     -webkit-animation: fadein 1.5s linear forwards;
     animation: fadein 1.5s linear forwards;
 }

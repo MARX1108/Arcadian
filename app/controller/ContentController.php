@@ -39,7 +39,7 @@ elseif ($route == 'save_editing_process') {
 }
 elseif ($route == 'admin')
 {
-  $nc->admin();
+  $nc->admin("");
 }
 elseif ($route == 'myProfile')
 {
@@ -49,11 +49,20 @@ elseif ($route == 'confirm_profile_change')
 {
   $nc->confirm_profile_change();
 }
+elseif ($route == 'admin_confirm_change')
+{
+  $nc->admin_confirm_change();
+}
+elseif ($route == 'user')
+{
+  $nc->userProfile();
+}
 
 class ContentController {
-  public function admin() {
+  public function admin($notification) {
 
     $stories = PictureStory::loadAllStories();
+    $users = User::loadAllUsers();
     $stylesheet = "style.css";
     $pageTitle = 'News';
 
@@ -61,6 +70,18 @@ class ContentController {
     $all_state = "active_tab";
     $discover_state = "";
     $profile_state = "";
+    // $notification = "";
+    if(isset($_GET['success']))
+    {
+      $succss = $_GET['success'];
+      if($succss == "true")
+      {
+        $notification = 
+        "<div class='alert alert-success mx-3' role='alert'>
+        Profile update succesful! </div>";
+      }
+    }
+
 
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/admin.php';
@@ -77,7 +98,7 @@ class ContentController {
     $all_state = "active_tab";
     $discover_state = "";
     $profile_state = "";
-
+    $content = Event::generateContent("");
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/home.php';
     include_once SYSTEM_PATH.'/view/footer.php';
@@ -99,6 +120,67 @@ class ContentController {
     include_once SYSTEM_PATH.'/view/footer.php';
   }
 
+  public function userProfile()
+  {
+    $username = $_GET['username'];
+    $all_state = "";
+    $discover_state = "";
+    $profile_state = "active_tab";
+
+
+      $stories = PictureStory::loadAllStories();
+
+      $stylesheet = "profile.css";
+      $user = User::loadByUsername($username);
+
+      if($user == null)
+      {
+        include_once SYSTEM_PATH.'/view/header.php';
+        echo "<div class = 'container card m-4 p-4 alert alert-danger'> Wrong username or The user no longer exists</div>
+        <footer id='footer' class = 'page-footer fixed-bottom'>
+        <div id='copyright'>@2019 Arcadian <a href='#'>Contact Us</a></div>
+        </footer>
+        </body>
+        </html>
+        ";
+      // include_once SYSTEM_PATH.'/view/footer.php';
+      }
+      else
+      {
+        if($user->role == 0)
+        {
+          $acounttype = "Registered user";
+        }
+        else
+        {
+          $acounttype = "Site admin";
+        }
+  
+        if($user->class_standing == 0)
+        {
+          $class_standing = "Freshman";
+        }
+        elseif($user->class_standing == 1)
+        {
+          $class_standing = "Sophomore";
+        }
+        elseif($user->class_standing == 2)
+        {
+          $class_standing = "Junior";
+        }
+        elseif($user->class_standing == 3)
+        {
+          $class_standing = "Senior";
+        }
+  
+  
+      $content = Event::generateContent($user->id);
+      include_once SYSTEM_PATH.'/view/header.php';
+      include_once SYSTEM_PATH.'/view/userProfile.php';
+      include_once SYSTEM_PATH.'/view/footer.php';
+      }
+      
+  }
   public function myProfile($notification)
   {
     $all_state = "";
@@ -146,6 +228,7 @@ class ContentController {
       $stylesheet = "lock.css";
     }
 
+    $content = Event::generateContent($_SESSION['loggedInUserID']);
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/myProfile.php';
     include_once SYSTEM_PATH.'/view/footer.php';
@@ -170,6 +253,16 @@ class ContentController {
       $stylesheet = "lock.css";
     }
 
+    if(isset($_SESSION['loggedInUserID']))
+    {
+      $content = Event::generateContent($_SESSION['loggedInUserID']);
+    }
+    else
+    {
+      $content = "";
+    }
+
+
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/timeline.php';
     include_once SYSTEM_PATH.'/view/footer.php';
@@ -187,8 +280,6 @@ class ContentController {
     {
       $stylesheet = "profile.css";
       $user = User::loadByID($_SESSION['loggedInUserID']);
-
-
     }
     else
     {
@@ -196,6 +287,7 @@ class ContentController {
     }
     
     $stories = PictureStory::loadAllStories();
+    $content = Event::generateContent($_SESSION['loggedInUserID']);
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/following.php';
     include_once SYSTEM_PATH.'/view/footer.php';
@@ -207,18 +299,8 @@ class ContentController {
   public function detail() {
     $storyID = $_GET['storyID'];
 
-    // if((isset($_POST['delete_request']) ))
-    // {
-    //   PictureStory::deleteStory($storyID);
-    //   echo "delete successful";
-    //   header('Location: '.BASE_URL.'/profile/timeline'); exit();
-    //   $nc = new ContentController();
-    //   $nc -> profile_timeline("<div class='alert alert-success' role='alert'>
-    //   Profile update succesful! </div>");
-    // }
-
-  
     $story = PictureStory::loadByID($storyID);
+    $user = User::loadByID($story->creator_id);
     $stylesheet = "pic.css";
     $pageTitle = 'News';
     include_once SYSTEM_PATH.'/view/header.php';
@@ -309,12 +391,16 @@ class ContentController {
   public function confirm_profile_change()
   {
     $id = $_GET['user_ID'];
+    $user = new User();
+    $user-> id = $id;
 
     if(isset($_POST['password'])) $password = $_POST['password'];
     if(isset($_POST['firstname'])) $firstname = $_POST['firstname'];
     if(isset($_POST['lastname'])) $lastname = $_POST['lastname'];
     if(isset($_POST['email'])) $email = $_POST['email'];
     if(isset($_POST['class_standing'])) $class_standing = $_POST['class_standing'];
+
+  
 
     if($class_standing == "Freshman")
     {
@@ -340,18 +426,15 @@ class ContentController {
     $email = mysqli_real_escape_string($GLOBALS['conn'], $email);
     $class_standing = mysqli_real_escape_string($GLOBALS['conn'], $class_standing);
 
+    $user-> password = $password;
+    $user-> firstname = $firstname;
+    $user-> lastname = $lastname;
+    $user-> email = $email;
+    $user-> class_standing = $class_standing;
 
-    $query = "UPDATE `user` 
-    SET 
-    `password`='$password',
-    `firstname`='$firstname',
-    `lastname`='$lastname',
-    `email`='$email',
-    `class_standing`='$class_standing' WHERE id = '$id'";
-
-    $result = $GLOBALS['conn']->query($query);
     // echo("Error description: " . mysqli_error($con));
     
+    $result = User::update_profile($user);
 
     $ev = new Event();
     $ev->event_type = Event::EVENT_TYPE['edit_profile'];
@@ -371,6 +454,24 @@ class ContentController {
 
     $nc = new ContentController();
     $nc-> myProfile($notification);
+
+  }
+
+  function admin_confirm_change()
+  {
+    $id = $_GET['user_ID'];
+    // echo $id ;
+    $newUserName = $_POST['username'];
+    User::update_Username($id, $newUserName);
+
+    $role = $_POST['role'];
+    User::update_role($id, $role);
+    // echo $role;
+
+
+
+
+    header('Location: '.BASE_URL.'/admin/success'); exit();
 
   }
 }

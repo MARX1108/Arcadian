@@ -4,20 +4,21 @@
 
     <div class="card col-md-2 mr-5 p-4 mt-4 text-center">
         <ul class="h5 my-3">
-        <p class="h2 justify-content-center mt-5 mb-4"> <Strong> <?= ($user -> username) ?></strong></p>
-        <p class="h10 justify-content-center mt-1 mb-1 mr-auto"> <Strong> ID: <?= ($user -> username)?></strong></p>
-        <p class="h10 justify-content-center mt-1 mb-5 mr-auto"> <Strong> Email: <?= ($user -> email) ?></strong></p>
+            <p class="h2 justify-content-center mt-5 mb-4"> <Strong> <?= ($user -> username) ?></strong></p>
+            <p class="h10 justify-content-center mt-1 mb-1 mr-auto"> <Strong> ID: <?= ($user -> username)?></strong></p>
+            <p class="h10 justify-content-center mt-1 mb-5 mr-auto"> <Strong> Email: <?= ($user -> email) ?></strong>
+            </p>
 
-        <p class = "pt-5"><a href="<?= BASE_URL ?>/profile/following" class = " my-5 sub_nar">Following</a></p>
-        
-        <p><a href="#" id="current_tab" class = "my-5 sub_nar " >Timeline</a></p>
+            <p class="pt-5"><a href="<?= BASE_URL ?>/profile/following" class=" my-5 sub_nar">Following</a></p>
 
-        <p><a href="<?= BASE_URL ?>/profile/myProfile" class = " my-5 sub_nar ">MyProfile</a></p>
-        
-        <?php if(isset($_SESSION['loggedInUserID']) && $_SESSION['loggedInUserRole'] == 1):  ?>
-        <a id="btn-signup" class = "mt-4 sub_nar" href="<?= BASE_URL ?>/admin">Admin</a>
-        <?php endif; ?>
-        <p class = "pt-5 mt-5"><a id="btn-signup" class = "mt-5" href="<?= BASE_URL ?>/logout">Log Out</a></p>
+            <p><a href="#" id="current_tab" class="my-5 sub_nar ">Timeline</a></p>
+
+            <p><a href="<?= BASE_URL ?>/profile/myProfile" class=" my-5 sub_nar ">MyProfile</a></p>
+
+            <?php if(isset($_SESSION['loggedInUserID']) && $_SESSION['loggedInUserRole'] == 1):  ?>
+            <a id="btn-signup" class="mt-4 sub_nar" href="<?= BASE_URL ?>/admin">Admin</a>
+            <?php endif; ?>
+            <p class="pt-5 mt-5"><a id="btn-signup" class="mt-5" href="<?= BASE_URL ?>/logout">Log Out</a></p>
         </ul>
     </div>
 
@@ -47,22 +48,22 @@
         <?php if(strcmp(($story->creator_id), $_SESSION['loggedInUserID'])== 0):?>
         <div class="post card m-2 p-4">
             <ul class="post_pic">
-                <p ><a href="#" class = "h3 mb-2 pic_title"><?=$story->title?></a> </br> by <?=$story->author?> </p>
-                
-                <a href="<?= BASE_URL ?>/detail/<?= $story->id ?>">
-                        <img src="<?= $story->img_url ?>" width="80%"
-                        alt="<?=$story->title?>" /></a>
+                <p><a href="#" class="h3 mb-2 pic_title"><?=$story->title?></a> </br> by <?=$story->author?> </p>
 
-                <p class = "mt-1"><Strong class = "mt-3 h5">Description: </br></Strong><?=$story->description?></p>
-                <p class = "mt-1"><Strong class = "mt-3 h5">Tags: </br></Strong><?=$story->tags?></p>
+                <a href="<?= BASE_URL ?>/detail/<?= $story->id ?>">
+                    <img src="<?= $story->img_url ?>" width="80%" alt="<?=$story->title?>" /></a>
+
+                <p class="mt-1"><Strong class="mt-3 h5">Description: </br></Strong><?=$story->description?></p>
+                <p class="mt-1"><Strong class="mt-3 h5">Tags: </br></Strong><?=$story->tags?></p>
                 <form id="post" method="POST" action="<?= BASE_URL ?>/detail/<?= $story->id ?>/edit">
                     <button class="edit btn btn-primary" type="submit" name="edit_request" value="true">Edit</button>
                     <button class="delete btn btn-primary" type="button" id="delete" name="delete_request" value="true"
-                        onclick="delete_('<?= $story->id ?>', '<?= BASE_URL ?>', '<?= $story->creator_id?>')"> Delete</button>
+                        onclick="delete_('<?= $story->id ?>', '<?= BASE_URL ?>', '<?= $story->creator_id?>')">
+                        Delete</button>
                 </form>
                 <p class="time_stamp text-right"><?=$story->date_created?></p>
             </ul>
-            
+
         </div>
         <?php endif; ?>
         <?php endforeach; ?>
@@ -70,11 +71,9 @@
 
     </div>
     <div class="card col-md-3 mt-4 ml-auto p-5">
-        <h2>Welcome to Arcadian</h2>
+        <h2>Activity Feed</h2>
         <p>
-            Arcadian is a user-generate-content online community which targets college students who are interested
-            in learn graphic design, and aims to facilitate a art-based social community where people can share they
-            work, critic each other, meet new people and look for inspirations
+            <?=$content?>
         </p>
     </div>
     <!-- #content-right -->

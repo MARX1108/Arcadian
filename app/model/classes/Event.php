@@ -16,7 +16,9 @@ class Event {
     'delete_story' => 202,
     'edit_story' => 203,
     'edit_profile' => 204,
-    'new_users' => 204
+    'new_users' => 205,
+    'admin_update_username' => 206,
+    'admin_update_role' => 207,
     );
 
   public static function loadAllEvents() {
@@ -33,7 +35,101 @@ class Event {
     }
 
     return $events;
+  }
 
+
+
+
+  public function generateContent($id)
+  {
+    $content = "";
+
+    if($id == "")
+    {
+        $query = "SELECT id FROM ".self::DB_TABLE." ORDER BY date_created DESC LIMIT 12";
+    }
+    else
+    {
+        $query = "SELECT id FROM ".self::DB_TABLE."  WHERE user_1_id = '$id' ORDER BY date_created DESC";
+    }
+
+
+    $result = $GLOBALS['conn']->query($query);
+    if($result->num_rows) {
+        $count = 0;
+      while($row = $result->fetch_assoc()) 
+      {
+        $ev = self::loadByID($row['id']);
+
+        $user = User::loadByID($ev->user_1_id);
+
+        $base = BASE_URL;
+        if($ev->event_type == "201")
+        {
+            $story = PictureStory::loadByID($ev->story_1_id);
+            if($story == null)
+            {
+                $prompt = " <a href= '$base/user/$user->username'> $user->username </a> add a new story, which he/she has deleted";
+            }
+            else
+            {
+                $prompt = " <a href= '$base/user/$user->username'> $user->username </a> add a new story named '$story->title'";
+            }
+            // echo $story;
+            
+        }
+        elseif ($ev->event_type == "202")
+        {
+            // $story = PictureStory::loadByID($ev->story_1_id);
+            // echo $ev->story_1_id;
+            $prompt = " <a href= '$base/user/$user->username'> $user->username </a> deleted a story";
+        }
+        elseif ($ev->event_type == "203")
+        {
+            $story = PictureStory::loadByID($ev->story_1_id);
+            $prompt = " <a href= '$base/user/$user->username'> $user->username </a> edited the story '$story->title'";
+        }
+        elseif ($ev->event_type == "204")
+        {
+            $prompt = " <a href= '$base/user/$user->username'> $user->username </a> edited his/her profile";
+        }
+        elseif ($ev->event_type == "205")
+        {
+            $prompt = " $user->username just join the community !";
+        }
+        elseif($ev->event_type == "206")
+        {
+            $prompt = "Admin updated  $user->username's Username";
+        }
+        elseif($ev->event_type == "207")
+        {
+            $prompt = "Admin updated  $user->username's Role";
+        }
+        $count++;
+
+        if($id == "")
+        {
+           
+            $content = $content."
+            <div class='card p-3 text-center my-2'> $prompt </div>";
+        }
+        else
+        {
+            $content = $content."
+            <div class='card mb-3 style='width: 18rem;'>
+            <div class='card-body'>
+                <p class='card-text'> $prompt </p>
+            </div>
+            </div>";
+        }
+
+        
+        // $events[$row['id']] = $ev;
+      }
+    }
+
+    
+    return $content;
   }
 
   public static function loadByID($eventID) {
@@ -93,5 +189,7 @@ class Event {
       return $query;
     }
   }
+
+
 
 }

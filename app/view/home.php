@@ -61,6 +61,7 @@
     </div>
 
     <div class="main">
+       
 
         <?php 
         $count = 0;
@@ -86,6 +87,17 @@
         <?php endif; ?>
         <?php endforeach; ?>
         </ul>
+        </div>
+        <div class = "container w-100" width = "100%">
+        <?php if(isset($_SESSION['loggedInUserID'])): ?>
+        <!-- <div class = "card"> -->
+        <p class = "h2 text-center mt-4 mb-2"> Recent Activity Feed</p>
+        <!-- <p></p> -->
+        <!-- <div class = "card-deck"> -->
+        <?=$content?>
+        <!-- </div> -->
+        <!-- </div> -->
+        <?php endif; ?>
+        </div>
 
-    </div>
     </div>

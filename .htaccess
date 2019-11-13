@@ -17,12 +17,13 @@ RewriteRule ^detail/(\d+)/delete$ app/controller/ContentController.php?route=det
 RewriteRule ^save_editing_process/(\d+)$ app/controller/ContentController.php?route=save_editing_process&storyID=$1
 
 RewriteRule ^admin$ app/controller/ContentController.php?route=admin
+RewriteRule ^admin/success$ app/controller/ContentController.php?route=admin&success=true
+
+RewriteRule ^admin/admin_confirm_change/(\d+)$ app/controller/ContentController.php?route=admin_confirm_change&user_ID=$1
+
+RewriteRule ^user/(.*)$ app/controller/ContentController.php?route=user&username=$1
 
 
-
-RewriteRule ^news/submit$ app/controller/NewsController.php?route=add
-RewriteRule ^news/submit/process$ app/controller/NewsController.php?route=addProcess
-RewriteRule ^news/(\d+)$ app/controller/NewsController.php?route=detail&storyID=$1
 
 # Site controller
 RewriteRule ^$ app/controller/SiteController.php?route=home
