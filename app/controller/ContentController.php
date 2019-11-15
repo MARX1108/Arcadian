@@ -450,10 +450,12 @@ class ContentController {
     $user-> email = $email;
     $user-> class_standing = $class_standing;
 
-    User::create_new($user);
     $user = User::loadByUsername($username);
 
-    if($user == null)
+    
+    
+
+    if($user != null)
     {
       $all_state = "";
       $discover_state = "";
@@ -470,6 +472,7 @@ class ContentController {
     }
     else
     {
+      User::create_new($user);
       $stories = PictureStory::loadAllStories();
       $stylesheet = "style.css";
       $pageTitle = 'News';
