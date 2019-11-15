@@ -1,6 +1,11 @@
 $(document).ready(function() {
 
     checkSize();
+
+    $('#btn-signup').click(function(){
+        window.location.href='https://www.w3docs.com/';
+     })
+
 });
 
 
