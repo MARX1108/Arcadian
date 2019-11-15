@@ -57,6 +57,10 @@ elseif ($route == 'user')
 {
   $nc->userProfile();
 }
+elseif ($route == 'signup')
+{
+  $nc->signup();
+}
 
 class ContentController {
   public function admin($notification) {
@@ -114,9 +118,23 @@ class ContentController {
     $stylesheet = "style.css";
     $stories = PictureStory::loadAllStories();
 
-    $pageTitle = 'Submit News';
     include_once SYSTEM_PATH.'/view/header.php';
     include_once SYSTEM_PATH.'/view/discover.php';
+    include_once SYSTEM_PATH.'/view/footer.php';
+  }
+
+  public function signup()
+  {
+    $all_state = "";
+    $discover_state = "";
+    $profile_state = "";
+
+
+    $stylesheet = "style.css";
+
+    include_once SYSTEM_PATH.'/view/header.php';
+    // include_once SYSTEM_PATH.'/view/discover.php';
+    echo "this is signup";
     include_once SYSTEM_PATH.'/view/footer.php';
   }
 

@@ -48,7 +48,7 @@
                         </div>
 
                         <button id="btn-signin" class="btn btn-primary ml-0 my-0 py-2">sign in</button>
-                        <button id="btn-signup" class="btn btn-primary ml-0 my-0 py-2" disabled>sign up</button>
+                        <button id="btn-signup" class="btn btn-primary ml-0 my-0 py-2"><a href = "<?= BASE_URL ?>/signup">sign up</a></button>
                         </div>
                         <?php endif; ?>
                     </form>
