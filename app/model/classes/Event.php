@@ -95,7 +95,7 @@ class Event {
         }
         elseif ($ev->event_type == "205")
         {
-            $prompt = " <a href= '$base/user/$user->username'> $user->username just join the community !";
+            $prompt = " <a href= '$base/user/$user->username'> $user->username </a>just join the community !";
         }
         elseif($ev->event_type == "206")
         {
@@ -181,7 +181,7 @@ class Event {
       );
 
     echo $query;
-    
+
     $result = $GLOBALS['conn']->query($query);
     if($result) {
       $eventID = $GLOBALS['conn']->insert_id;
