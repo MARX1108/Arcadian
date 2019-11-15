@@ -13,4 +13,4 @@ define('BASE_URL','http://ec2-52-55-10-130.compute-1.amazonaws.com/Arcadian');
 define('DB_HOST','localhost');
 define('DB_DBNAME','Arcadian');
 define('DB_USER','root');
-define('DB_PASS','');
+define('DB_PASS','sh269820');
