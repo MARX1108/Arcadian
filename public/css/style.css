@@ -356,7 +356,11 @@
         border-radius: 8px;
         background: #6cd8f2;
     }
-
+    #btn-signup 
+    {
+        background: #9da8f5;
+        padding: 20%;
+    }
 }
 
 @media screen and (max-width: 800px) {
