@@ -450,12 +450,12 @@ class ContentController {
     $user-> email = $email;
     $user-> class_standing = $class_standing;
 
-    $user = User::loadByUsername($username);
+    $exist_user = User::loadByUsername($username);
 
     
     
 
-    if($user != null)
+    if($exist_user != null)
     {
       $all_state = "";
       $discover_state = "";
