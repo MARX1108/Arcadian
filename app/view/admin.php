@@ -1,3 +1,5 @@
+<?php if(isset($_SESSION['username'])): ?>
+
 <div class="main">
         <?=$notification?>
         <?php foreach($users as $user): ?>
@@ -40,3 +42,15 @@
 
 
 </div>
+
+<?php else: ?>
+    <div class="main container text-center">
+        <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> -->
+        <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> -->
+        <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div> -->
+        <img src="<?= BASE_URL ?>/public/assets/padlock.png" alt="" width="10%" href="<?= BASE_URL ?>/home">
+        </br>
+
+        <a href="<?= BASE_URL ?>/home" class="mt-4">Click Here To Sign in</a>
+        <?php endif; ?>
+    </div>
