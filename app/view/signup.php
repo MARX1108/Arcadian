@@ -1,4 +1,5 @@
-<div class="card col-md-6 p-1 mx-2  mt-4 mr-5" id="middle_container">
+<div class = "main">
+<div class="card col-md-6 p-1 mx-2  mt-4 mr-5 mx-auto" id="middle_container">
         <?= $notification ?>
         <form id="post" method="POST" action="<?= BASE_URL ?>/profile/confirm_profile_change/<?= ($user -> id)?>">
             <div class="post card mb-4 p-4" id="post_win">
@@ -33,4 +34,5 @@
             </div>
         </form>
 
+</div>
 </div>
