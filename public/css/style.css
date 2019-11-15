@@ -324,6 +324,11 @@
     #btn-signup 
     {
         background: #9da8f5;
+        padding: 20%;
+    }
+    #signup_form
+    {
+        float: left;
     }
 }
 
