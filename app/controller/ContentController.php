@@ -483,6 +483,15 @@ class ContentController {
       $profile_state = "";
       $name = $user->$username;
       $content = Event::generateContent("");
+
+
+      $newuser = User::loadByUsername();
+      $ev = new Event();
+      $ev->event_type = Event::EVENT_TYPE['new_users'];
+      $ev->user_1_id = $newuser -> $id;
+      $ev = Event::insertEvent($ev);
+
+
       include_once SYSTEM_PATH.'/view/header.php';
       echo"<div id = 'alert_div'><div class='alert alert-success' role='alert'>
       Registration succesful! Your username is $username </div> </div>";

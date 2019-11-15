@@ -40,7 +40,7 @@
                         <!-- Sign in /Sign up card -->
                         <div class="container ">
                             <div class="form-group">
-                                <label for="exampleInputEmail1" class="mb-0">Email address</label>
+                                <label for="exampleInputEmail1" class="mb-0">Username</label>
                                 <input id="un" name="un" type="text" placeholder=" Username" class="form-control" />
                             </div>
 
