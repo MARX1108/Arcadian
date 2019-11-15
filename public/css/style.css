@@ -199,6 +199,12 @@
     color: rgb(120, 112, 222);
 }
 
+#alert_div {
+    background-color: #f7f8ff;
+    padding: 2% 2% 2% 2%;
+    color: rgb(120, 112, 222);
+}
+
 #topnews {
     background-color: #ffffff;
     box-shadow: 0 10px 20px 0 rgba(227, 231, 255, 0.25);

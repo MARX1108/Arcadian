@@ -465,7 +465,7 @@ class ContentController {
       $stylesheet = "style.css";    
   
       include_once SYSTEM_PATH.'/view/header.php';
-      echo"<div id = 'news'><div class='alert alert-danger' role='alert'>
+      echo"<div id = 'alert_div'><div class='alert alert-danger' role='alert'>
       Unsuccesful! Duplicate username </div> </div>";
       include_once SYSTEM_PATH.'/view/signup.php';
       include_once SYSTEM_PATH.'/view/footer.php';
@@ -484,7 +484,7 @@ class ContentController {
       $name = $user->$username;
       $content = Event::generateContent("");
       include_once SYSTEM_PATH.'/view/header.php';
-      echo"<div id = 'news'><div class='alert alert-success' role='alert'>
+      echo"<div id = 'alert_div'><div class='alert alert-success' role='alert'>
       Registration succesful! Your username is $name </div> </div>";
       include_once SYSTEM_PATH.'/view/home.php';
       include_once SYSTEM_PATH.'/view/footer.php';
