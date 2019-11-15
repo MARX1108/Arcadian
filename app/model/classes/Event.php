@@ -180,7 +180,7 @@ class Event {
       self::checkIfNull($GLOBALS['conn']->real_escape_string($event->data_value))
       );
 
-    echo $query;
+    // echo $query;
 
     $result = $GLOBALS['conn']->query($query);
     if($result) {
