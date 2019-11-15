@@ -11,7 +11,6 @@
                 <label for="url" class="h5  ml-2 mt-2">Firstname</label>
                 <input id="url" name="firstname" type="text" placeholder="Your First Name" class="form-control" required>
 
-
                 <label for="url" class="h5  ml-2 mt-2">Lastname</label>
                 <input id="url" name="lastname" type="text" placeholder="Your Last Name" class="form-control" required>
 
@@ -33,3 +32,5 @@
                 <button id="upload" type="submit" class="btn btn-primary mt-3">Post</button>
             </div>
         </form>
+
+</div>
