@@ -3,8 +3,8 @@
 
 define('SYSTEM_PATH', dirname(__FILE__)); # location of 'app' folder - don't change
 
-define('BASE_URL','http://localhost:8080/Arcadian'); # your base URL
-
+//define('BASE_URL','http://localhost:8080/Arcadian'); # your base URL
+define('BASE_URL','http://ec2-52-55-10-130.compute-1.amazonaws.com/Arcadian'); 
 // constants for admin access
 // define('ADMIN_USERNAME','Mr.Thanos');
 // define('ADMIN_PASSWORD','Mr.Thanos');
