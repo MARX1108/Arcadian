@@ -115,7 +115,7 @@ class User {
       VALUES(
       '$username',
       '$password',
-      1,
+      0,
       '$firstname',
       '$lastname',
       '$email',
