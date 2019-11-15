@@ -95,7 +95,7 @@ class Event {
         }
         elseif ($ev->event_type == "205")
         {
-            $prompt = " $user->username just join the community !";
+            $prompt = " <a href= '$base/user/$user->username'> $user->username just join the community !";
         }
         elseif($ev->event_type == "206")
         {
@@ -168,6 +168,7 @@ class Event {
   }
 
   public static function insertEvent($event) {
+
     $query = sprintf("INSERT INTO %s (event_type, user_1_id, user_2_id, story_1_id, story_2_id, data_type, data_value) VALUES (%d, %d, %s, %s, %s, %s, %s) ",
       self::DB_TABLE,
       $GLOBALS['conn']->real_escape_string($event->event_type),
@@ -179,7 +180,8 @@ class Event {
       self::checkIfNull($GLOBALS['conn']->real_escape_string($event->data_value))
       );
 
-    // echo $query;
+    echo $query;
+    
     $result = $GLOBALS['conn']->query($query);
     if($result) {
       $eventID = $GLOBALS['conn']->insert_id;
