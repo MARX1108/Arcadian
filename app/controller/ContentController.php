@@ -480,7 +480,7 @@ class ContentController {
        
       $ev = new Event();
       $ev->event_type = Event::EVENT_TYPE['new_users'];
-      $ev->user_1_id = ($newuser->$id);
+      // $ev->user_1_id = ();
       $ev = Event::insertEvent($ev);
 
       $stories = PictureStory::loadAllStories();
