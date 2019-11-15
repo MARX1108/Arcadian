@@ -130,11 +130,10 @@ class ContentController {
     $profile_state = "";
 
 
-    $stylesheet = "style.css";
+    $stylesheet = "style.css";    
 
     include_once SYSTEM_PATH.'/view/header.php';
-    // include_once SYSTEM_PATH.'/view/discover.php';
-    echo "this is signup";
+    include_once SYSTEM_PATH.'/view/signup.php';
     include_once SYSTEM_PATH.'/view/footer.php';
   }
 
