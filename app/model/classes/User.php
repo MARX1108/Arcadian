@@ -101,6 +101,30 @@ class User {
     $ev = Event::insertEvent($ev);
 
 }
+    public static function create_new($user)
+    {
+      $username = $user-> username;
+      $password = $user-> password;
+      $firstname = $user-> firstname;
+      $lastname = $user-> lastname;
+      $email = $user-> email;
+      $class_standing = $user-> class_standing;
+
+      $query = "INSERT INTO `user`
+      (`username`, `password`, `role`, `firstname`, `lastname`, `email`, `class_standing`))
+      VALUES(
+      `username`='$username',
+      `password`='$password',
+      `role`=1,
+      `firstname`='$firstname',
+      `lastname`='$lastname',
+      `email`='$email',
+      `class_standing`='$class_standing')";
+       echo $query;   
+      $result = $GLOBALS['conn']->query($query);
+      return $result;
+    }
+
 
     public static function update_profile($user)
     {

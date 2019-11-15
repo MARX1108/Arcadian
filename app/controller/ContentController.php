@@ -411,8 +411,46 @@ class ContentController {
   public function confirm_registration()
   {
 
+    $user = new User();
+    if(isset($_POST['username'])) $password = $_POST['username'];
+    if(isset($_POST['password'])) $password = $_POST['password'];
+    if(isset($_POST['firstname'])) $firstname = $_POST['firstname'];
+    if(isset($_POST['lastname'])) $lastname = $_POST['lastname'];
+    if(isset($_POST['email'])) $email = $_POST['email'];
+    if(isset($_POST['class_standing'])) $class_standing = $_POST['class_standing'];
 
+    if($class_standing == "Freshman")
+    {
+      $class_standing = 0;
+    }
+    elseif($class_standing == "Sophomore")
+    {
+      $class_standing = 1;
+    }
+    elseif($class_standing== "Junior")
+    {
+      $class_standing = 2;
+    }
+    elseif($class_standing == "Senior")
+    {
+      $class_standing = 3;
+    }
 
+    $username = mysqli_real_escape_string($GLOBALS['conn'], $username);
+    $password = mysqli_real_escape_string($GLOBALS['conn'], $password);
+    $firstname = mysqli_real_escape_string($GLOBALS['conn'], $firstname);
+    $lastname = mysqli_real_escape_string($GLOBALS['conn'], $lastname);
+    $email = mysqli_real_escape_string($GLOBALS['conn'], $email);
+    $class_standing = mysqli_real_escape_string($GLOBALS['conn'], $class_standing);
+
+    $user-> username = $username;
+    $user-> password = $password;
+    $user-> firstname = $firstname;
+    $user-> lastname = $lastname;
+    $user-> email = $email;
+    $user-> class_standing = $class_standing;
+
+    User::create_new($user);
 
     $stories = PictureStory::loadAllStories();
     $stylesheet = "style.css";
