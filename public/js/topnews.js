@@ -4,7 +4,7 @@ $(document).ready(function() {
 
     $('#btn-signup').click(function(){
         window.location.href='https://www.w3docs.com/';
-     })
+     });
 
 });
 
