@@ -475,7 +475,7 @@ class ContentController {
       User::create_new($user);
 
       $newuser = User::loadByUsername($username);
-      $newuser_id = $newuser->$id;
+      // $newuser_id = $newuser->$id;
       
        
       // $ev = new Event();
