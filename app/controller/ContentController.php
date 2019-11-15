@@ -478,10 +478,11 @@ class ContentController {
       $all_state = "active_tab";
       $discover_state = "";
       $profile_state = "";
+      $name = $user->$username;
       $content = Event::generateContent("");
       include_once SYSTEM_PATH.'/view/header.php';
       echo"<div id = 'news'><div class='alert alert-success' role='alert'>
-      Registration succesful! Your username is $user->$username </div> </div>";
+      Registration succesful! Your username is $name </div> </div>";
       include_once SYSTEM_PATH.'/view/home.php';
       include_once SYSTEM_PATH.'/view/footer.php';
       exit();
