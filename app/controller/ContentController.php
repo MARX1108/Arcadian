@@ -451,22 +451,42 @@ class ContentController {
     $user-> class_standing = $class_standing;
 
     User::create_new($user);
+    $user = User::loadByUsername($username);
 
-    $stories = PictureStory::loadAllStories();
-    $stylesheet = "style.css";
-    $pageTitle = 'News';
-
-    $script = 'news';
-    $all_state = "active_tab";
-    $discover_state = "";
-    $profile_state = "";
-    $content = Event::generateContent("");
-    include_once SYSTEM_PATH.'/view/header.php';
-    echo"<div id = 'news'><div class='alert alert-success' role='alert'>
-    Registration succesful! Your username is </div> </div>";
-    include_once SYSTEM_PATH.'/view/home.php';
-    include_once SYSTEM_PATH.'/view/footer.php';
-    exit();
+    if($user == null)
+    {
+      $all_state = "";
+      $discover_state = "";
+      $profile_state = "";
+  
+  
+      $stylesheet = "style.css";    
+  
+      include_once SYSTEM_PATH.'/view/header.php';
+      echo"<div id = 'news'><div class='alert alert-danger' role='alert'>
+      Unsuccesful! Duplicate username </div> </div>";
+      include_once SYSTEM_PATH.'/view/signup.php';
+      include_once SYSTEM_PATH.'/view/footer.php';
+    }
+    else
+    {
+      $stories = PictureStory::loadAllStories();
+      $stylesheet = "style.css";
+      $pageTitle = 'News';
+  
+      $script = 'news';
+      $all_state = "active_tab";
+      $discover_state = "";
+      $profile_state = "";
+      $content = Event::generateContent("");
+      include_once SYSTEM_PATH.'/view/header.php';
+      echo"<div id = 'news'><div class='alert alert-success' role='alert'>
+      Registration succesful! Your username is $user->$username </div> </div>";
+      include_once SYSTEM_PATH.'/view/home.php';
+      include_once SYSTEM_PATH.'/view/footer.php';
+      exit();
+    }
+    
   }
 
 

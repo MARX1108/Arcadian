@@ -120,8 +120,10 @@ class User {
       '$lastname',
       '$email',
       '$class_standing')";
-       echo $query;   
+      //  echo $query;   
       $result = $GLOBALS['conn']->query($query);
+
+      
       return $result;
     }
 
