@@ -424,8 +424,8 @@ class ContentController {
     $profile_state = "";
     $content = Event::generateContent("");
     include_once SYSTEM_PATH.'/view/header.php';
-    echo"<div class='alert alert-success' role='alert'>
-    Registration succesful! Your username is </div>";
+    echo"<div id = 'news'><div class='alert alert-success' role='alert'>
+    Registration succesful! Your username is </div> </div>";
     include_once SYSTEM_PATH.'/view/home.php';
     include_once SYSTEM_PATH.'/view/footer.php';
     exit();
