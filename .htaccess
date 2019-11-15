@@ -17,6 +17,7 @@ RewriteRule ^detail/(\d+)/delete$ app/controller/ContentController.php?route=det
 RewriteRule ^save_editing_process/(\d+)$ app/controller/ContentController.php?route=save_editing_process&storyID=$1
 
 RewriteRule ^signup$ app/controller/ContentController.php?route=signup
+RewriteRule ^confirm_registration$ app/controller/ContentController.php?route=confirm_registration
 
 RewriteRule ^admin$ app/controller/ContentController.php?route=admin
 RewriteRule ^admin/success$ app/controller/ContentController.php?route=admin&success=true

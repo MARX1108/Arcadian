@@ -61,6 +61,10 @@ elseif ($route == 'signup')
 {
   $nc->signup();
 }
+elseif($route == 'confirm_registration')
+{
+  $nc->confirm_registration();
+}
 
 class ContentController {
   public function admin($notification) {
@@ -402,6 +406,29 @@ class ContentController {
     $ev = Event::insertEvent($ev);
 
     header('Location: '.BASE_URL.'/detail/'.$story->id); exit();
+  }
+
+  public function confirm_registration()
+  {
+
+
+
+
+    $stories = PictureStory::loadAllStories();
+    $stylesheet = "style.css";
+    $pageTitle = 'News';
+
+    $script = 'news';
+    $all_state = "active_tab";
+    $discover_state = "";
+    $profile_state = "";
+    $content = Event::generateContent("");
+    include_once SYSTEM_PATH.'/view/header.php';
+    echo"<div class='alert alert-success' role='alert'>
+    Registration succesful! Your username is </div>";
+    include_once SYSTEM_PATH.'/view/home.php';
+    include_once SYSTEM_PATH.'/view/footer.php';
+    exit();
   }
 
 

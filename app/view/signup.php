@@ -1,10 +1,10 @@
 <div class = "main">
 <div class="card col-md-6 p-1 mx-2  mt-4 mr-5 mx-auto" id="middle_container">
         <?= $notification ?>
-        <form id="post" method="POST" action="<?= BASE_URL ?>/profile/confirm_profile_change/<?= ($user -> id)?>">
+        <form id="post" method="POST" action="<?= BASE_URL ?>/confirm_registration">
             <div class="post card mb-4 p-4" id="post_win">
                 <label for="title" class="h5 ml-2 ">Username</label>
-                <input id="title" name="username" type="text" placeholder="choose a username" class="form-control" disabled>
+                <input id="title" name="username" type="text" placeholder="choose a username" class="form-control" required>
                 <label for="url" class="h5  ml-2 mt-2">Password</label>
                 <input id="url" name="password" type="text" placeholder="choose a password" class="form-control" required>
 
@@ -28,7 +28,7 @@
                 </select>
 
                 <label for="url" class="h5  ml-2 mt-2">Account Type</label>
-                <input id="url" name="url" type="text" placeholder="<?= $acounttype?>" class="form-control" disabled>
+                <input id="url" name="url" type="text" placeholder="Regular Account" class="form-control" disabled>
                 
                 <button id="upload" type="submit" class="btn btn-primary mt-3">Post</button>
             </div>
