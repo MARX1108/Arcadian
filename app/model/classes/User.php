@@ -113,13 +113,13 @@ class User {
       $query = "INSERT INTO `user`
       (`username`, `password`, `role`, `firstname`, `lastname`, `email`, `class_standing`)
       VALUES(
-      `username`='$username',
-      `password`='$password',
-      `role`=1,
-      `firstname`='$firstname',
-      `lastname`='$lastname',
-      `email`='$email',
-      `class_standing`='$class_standing')";
+      '$username',
+      '$password',
+      1,
+      '$firstname',
+      '$lastname',
+      '$email',
+      '$class_standing')";
        echo $query;   
       $result = $GLOBALS['conn']->query($query);
       return $result;
