@@ -52,7 +52,7 @@
                             <button id="btn-signin" class="btn btn-primary ml-0 my-0 py-2">sign in</button>
                     </form>
                     <!-- <form action="https://www.w3docs.com/"> -->
-                        <button id="btn-signup" class="btn btn-primary ml-0 my-0 py-2">sign up</button>
+                        <button id="btn-signup" class="btn btn-primary ml-0 my-0 py-2" onclick="window.location = '<?= BASE_URL ?>/signup';">sign up</button>
                     <!-- </form> -->
 
                 </div>

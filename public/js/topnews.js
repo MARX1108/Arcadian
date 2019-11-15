@@ -2,9 +2,7 @@ $(document).ready(function() {
 
     checkSize();
 
-    $('#btn-signup').click(function(){
-        window.location='https://www.w3docs.com/';
-     });
+    
 
 });
 
