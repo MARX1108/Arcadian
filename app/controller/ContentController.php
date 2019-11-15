@@ -478,10 +478,10 @@ class ContentController {
       // $newuser_id = $newuser->$id;
       
        
-      // $ev = new Event();
-      // $ev->event_type = Event::EVENT_TYPE['new_users'];
-      // $ev->user_1_id = $newuser_id;
-      // $ev = Event::insertEvent($ev);
+      $ev = new Event();
+      $ev->event_type = Event::EVENT_TYPE['new_users'];
+      $ev->user_1_id = ($newuser->$id);
+      $ev = Event::insertEvent($ev);
 
       $stories = PictureStory::loadAllStories();
       $stylesheet = "style.css";
