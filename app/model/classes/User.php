@@ -111,7 +111,7 @@ class User {
       $class_standing = $user-> class_standing;
 
       $query = "INSERT INTO `user`
-      (`username`, `password`, `role`, `firstname`, `lastname`, `email`, `class_standing`))
+      (`username`, `password`, `role`, `firstname`, `lastname`, `email`, `class_standing`)
       VALUES(
       `username`='$username',
       `password`='$password',

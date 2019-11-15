@@ -7,7 +7,9 @@
                 <input id="title" name="username" type="text" placeholder="choose a username" class="form-control" required>
                 <label for="url" class="h5  ml-2 mt-2">Password</label>
                 <input id="url" name="password" type="text" placeholder="choose a password" class="form-control" required>
-
+                
+                <label for="url" class="h5  ml-2 mt-2">Password Again</label>
+                <input id="url" name="password2" type="text" placeholder="type in your password again" class="form-control" required>
                 
                 <label for="url" class="h5  ml-2 mt-2">Firstname</label>
                 <input id="url" name="firstname" type="text" placeholder="Your First Name" class="form-control" required>

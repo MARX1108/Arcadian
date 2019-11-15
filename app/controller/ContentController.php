@@ -412,7 +412,7 @@ class ContentController {
   {
 
     $user = new User();
-    if(isset($_POST['username'])) $password = $_POST['username'];
+    if(isset($_POST['username'])) $username = $_POST['username'];
     if(isset($_POST['password'])) $password = $_POST['password'];
     if(isset($_POST['firstname'])) $firstname = $_POST['firstname'];
     if(isset($_POST['lastname'])) $lastname = $_POST['lastname'];
