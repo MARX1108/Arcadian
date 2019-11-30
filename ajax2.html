@@ -48,7 +48,8 @@
             data: '{"url": ' + '"' + sourceImageUrl + '"}',
             success: function(data)
             {
-                $("#responseTextArea").val(JSON.stringify(data, null, 2));
+                alert(JSON.stringify(data, null, 2));
+                // $("#responseTextArea").val(JSON.stringify(data, null, 2));
             },
             error: function (xhr, status, error) {
             alert("error"+xhr.responseText);
