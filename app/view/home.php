@@ -103,7 +103,8 @@
         
         <label class="switch">
         <input type="checkbox">
-        <span class="slider round">Ordered by event</span>
+        <span class="slider round"></span>
+        Ordered by event
         </label>
         </div>
         <!-- <label class="h5 text-center ml-2 mt-2">Ordered by
