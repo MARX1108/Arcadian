@@ -29,7 +29,7 @@ function reorder(order)
         method: 'get',
         dataType: 'json',
         success: function(output){
-
+            $("#event_home").replaceWith(output.event);
             // console.log(id);
             // $( "#"+id ).remove();
             // alert(output.message);
