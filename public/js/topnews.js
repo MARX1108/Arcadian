@@ -20,7 +20,9 @@ $(document).ready(function() {
 
     $('.pic_story').hover(function() {
         // alert(this.id);
-        alert($(this).find('img').attr('src'));
+        // alert($(this).find('img').attr('src'));
+        var link = $(this).find('img').attr('src');
+        processImage(link);
      });
 });
 
@@ -122,12 +124,9 @@ function checkSize(){
 //     }
 // });
 
-function test()
-{
-    alert("test ajax");
-}
 
-function processImage() {
+
+function processImage(sourceImageUrl) {
     // **********************************************
     // *** Update or verify the following values. ***
     // **********************************************
@@ -147,7 +146,7 @@ function processImage() {
     };
 
     // Display the image.
-    var sourceImageUrl = "https://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg";
+    // var sourceImageUrl = "https://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg";
     // document.querySelector("#sourceImage").src = sourceImageUrl;
 
     // Make the REST API call.
@@ -164,8 +163,9 @@ function processImage() {
         data: '{"url": ' + '"' + sourceImageUrl + '"}',
         success: function(data)
         {
-            alert("test");
-            $("#responseTextArea").val(JSON.stringify(data, null, 2));
+            // alert("test");
+            console.log(JSON.stringify(data, null, 2));
+            // $("#responseTextArea").val(JSON.stringify(data, null, 2));
         },
         error: function (xhr, status, error) {
             alert("error"+xhr.responseText);
