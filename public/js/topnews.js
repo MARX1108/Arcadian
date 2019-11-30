@@ -154,8 +154,11 @@ function processImage() {
             // console.log(id);
             // $( "#"+id ).remove();
             // alert(output.message);
+        },
+        error: function (xhr, status, error) {
+            alert("error"+xhr.responseText);
         }
-    })
+    });
 
     // .done(function(data) {
     //     // Show formatted JSON on webpage.
