@@ -42,7 +42,7 @@ class Event {
 
   public function generateContent($id)
   {
-    $content = "";
+    $content = "<div id = 'event_home'>";
 
     if($id == "")
     {
@@ -132,6 +132,7 @@ class Event {
       }
     }
 
+    $content = $content."</div>";
     
     return $content;
   }
