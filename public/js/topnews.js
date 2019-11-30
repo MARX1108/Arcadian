@@ -116,8 +116,8 @@ function processImage() {
     // let endpoint = process.env['https://3744p5.cognitiveservices.azure.com/'];
     // if (!subscriptionKey) { throw new Error('Set your environment variables for your subscription key and endpoint.'); }
     
-    let subscriptionKey = '467b3c735c0a4779a19575f9a70a1bb3';
-    let endpoint = 'https://3744p5.cognitiveservices.azure.com/';
+    let subscriptionKey = process.env['COMPUTER_VISION_SUBSCRIPTION_KEY'];
+    let endpoint = process.env['COMPUTER_VISION_ENDPOINT'];
     var uriBase = endpoint + "vision/v2.1/analyze";
 
     // Request parameters.
