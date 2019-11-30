@@ -99,12 +99,19 @@
         <?php if(isset($_SESSION['loggedInUserID'])): ?>
         <!-- <div class = "card"> -->
         <p class="h2 text-center mt-4 mb-2"> Recent Activity Feed</p>
-        <label class="h5 text-center ml-2 mt-2">Ordered by
+        <div class = "container">
+        Ordered by event:
+        <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+        </label>
+        </div>
+        <!-- <label class="h5 text-center ml-2 mt-2">Ordered by
         <select class = 'form-control' name='class_standing' id = 'event_order' required>
             <option>time</option>
             <option>type</option>
         </select>
-        </label>
+        </label> -->
         <!-- <p></p> -->
         <!-- <div class = "card-deck"> -->
         <?=$content?>
