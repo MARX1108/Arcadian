@@ -5,8 +5,12 @@ $(document).ready(function() {
     
     $('#order_check').change(function() {
         if(this.checked) {
-            var returnVal = confirm("Are you sure?");
-            $(this).prop("checked", returnVal);
+            var returnVal = confirm("Ordered by Event?");
+            // $(this).prop("checked", returnVal);
+        }
+        else
+        {
+            confirm("Ordered by Time?");
         }
         // $('#textbox1').val(this.checked);        
     });
