@@ -70,6 +70,10 @@
     </div>
 
 
+    
+
+    <div class="main">
+
     <div class = "container p-4 card">
         <p class = "h2">Quick Viewer</p> 
         <p>Category: <span id = 'category'>N/A</span> 
@@ -77,9 +81,6 @@
         Main color: <span id = 'colors'>N/A</span>
     </p>
     </div>
-
-    <div class="main">
-
     
         <?php 
         $count = 0;
