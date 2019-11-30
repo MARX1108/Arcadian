@@ -112,10 +112,12 @@ function processImage() {
     // *** Update or verify the following values. ***
     // **********************************************
 
-    let subscriptionKey = process.env['467b3c735c0a4779a19575f9a70a1bb3'];
-    let endpoint = process.env['https://3744p5.cognitiveservices.azure.com/'];
-    if (!subscriptionKey) { throw new Error('Set your environment variables for your subscription key and endpoint.'); }
+    // let subscriptionKey = process.env['467b3c735c0a4779a19575f9a70a1bb3'];
+    // let endpoint = process.env['https://3744p5.cognitiveservices.azure.com/'];
+    // if (!subscriptionKey) { throw new Error('Set your environment variables for your subscription key and endpoint.'); }
     
+    let subscriptionKey = '467b3c735c0a4779a19575f9a70a1bb3';
+    let endpoint = 'https://3744p5.cognitiveservices.azure.com/';
     var uriBase = endpoint + "vision/v2.1/analyze";
 
     // Request parameters.
