@@ -125,9 +125,9 @@ function processImage() {
 
     // let subscriptionKey = process.env['COMPUTER_VISION_SUBSCRIPTION_KEY'];
     // let endpoint = process.env['COMPUTER_VISION_ENDPOINT']
-    let subscriptionKey = '467b3c735c0a4779a19575f9a70a1bb3';
-    let endpoint = 'https://3744p5.cognitiveservices.azure.com/';
-    if (!subscriptionKey) { throw new Error('Set your environment variables for your subscription key and endpoint.'); }
+    var subscriptionKey = '467b3c735c0a4779a19575f9a70a1bb3';
+    var endpoint = 'https://3744p5.cognitiveservices.azure.com/';
+    // if (!subscriptionKey) { throw new Error('Set your environment variables for your subscription key and endpoint.'); }
     
     var uriBase = endpoint + "vision/v2.1/analyze";
 
@@ -162,7 +162,7 @@ function processImage() {
     .done(function(data) {
         // Show formatted JSON on webpage.
         alert("e");
-        // $("#responseTextArea").val(JSON.stringify(data, null, 2));
+        $("#responseTextArea").val(JSON.stringify(data, null, 2));
     })
 
     .fail(function(jqXHR, textStatus, errorThrown) {
@@ -173,4 +173,4 @@ function processImage() {
             jQuery.parseJSON(jqXHR.responseText).message;
         alert(errorString);
     });
-};
+}
