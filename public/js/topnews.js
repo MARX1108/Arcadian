@@ -25,7 +25,7 @@ function delete_(id, BASE_URL, userid){
             method: 'post',
             dataType: 'json',
             success: function(output){
-                console.log(id);
+                // console.log(id);
                 $( "#"+id ).remove();
                 // alert(output.message);
             },
@@ -65,7 +65,6 @@ function checkSize(){
             ($("#news").css("padding-left") +
                 $("#news").css("padding-right") +
                 $("#news >#signin").outerWidth())
-
     });
     }
 
