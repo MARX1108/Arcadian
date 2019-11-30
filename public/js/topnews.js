@@ -107,6 +107,59 @@ function checkSize(){
 
 
     
+function processImage() {
+    // **********************************************
+    // *** Update or verify the following values. ***
+    // **********************************************
+
+    let subscriptionKey = process.env['467b3c735c0a4779a19575f9a70a1bb3'];
+    let endpoint = process.env['https://3744p5.cognitiveservices.azure.com/'];
+    if (!subscriptionKey) { throw new Error('Set your environment variables for your subscription key and endpoint.'); }
+    
+    var uriBase = endpoint + "vision/v2.1/analyze";
+
+    // Request parameters.
+    var params = {
+        "visualFeatures": "Categories,Description,Color",
+        "details": "",
+        "language": "en",
+    };
+
+    // Display the image.
+    var sourceImageUrl = document.getElementById("inputImage").value;
+    document.querySelector("#sourceImage").src = sourceImageUrl;
+
+    // Make the REST API call.
+    $.ajax({
+        url: uriBase + "?" + $.param(params),
+
+        // Request headers.
+        beforeSend: function(xhrObj){
+            xhrObj.setRequestHeader("Content-Type","application/json");
+            xhrObj.setRequestHeader(
+                "Ocp-Apim-Subscription-Key", subscriptionKey);
+        },
+        type: "POST",
+
+        // Request body.
+        data: '{"url": ' + '"' + sourceImageUrl + '"}',
+    })
+
+    .done(function(data) {
+        // Show formatted JSON on webpage.
+        alert(JSON.stringify(data, null, 2));
+        // $("#responseTextArea").val(JSON.stringify(data, null, 2));
+    })
+
+    .fail(function(jqXHR, textStatus, errorThrown) {
+        // Display error message.
+        var errorString = (errorThrown === "") ? "Error. " :
+            errorThrown + " (" + jqXHR.status + "): ";
+        errorString += (jqXHR.responseText === "") ? "" :
+            jQuery.parseJSON(jqXHR.responseText).message;
+        alert(errorString);
+    });
+};
 
                   
 /*$("#header > #search-bar > input").focus(function() {

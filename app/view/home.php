@@ -69,6 +69,9 @@
 
     <div class="main">
 
+    <input type="text" name="inputImage" id="inputImage"
+    value="https://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg" />
+    <button onclick="processImage()">Analyze image</button>
 
         <?php 
         $count = 0;
