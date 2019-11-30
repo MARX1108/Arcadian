@@ -164,7 +164,7 @@ function processImage() {
             jQuery.parseJSON(jqXHR.responseText).message;
         alert(errorString);
     });
-};
+}
 
                   
 /*$("#header > #search-bar > input").focus(function() {
