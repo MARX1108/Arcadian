@@ -167,8 +167,8 @@ function processImage(sourceImageUrl) {
             // console.log(JSON.stringify(data, null, 2));
             // var json = JSON.stringify(data, null, 2);
 
-            $("#tags").replaceWith(data.color.accentColor);
-            $("#category").replaceWith(data.color.accentColor);
+            $("#tags").replaceWith(data.categories[0].name);
+            $("#category").replaceWith(data.description.tags);
             $("#colors").replaceWith(data.color.accentColor);
             
             // $("#responseTextArea").val(JSON.stringify(data, null, 2));
