@@ -5,7 +5,8 @@ $(document).ready(function() {
     
     $('#order_check').change(function() {
         if(this.checked) {
-            var returnVal = confirm("Ordered by Event?");
+            confirm("Ordered by Event?");
+            alert(base_url);
             // $(this).prop("checked", returnVal);
         }
         else
@@ -16,7 +17,28 @@ $(document).ready(function() {
     });
 });
 
-
+function reorder()
+{
+    $.ajax({
+        url: base_url+'/app/controller/ContentController.php',
+        data: {
+            route: 'detail',
+            delete_request: 'true',
+            storyID: id,
+            userid: userid
+        },
+        method: 'post',
+        dataType: 'json',
+        success: function(output){
+            // console.log(id);
+            $( "#"+id ).remove();
+            // alert(output.message);
+        },
+        error: function (xhr, status, error) {
+            alert("error"+xhr.responseText);
+        }
+    });
+}
 function delete_(id, BASE_URL, userid){
     // alert("test");
 
