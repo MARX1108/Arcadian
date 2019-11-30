@@ -102,7 +102,7 @@
         <div class = "container">
             
         <label class="switch">
-        <input type="checkbox">
+        <input type="checkbox" name='reordered' id ='order_check' >
         <span class="slider round"></span>
         
         </label>

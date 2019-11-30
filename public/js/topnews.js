@@ -3,7 +3,13 @@ $(document).ready(function() {
     checkSize();
 
     
-
+    $('#order_check').change(function() {
+        if(this.checked) {
+            var returnVal = confirm("Are you sure?");
+            $(this).prop("checked", returnVal);
+        }
+        // $('#textbox1').val(this.checked);        
+    });
 });
 
 
