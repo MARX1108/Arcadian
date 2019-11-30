@@ -164,12 +164,12 @@ function processImage(sourceImageUrl) {
         success: function(data)
         {
             // alert("test");
-
-            $("#tags").replaceWith(data.color);
-            $("#category").replaceWith(data.color);
-            $("#colors").replaceWith(data.categories);
-            
             console.log(JSON.stringify(data, null, 2));
+            var json = JSON.stringify(data, null, 2);
+            $("#tags").replaceWith(json.color);
+            $("#category").replaceWith(json.color);
+            $("#colors").replaceWith(json.categories);
+            
             // $("#responseTextArea").val(JSON.stringify(data, null, 2));
         },
         error: function (xhr, status, error) {

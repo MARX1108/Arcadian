@@ -75,13 +75,13 @@
     <div class="main">
 
     <div class = "container p-4 card">
-        <p class = "h2">Quick Viewer</p> 
+        <p class = "h2">Quick Selector</p> 
         <p>Category: <span id = 'category'>N/A</span> 
         Tags: <span id = 'tags'>N/A</span>
         Main color: <span id = 'colors'>N/A</span>
-    </p>
+        </p>
     </div>
-    
+
         <?php 
         $count = 0;
         foreach($stories as $story): 
