@@ -33,7 +33,7 @@ function reorder(order)
             // console.log(id);
             // $( "#"+id ).remove();
             // alert(output.message);
-            alert(output.event);
+            // alert(output.event);
         },
         error: function (xhr, status, error) {
             alert("error"+xhr.responseText);
