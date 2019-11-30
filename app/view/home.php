@@ -74,6 +74,7 @@
 
     
     <button onclick="processImage()">Analyze image</button>
+    <button onclick="test()">test</button>
 
         <?php 
         $count = 0;

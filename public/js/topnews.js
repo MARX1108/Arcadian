@@ -117,6 +117,10 @@ function checkSize(){
 //     }
 // });
 
+function test()
+{
+    alert("test ajax");
+}
 
 function processImage() {
     // **********************************************
@@ -163,5 +167,5 @@ function processImage() {
         }
     });
 
-    
+
 }
