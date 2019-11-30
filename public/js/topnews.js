@@ -148,22 +148,29 @@ function processImage() {
 
         // Request body.
         data: '{"url": ' + '"' + sourceImageUrl + '"}',
+        success: function(data){
+
+            alert(JSON.stringify(data, null, 2));
+            // console.log(id);
+            // $( "#"+id ).remove();
+            // alert(output.message);
+        }
     })
 
-    .done(function(data) {
-        // Show formatted JSON on webpage.
-        alert(JSON.stringify(data, null, 2));
-        // $("#responseTextArea").val(JSON.stringify(data, null, 2));
-    })
+    // .done(function(data) {
+    //     // Show formatted JSON on webpage.
+    //     alert(JSON.stringify(data, null, 2));
+    //     // $("#responseTextArea").val(JSON.stringify(data, null, 2));
+    // })
 
-    .fail(function(jqXHR, textStatus, errorThrown) {
-        // Display error message.
-        var errorString = (errorThrown === "") ? "Error. " :
-            errorThrown + " (" + jqXHR.status + "): ";
-        errorString += (jqXHR.responseText === "") ? "" :
-            jQuery.parseJSON(jqXHR.responseText).message;
-        alert(errorString);
-    });
+    // .fail(function(jqXHR, textStatus, errorThrown) {
+    //     // Display error message.
+    //     var errorString = (errorThrown === "") ? "Error. " :
+    //         errorThrown + " (" + jqXHR.status + "): ";
+    //     errorString += (jqXHR.responseText === "") ? "" :
+    //         jQuery.parseJSON(jqXHR.responseText).message;
+    //     alert(errorString);
+    // });
 }
 
                   
