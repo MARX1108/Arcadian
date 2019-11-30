@@ -73,10 +73,13 @@
 
     <div class="main">
 
-
-    
-  
-
+    <div class = "container p-3">
+        <p class = "h2">Quick Viewer</p> 
+        <p>Category: <span id = 'category'>N/A</span> 
+        Tags: <span id = 'tags'>N/A</span>
+        Main color: <span id = 'colors'>N/A</span>
+    </p>
+    </div>
         <?php 
         $count = 0;
         foreach($stories as $story): 

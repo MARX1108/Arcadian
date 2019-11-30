@@ -164,6 +164,11 @@ function processImage(sourceImageUrl) {
         success: function(data)
         {
             // alert("test");
+
+            $("#tags").replaceWith(data.color);
+            $("#category").replaceWith(data.color);
+            $("#colors").replaceWith(data.categories);
+            
             console.log(JSON.stringify(data, null, 2));
             // $("#responseTextArea").val(JSON.stringify(data, null, 2));
         },
