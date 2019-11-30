@@ -66,7 +66,7 @@ function delete_(id, BASE_URL, userid){
                 alert("error"+xhr.responseText);
             }
         });
-
+        
         // window.location.replace(BASE_URL+"/profile/timeline");
     }
     else{
@@ -107,75 +107,59 @@ function checkSize(){
 
 
 
-$("#delete").click(function(){
-    alert("test");
-    if(confirm("Are you sure you want to delete this?")){
-        // $("#delete").attr("href", "<?= BASE_URL ?>/detail/<?= $story->id ?>/delete");
-    }
-    else{
-        return false;
-    }
-});
+// $("#delete").click(function(){
+//     alert("test");
+//     if(confirm("Are you sure you want to delete this?")){
+//         // $("#delete").attr("href", "<?= BASE_URL ?>/detail/<?= $story->id ?>/delete");
+//     }
+//     else{
+//         return false;
+//     }
+// });
 
 
-function processImage() {
-    // **********************************************
-    // *** Update or verify the following values. ***
-    // **********************************************
+// function processImage() {
+//     // **********************************************
+//     // *** Update or verify the following values. ***
+//     // **********************************************
 
-    // let subscriptionKey = process.env['COMPUTER_VISION_SUBSCRIPTION_KEY'];
-    // let endpoint = process.env['COMPUTER_VISION_ENDPOINT']
-    var subscriptionKey = '467b3c735c0a4779a19575f9a70a1bb3';
-    var endpoint = 'https://3744p5.cognitiveservices.azure.com/';
-    // if (!subscriptionKey) { throw new Error('Set your environment variables for your subscription key and endpoint.'); }
-    
-    var uriBase = endpoint + "vision/v2.1/analyze";
+//     // let subscriptionKey = process.env['COMPUTER_VISION_SUBSCRIPTION_KEY'];
+//     // let endpoint = process.env['COMPUTER_VISION_ENDPOINT']
+//     var subscriptionKey = '467b3c735c0a4779a19575f9a70a1bb3';
+//     var endpoint = 'https://3744p5.cognitiveservices.azure.com/';
+//     // if (!subscriptionKey) { throw new Error('Set your environment variables for your subscription key and endpoint.'); }
+//     var uriBase = endpoint + "vision/v2.1/analyze";
 
-    // Request parameters.
-    var params = {
-        "visualFeatures": "Categories,Description,Color",
-        "details": "",
-        "language": "en",
-    };
+//     // Request parameters.
+//     var params = {
+//         "visualFeatures": "Categories,Description,Color",
+//         "details": "",
+//         "language": "en",
+//     };
 
-    // Display the image.
-    var sourceImageUrl = "https://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg";
-    // document.querySelector("#sourceImage").src = sourceImageUrl;
+//     // Display the image.
+//     var sourceImageUrl = "https://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg";
+//     // document.querySelector("#sourceImage").src = sourceImageUrl;
 
-    // Make the REST API call.
-    $.ajax({
-        url: uriBase + "?" + $.param(params),
+//     // Make the REST API call.
+//     $.ajax({
+//         url: uriBase + "?" + $.param(params),
 
-        // Request headers.
-        beforeSend: function(xhrObj){
-            xhrObj.setRequestHeader("Content-Type","application/json");
-            xhrObj.setRequestHeader(
-                "Ocp-Apim-Subscription-Key", subscriptionKey);
-        },
-        type: "POST",
-        data: '{"url": ' + '"' + sourceImageUrl + '"}',
-        success: function(data)
-        {
-            alert("test");
-            $("#responseTextArea").val(JSON.stringify(data, null, 2));
-        },
-        error: function (xhr, status, error) {
-            alert("error"+xhr.responseText);
-        }
-    });
-
-    // .done(function(data) {
-    //     // Show formatted JSON on webpage.
-    //     alert("e");
-    //     $("#responseTextArea").val(JSON.stringify(data, null, 2));
-    // })
-
-    // .fail(function(jqXHR, textStatus, errorThrown) {
-    //     // Display error message.
-    //     var errorString = (errorThrown === "") ? "Error. " :
-    //         errorThrown + " (" + jqXHR.status + "): ";
-    //     errorString += (jqXHR.responseText === "") ? "" :
-    //         jQuery.parseJSON(jqXHR.responseText).message;
-    //     alert(errorString);
-    // });
-}
+//         // Request headers.
+//         beforeSend: function(xhrObj){
+//             xhrObj.setRequestHeader("Content-Type","application/json");
+//             xhrObj.setRequestHeader(
+//                 "Ocp-Apim-Subscription-Key", subscriptionKey);
+//         },
+//         type: "POST",
+//         data: '{"url": ' + '"' + sourceImageUrl + '"}',
+//         success: function(data)
+//         {
+//             alert("test");
+//             $("#responseTextArea").val(JSON.stringify(data, null, 2));
+//         },
+//         error: function (xhr, status, error) {
+//             alert("error"+xhr.responseText);
+//         }
+//     });
+// }
