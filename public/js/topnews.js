@@ -20,7 +20,7 @@ $(document).ready(function() {
 
     $('.pic_story').hover(function() {
         // alert(this.id);
-        alert(this.find('tag').attr('src'));
+        alert($(this).find('img').attr('src'));
      });
 });
 
