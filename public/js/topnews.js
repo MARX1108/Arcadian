@@ -25,7 +25,9 @@ function delete_(id, BASE_URL, userid){
             method: 'post',
             dataType: 'json',
             success: function(output){
-                alert(output.message);
+                console.log(id);
+                $( "#"+id ).remove();
+                // alert(output.message);
             },
             error: function (xhr, status, error) {
                 alert(xhr.responseText);
