@@ -106,21 +106,29 @@ function checkSize(){
 }
 
 
-    
+
+$("#delete").click(function(){
+    alert("test");
+    if(confirm("Are you sure you want to delete this?")){
+        // $("#delete").attr("href", "<?= BASE_URL ?>/detail/<?= $story->id ?>/delete");
+    }
+    else{
+        return false;
+    }
+});
+
+
 function processImage() {
     // **********************************************
     // *** Update or verify the following values. ***
     // **********************************************
 
-    // let subscriptionKey = process.env['467b3c735c0a4779a19575f9a70a1bb3'];
-    // let endpoint = process.env['https://3744p5.cognitiveservices.azure.com/'];
-    // if (!subscriptionKey) { throw new Error('Set your environment variables for your subscription key and endpoint.'); }
-    
     // let subscriptionKey = process.env['COMPUTER_VISION_SUBSCRIPTION_KEY'];
-    // let endpoint = process.env['COMPUTER_VISION_ENDPOINT'];
-
+    // let endpoint = process.env['COMPUTER_VISION_ENDPOINT']
     let subscriptionKey = '467b3c735c0a4779a19575f9a70a1bb3';
     let endpoint = 'https://3744p5.cognitiveservices.azure.com/';
+    if (!subscriptionKey) { throw new Error('Set your environment variables for your subscription key and endpoint.'); }
+    
     var uriBase = endpoint + "vision/v2.1/analyze";
 
     // Request parameters.
@@ -131,8 +139,7 @@ function processImage() {
     };
 
     // Display the image.
-    // var sourceImageUrl = document.getElementById("inputImage").value;
-    var sourceImageUrl = 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg';
+    var sourceImageUrl = document.getElementById("inputImage").value;
     // document.querySelector("#sourceImage").src = sourceImageUrl;
 
     // Make the REST API call.
@@ -145,53 +152,24 @@ function processImage() {
             xhrObj.setRequestHeader(
                 "Ocp-Apim-Subscription-Key", subscriptionKey);
         },
+
         type: "POST",
 
         // Request body.
         data: '{"url": ' + '"' + sourceImageUrl + '"}',
-        success: function(data){
+    })
 
-            alert(JSON.stringify(data, null, 2));
-            // console.log(id);
-            // $( "#"+id ).remove();
-            // alert(output.message);
-        },
-        error: function (xhr, status, error) {
-            alert("error"+xhr.responseText);
-        }
+    .done(function(data) {
+        // Show formatted JSON on webpage.
+        $("#responseTextArea").val(JSON.stringify(data, null, 2));
+    })
+
+    .fail(function(jqXHR, textStatus, errorThrown) {
+        // Display error message.
+        var errorString = (errorThrown === "") ? "Error. " :
+            errorThrown + " (" + jqXHR.status + "): ";
+        errorString += (jqXHR.responseText === "") ? "" :
+            jQuery.parseJSON(jqXHR.responseText).message;
+        alert(errorString);
     });
-
-    // .done(function(data) {
-    //     // Show formatted JSON on webpage.
-    //     alert(JSON.stringify(data, null, 2));
-    //     // $("#responseTextArea").val(JSON.stringify(data, null, 2));
-    // })
-
-    // .fail(function(jqXHR, textStatus, errorThrown) {
-    //     // Display error message.
-    //     var errorString = (errorThrown === "") ? "Error. " :
-    //         errorThrown + " (" + jqXHR.status + "): ";
-    //     errorString += (jqXHR.responseText === "") ? "" :
-    //         jQuery.parseJSON(jqXHR.responseText).message;
-    //     alert(errorString);
-    // });
-}
-
-                  
-/*$("#header > #search-bar > input").focus(function() {
-        $("#primary-nav").remove();
-        $("#header form").css({
-            "padding-top": 10%
-        });
-});*/
-
-
-$("#delete").click(function(){
-    alert("test");
-    if(confirm("Are you sure you want to delete this?")){
-        // $("#delete").attr("href", "<?= BASE_URL ?>/detail/<?= $story->id ?>/delete");
-    }
-    else{
-        return false;
-    }
-});
+};
