@@ -13,7 +13,7 @@ $(document).ready(function() {
         else
         {
             confirm("Ordered by Time?");
-            reorder("order");
+            reorder("");
         }
         // $('#textbox1').val(this.checked);        
     });
