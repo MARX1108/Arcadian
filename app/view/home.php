@@ -100,7 +100,7 @@
         <!-- <div class = "card"> -->
         <p class="h2 text-center mt-4 mb-2"> Recent Activity Feed</p>
         <div class = "container">
-        <p class = "h3 mt-2">Ordered by event:</p>
+        <p class = "mt-2">Ordered by event:</p>
         <label class="switch">
         <input type="checkbox">
         <span class="slider round"></span>
