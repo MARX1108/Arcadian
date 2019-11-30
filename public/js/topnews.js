@@ -6,7 +6,8 @@ $(document).ready(function() {
     $('#order_check').change(function() {
         if(this.checked) {
             confirm("Ordered by Event?");
-            alert(base_url);
+            reorder(order);
+            // alert(base_url);
             // $(this).prop("checked", returnVal);
         }
         else
@@ -17,22 +18,20 @@ $(document).ready(function() {
     });
 });
 
-function reorder()
+function reorder(order)
 {
     $.ajax({
-        url: base_url+'/app/controller/ContentController.php',
+        url: base_url+'/app/controller/ContentController.php?route=event_order',
         data: {
-            route: 'detail',
-            delete_request: 'true',
-            storyID: id,
-            userid: userid
+            order: order
         },
-        method: 'post',
+        method: 'get',
         dataType: 'json',
         success: function(output){
+
             // console.log(id);
-            $( "#"+id ).remove();
-            // alert(output.message);
+            // $( "#"+id ).remove();
+            alert(output.message);
         },
         error: function (xhr, status, error) {
             alert("error"+xhr.responseText);

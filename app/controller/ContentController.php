@@ -67,6 +67,12 @@ elseif($route == 'confirm_registration')
 {
   $nc->confirm_registration();
 }
+elseif($route == 'event_order')
+{
+  $nc->event_order();
+}
+
+
 
 class ContentController {
   public function admin($notification) {
@@ -203,6 +209,15 @@ class ContentController {
       include_once SYSTEM_PATH.'/view/footer.php';
       }
       
+  }
+
+  public function event_order()
+  {
+    // $content = Event::generateContent($user->id);
+    // echo "generateContent\n";
+    echo json_encode(
+      array("message" => "generateContent")
+    );
   }
   public function myProfile($notification)
   {
