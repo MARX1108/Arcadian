@@ -100,12 +100,13 @@
         <!-- <div class = "card"> -->
         <p class="h2 text-center mt-4 mb-2"> Recent Activity Feed</p>
         <div class = "container">
-        
+            
         <label class="switch">
         <input type="checkbox">
         <span class="slider round"></span>
-        Ordered by event
+        
         </label>
+        Ordered by event
         </div>
         <!-- <label class="h5 text-center ml-2 mt-2">Ordered by
         <select class = 'form-control' name='class_standing' id = 'event_order' required>
