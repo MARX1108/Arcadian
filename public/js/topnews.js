@@ -131,7 +131,8 @@ function processImage() {
     };
 
     // Display the image.
-    var sourceImageUrl = document.getElementById("inputImage").value;
+    // var sourceImageUrl = document.getElementById("inputImage").value;
+    var sourceImageUrl = 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg';
     // document.querySelector("#sourceImage").src = sourceImageUrl;
 
     // Make the REST API call.
