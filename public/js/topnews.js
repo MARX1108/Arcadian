@@ -157,20 +157,28 @@ function processImage() {
 
         // Request body.
         data: '{"url": ' + '"' + sourceImageUrl + '"}',
-    })
-
-    .done(function(data) {
-        // Show formatted JSON on webpage.
-        alert("e");
-        $("#responseTextArea").val(JSON.stringify(data, null, 2));
-    })
-
-    .fail(function(jqXHR, textStatus, errorThrown) {
-        // Display error message.
-        var errorString = (errorThrown === "") ? "Error. " :
-            errorThrown + " (" + jqXHR.status + "): ";
-        errorString += (jqXHR.responseText === "") ? "" :
-            jQuery.parseJSON(jqXHR.responseText).message;
-        alert(errorString);
+        success: function(data)
+        {
+            alert("test");
+            $("#responseTextArea").val(JSON.stringify(data, null, 2));
+        },
+        error: function (xhr, status, error) {
+            alert("error"+xhr.responseText);
+        }
     });
+
+    // .done(function(data) {
+    //     // Show formatted JSON on webpage.
+    //     alert("e");
+    //     $("#responseTextArea").val(JSON.stringify(data, null, 2));
+    // })
+
+    // .fail(function(jqXHR, textStatus, errorThrown) {
+    //     // Display error message.
+    //     var errorString = (errorThrown === "") ? "Error. " :
+    //         errorThrown + " (" + jqXHR.status + "): ";
+    //     errorString += (jqXHR.responseText === "") ? "" :
+    //         jQuery.parseJSON(jqXHR.responseText).message;
+    //     alert(errorString);
+    // });
 }
