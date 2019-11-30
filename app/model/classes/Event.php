@@ -111,24 +111,23 @@ class Event {
         }
         $count++;
 
-        if($id == "")
-        {
+        // if($id == "")
+        // {
            
             $content = $content."
             <div class='card p-3 text-center my-2'> $prompt </div>";
-        }
-        else
-        {
-            $content = $content."
-            <div class='card mb-3 style='width: 18rem;'>
-            <div class='card-body'>
-                <p class='card-text'> $prompt </p>
-            </div>
-            </div>";
-        }
+        // }
+        // else
+        // {
+        //     $content = $content."
+        //     <div class='card mb-3 style='width: 18rem;'>
+        //     <div class='card-body'>
+        //         <p class='card-text'> $prompt </p>
+        //     </div>
+        //     </div>";
+        // }
 
-        
-        // $events[$row['id']] = $ev;
+
       }
     }
 
