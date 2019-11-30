@@ -30,7 +30,7 @@ function delete_(id, BASE_URL, userid){
                 // alert(output.message);
             },
             error: function (xhr, status, error) {
-                alert(xhr.responseText);
+                alert("error"+xhr.responseText);
             }
         });
 

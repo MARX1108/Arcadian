@@ -149,7 +149,7 @@ class PictureStory {
        {
           $delete_query = "DELETE FROM `news_list` WHERE `id` = '$storyID'; ";
           $result =  $GLOBALS['conn']->query($delete_query);
-          echo $delete_query;
+          // echo $delete_query;
         }
 
       
