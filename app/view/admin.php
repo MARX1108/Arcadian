@@ -9,7 +9,6 @@
                 User ID: 
                 <input id="title" name="username" type="text" placeholder="<?=$user->id?>"
                     class="form-control mt-1" disabled>
-                
             </div>
             <div class="card col-2 p-4 mx-2">
                 Username: 

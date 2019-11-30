@@ -8,7 +8,8 @@ $(document).ready(function() {
 
 
 function delete_(id, BASE_URL, userid){
-    // alert("test");
+    alert("test");
+
     if(confirm("Are you sure you want to delete this?"))
     {
         url = BASE_URL+"/detail/"+id+"/edit";
