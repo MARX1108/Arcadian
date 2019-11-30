@@ -17,6 +17,10 @@ $(document).ready(function() {
         }
         // $('#textbox1').val(this.checked);        
     });
+
+    $('.pic_story').hover(function() {
+        alert(this.id);
+     });
 });
 
 function reorder(order)

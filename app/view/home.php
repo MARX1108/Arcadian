@@ -1,7 +1,6 @@
     <!-- body content section -->
-    <button onclick="processImage()">Analyze image</button>
-    <button onclick="test()">test</button>
     
+
     <div id="news" class="row h-20">
 
         <div class="card col-md-7 mr-0 ml-5 container">
