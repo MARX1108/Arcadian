@@ -48,6 +48,10 @@ class Event {
     {
         $query = "SELECT id FROM ".self::DB_TABLE." ORDER BY date_created DESC LIMIT 12";
     }
+    else if($id == 'event')
+    {
+        $query = "SELECT id FROM ".self::DB_TABLE." ORDER BY `event`.`event_type` ASC ";
+    }
     else
     {
         $query = "SELECT id FROM ".self::DB_TABLE."  WHERE user_1_id = '$id' ORDER BY date_created DESC";

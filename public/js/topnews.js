@@ -6,13 +6,14 @@ $(document).ready(function() {
     $('#order_check').change(function() {
         if(this.checked) {
             confirm("Ordered by Event?");
-            reorder(order);
+            reorder("event");
             // alert(base_url);
             // $(this).prop("checked", returnVal);
         }
         else
         {
             confirm("Ordered by Time?");
+            reorder("order");
         }
         // $('#textbox1').val(this.checked);        
     });
@@ -31,7 +32,8 @@ function reorder(order)
 
             // console.log(id);
             // $( "#"+id ).remove();
-            alert(output.message);
+            // alert(output.message);
+            alert(output.event);
         },
         error: function (xhr, status, error) {
             alert("error"+xhr.responseText);

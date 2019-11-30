@@ -215,8 +215,11 @@ class ContentController {
   {
     // $content = Event::generateContent($user->id);
     // echo "generateContent\n";
+    $order = $_GET['order'];
+
+    $content = Event::generateContent($order);
     echo json_encode(
-      array("message" => "generateContent")
+      array("message" => "generateContent", "event" => $content)
     );
   }
   public function myProfile($notification)
