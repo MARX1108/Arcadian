@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 
 function delete_(id, BASE_URL, userid){
-    alert("test");
+    // alert("test");
 
     if(confirm("Are you sure you want to delete this?"))
     {
@@ -24,12 +24,15 @@ function delete_(id, BASE_URL, userid){
             },
             method: 'post',
             dataType: 'json',
+            success: function(output){
+                alert(output.message);
+            },
             error: function (xhr, status, error) {
                 alert(xhr.responseText);
             }
         });
 
-        window.location.replace(BASE_URL+"/profile/timeline");
+        // window.location.replace(BASE_URL+"/profile/timeline");
     }
     else{
         return false;

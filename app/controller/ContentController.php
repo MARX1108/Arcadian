@@ -4,15 +4,16 @@ include_once '../global.php';
 
 if(isset($_POST['delete_request']))
 {
-  
+
   PictureStory::deleteStory($_POST['storyID']); 
   $ev = new Event();
   $ev->event_type = Event::EVENT_TYPE['delete_story'];
   $ev->user_1_id = $_POST['userid'];
   $ev->story_1_id = $_POST['storyID'];
   $ev = Event::insertEvent($ev);
-
-  exit();
+  echo json_encode(
+    array("message" => "test call back")
+  );
 }
 
 $route = $_GET['route'];
