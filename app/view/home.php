@@ -78,7 +78,7 @@
         <p class = "h2">Quick Viewer</p> 
         <p>Category: <span id = 'category'>N/A</span> | 
         Tags: <span id = 'tags'>N/A</span> |
-        Main color: <span id = 'colors'>N/A (Hovering over picture for 2s to view quick info)</span>
+        Main color: <span id = 'colors'>N/A (Hovering over picture for 1s to view quick info)</span>
         </p>
     </div>
 

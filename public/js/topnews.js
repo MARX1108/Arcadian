@@ -24,7 +24,7 @@ $(document).ready(function() {
         timer = setTimeout(function(){
             
             processImage(link);
-        }, 1000);
+        }, 500);
     }).mouseleave(function() {
         clearTimeout(timer);
     });
