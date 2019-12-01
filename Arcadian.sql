@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 15, 2019 at 09:49 PM
+-- Generation Time: Dec 01, 2019 at 05:49 PM
 -- Server version: 5.6.45
 -- PHP Version: 7.0.33
 
@@ -104,7 +104,43 @@ INSERT INTO `event` (`id`, `event_type`, `user_1_id`, `user_2_id`, `story_1_id`,
 (63, 206, 7, NULL, NULL, NULL, NULL, NULL, '2019-11-15 19:00:44'),
 (64, 207, 7, NULL, NULL, NULL, NULL, NULL, '2019-11-15 19:00:44'),
 (69, 205, 39, NULL, NULL, NULL, NULL, NULL, '2019-11-15 21:34:42'),
-(70, 205, 40, NULL, NULL, NULL, NULL, NULL, '2019-11-15 21:36:26');
+(70, 205, 40, NULL, NULL, NULL, NULL, NULL, '2019-11-15 21:36:26'),
+(71, 206, 3, NULL, NULL, NULL, NULL, NULL, '2019-11-27 23:36:21'),
+(72, 207, 3, NULL, NULL, NULL, NULL, NULL, '2019-11-27 23:36:21'),
+(73, 201, 39, NULL, 94, NULL, NULL, NULL, '2019-11-29 10:29:52'),
+(74, 202, 39, NULL, 94, NULL, NULL, NULL, '2019-11-29 10:30:08'),
+(75, 202, 39, NULL, 94, NULL, NULL, NULL, '2019-11-29 10:30:13'),
+(76, 203, 39, NULL, 94, NULL, NULL, NULL, '2019-11-29 10:30:20'),
+(77, 202, 39, NULL, 94, NULL, NULL, NULL, '2019-11-29 10:30:27'),
+(78, 201, 17, NULL, 95, NULL, NULL, NULL, '2019-11-30 00:22:24'),
+(79, 202, 17, NULL, 95, NULL, NULL, NULL, '2019-11-30 00:22:32'),
+(80, 202, 17, NULL, 95, NULL, NULL, NULL, '2019-11-30 00:22:37'),
+(81, 202, 17, NULL, 95, NULL, NULL, NULL, '2019-11-30 00:22:46'),
+(82, 202, 17, NULL, 95, NULL, NULL, NULL, '2019-11-30 00:27:16'),
+(83, 202, 17, NULL, 95, NULL, NULL, NULL, '2019-11-30 00:27:26'),
+(84, 202, 17, NULL, 95, NULL, NULL, NULL, '2019-11-30 00:34:32'),
+(85, 202, 17, NULL, 95, NULL, NULL, NULL, '2019-11-30 00:36:10'),
+(86, 202, 17, NULL, 95, NULL, NULL, NULL, '2019-11-30 00:38:47'),
+(87, 202, 17, NULL, 95, NULL, NULL, NULL, '2019-11-30 00:38:59'),
+(88, 202, 17, NULL, 95, NULL, NULL, NULL, '2019-11-30 00:39:16'),
+(89, 202, 17, NULL, 95, NULL, NULL, NULL, '2019-11-30 00:40:19'),
+(90, 201, 17, NULL, 96, NULL, NULL, NULL, '2019-11-30 00:45:06'),
+(91, 201, 17, NULL, 97, NULL, NULL, NULL, '2019-11-30 00:45:13'),
+(92, 202, 17, NULL, 97, NULL, NULL, NULL, '2019-11-30 00:45:20'),
+(93, 202, 17, NULL, 96, NULL, NULL, NULL, '2019-11-30 00:45:32'),
+(94, 201, 17, NULL, 98, NULL, NULL, NULL, '2019-11-30 00:46:31'),
+(95, 201, 17, NULL, 99, NULL, NULL, NULL, '2019-11-30 00:46:35'),
+(96, 201, 17, NULL, 100, NULL, NULL, NULL, '2019-11-30 00:46:39'),
+(97, 202, 17, NULL, 100, NULL, NULL, NULL, '2019-11-30 00:47:04'),
+(98, 202, 17, NULL, 100, NULL, NULL, NULL, '2019-11-30 00:48:37'),
+(99, 202, 17, NULL, 100, NULL, NULL, NULL, '2019-11-30 00:49:16'),
+(100, 202, 17, NULL, 99, NULL, NULL, NULL, '2019-11-30 00:50:40'),
+(101, 201, 17, NULL, 101, NULL, NULL, NULL, '2019-11-30 00:51:19'),
+(102, 202, 17, NULL, 101, NULL, NULL, NULL, '2019-11-30 00:51:27'),
+(103, 201, 17, NULL, 102, NULL, NULL, NULL, '2019-11-30 00:51:40'),
+(104, 202, 17, NULL, 102, NULL, NULL, NULL, '2019-11-30 00:51:51'),
+(105, 202, 39, NULL, 94, NULL, NULL, NULL, '2019-12-01 15:15:15'),
+(106, 202, 17, NULL, 98, NULL, NULL, NULL, '2019-12-01 17:36:16');
 
 -- --------------------------------------------------------
 
@@ -177,7 +213,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `username`, `password`, `role`, `date_registered`, `firstname`, `lastname`, `email`, `class_standing`) VALUES
 (1, 'Zahidul', 'Zahidul', 0, '2019-11-10 22:16:28', 'Zahidul', 'T', 'zahidul@vt.edu', 0),
-(3, 'Semas2', 'Semas', 0, '2019-11-20 22:31:25', 'Semas', 'Stackhouse', 'semas@vt.edu', 2),
+(3, 'Semas', 'Semas', 1, '2019-11-20 22:31:25', 'Semas', 'Stackhouse', 'semas@vt.edu', 2),
 (4, 'Dalibor', 'Dalibor', 0, '2019-11-05 22:17:56', 'Dalibor', 'Hajdinjak', 'dalibor99@vt.edu', 1),
 (5, 'MdRasel', 'MdRasel', 1, '2019-11-13 15:17:56', 'Md', 'Rasel', 'rasel@vt.edu', 3),
 (6, 'Mr.Jarvis', 'Mr.Jarvis', 1, '2019-11-14 15:30:29', 'Jarvis', 'Stark', 'stark@vt.edu', 4),
@@ -228,13 +264,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- AUTO_INCREMENT for table `news_list`
 --
 ALTER TABLE `news_list`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=103;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -250,16 +286,15 @@ ALTER TABLE `user`
 -- Constraints for table `event`
 --
 ALTER TABLE `event`
-  ADD CONSTRAINT `event_ibfk_1` FOREIGN KEY (`user_1_id`) REFERENCES `user` (`id`),
-  ADD CONSTRAINT `event_ibfk_2` FOREIGN KEY (`user_2_id`) REFERENCES `user` (`id`),
-  ADD CONSTRAINT `event_ibfk_3` FOREIGN KEY (`story_1_id`) REFERENCES `news_list` (`id`),
-  ADD CONSTRAINT `event_ibfk_4` FOREIGN KEY (`story_2_id`) REFERENCES `news_list` (`id`);
+  ADD CONSTRAINT `event_ibfk_1` FOREIGN KEY (`user_1_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `event_ibfk_2` FOREIGN KEY (`user_2_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `event_ibfk_4` FOREIGN KEY (`story_2_id`) REFERENCES `news_list` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `news_list`
 --
 ALTER TABLE `news_list`
-  ADD CONSTRAINT `news_list_ibfk_1` FOREIGN KEY (`creator_id`) REFERENCES `user` (`id`);
+  ADD CONSTRAINT `news_list_ibfk_1` FOREIGN KEY (`creator_id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
