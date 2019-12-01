@@ -18,12 +18,22 @@ $(document).ready(function() {
         // $('#textbox1').val(this.checked);        
     });
 
-    $('.pic_story').hover(function() {
-        // alert(this.id);
-        // alert($(this).find('img').attr('src'));
-        var link = $(this).find('img').attr('src');
-        processImage(link);
-     });
+    var timer;
+    $(".pic_story").mouseenter(function() {
+        var that = this;
+        timer = setTimeout(function(){
+            processImage(link);
+        }, 1000);
+    }).mouseleave(function() {
+        clearTimeout(timer);
+    });
+
+    // $('.pic_story').hover(function() {
+    //     // alert(this.id);
+    //     // alert($(this).find('img').attr('src'));
+    //     var link = $(this).find('img').attr('src');
+    //     processImage(link);
+    //  });
 });
 
 function reorder(order)
@@ -180,3 +190,4 @@ function processImage(sourceImageUrl) {
 
 
 }
+
