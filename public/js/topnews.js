@@ -177,11 +177,11 @@ function processImage(sourceImageUrl) {
             // alert("test");
             // console.log(JSON.stringify(data, null, 2));
             // var json = JSON.stringify(data, null, 2);
-            alert("#tags"+data.categories[0].name);
-            $("#tags").replaceWith(data.categories[0].name);
-            $("#category").replaceWith(data.description.tags);
-            $("#colors").replaceWith(data.color.accentColor);
             
+            $("#tags").html(data.categories[0].name);
+            $("#category").html(data.description.tags);
+            $("#colors").html(data.color.accentColor);
+            alert("#tags"+data.categories[0].name);
             // $("#responseTextArea").val(JSON.stringify(data, null, 2));
         },
         error: function (xhr, status, error) {
