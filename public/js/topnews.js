@@ -20,8 +20,9 @@ $(document).ready(function() {
 
     var timer;
     $(".pic_story").mouseenter(function() {
-        var that = this;
+        // var that = this;
         timer = setTimeout(function(){
+            var link = $(this).find('img').attr('src');
             processImage(link);
         }, 1000);
     }).mouseleave(function() {
