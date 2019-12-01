@@ -177,9 +177,22 @@ function processImage(sourceImageUrl) {
             // alert("test");
             // console.log(JSON.stringify(data, null, 2));
             // var json = JSON.stringify(data, null, 2);
-            
-            $("#tags").html("#"+ data.description.tags[0]
-             + ", #" + data.description.tags[1] + ", #" + data.description.tags[2] );
+            var tag_0 = data.description.tags[0];
+            var tag_1 = data.description.tags[1];
+            var tag_2 = data.description.tags[2];
+
+            if (typeof tag_0 === "undefined") {
+                tag_0 = "Unknown";
+            }
+            if (typeof tag_1 === "undefined") {
+                tag_1 = "Unknown";
+            }
+            if (typeof tag_2 === "undefined") {
+                tag_2 = "Unknown";
+            }
+
+            $("#tags").html("#"+ tag_0
+             + ", #" + tag_1 + ", #" + tag_2 );
             // console.log(data.categories[0].name);
             $("#category").html(data.categories[0].name);
             $("#colors").html(data.color.accentColor);
