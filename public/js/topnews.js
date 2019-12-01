@@ -179,9 +179,10 @@ function processImage(sourceImageUrl) {
             // var json = JSON.stringify(data, null, 2);
             
             $("#tags").html(data.categories[0].name);
+            console.log(data.categories[0].name);
             $("#category").html(data.description.tags);
             $("#colors").html(data.color.accentColor);
-            alert("#tags"+data.categories[0].name);
+            // alert("#tags"+data.categories[0].name);
             // $("#responseTextArea").val(JSON.stringify(data, null, 2));
         },
         error: function (xhr, status, error) {
