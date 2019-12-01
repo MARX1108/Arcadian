@@ -75,10 +75,10 @@
     <div class="main">
 
     <div class = "container p-4 card">
-        <p class = "h2">Quick Selector</p> 
+        <p class = "h2">Quick Viewer</p> 
         <p>Category: <span id = 'category'>N/A</span> 
         Tags: <span id = 'tags'>N/A</span>
-        Main color: <span id = 'colors'>N/A</span>
+        Main color: <span id = 'colors'>N/A (Hovering over picture for 2s to view quick info)</span>
         </p>
     </div>
 

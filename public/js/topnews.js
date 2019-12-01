@@ -178,7 +178,8 @@ function processImage(sourceImageUrl) {
             // console.log(JSON.stringify(data, null, 2));
             // var json = JSON.stringify(data, null, 2);
             
-            $("#tags").html(data.description.tags[0] + "," + data.description.tags[1] + ", " + data.description.tags[2] );
+            $("#tags").html("#"+ data.description.tags[0]
+             + ", #" + data.description.tags[1] + ", #" + data.description.tags[2] );
             // console.log(data.categories[0].name);
             $("#category").html(data.categories[0].name);
             $("#colors").html(data.color.accentColor);
