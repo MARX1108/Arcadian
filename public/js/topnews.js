@@ -20,9 +20,9 @@ $(document).ready(function() {
 
     var timer;
     $(".pic_story").mouseenter(function() {
-        // var that = this;
+        var link = $(this).find('img').attr('src');
         timer = setTimeout(function(){
-            var link = $(this).find('img').attr('src');
+            
             processImage(link);
         }, 1000);
     }).mouseleave(function() {
@@ -177,7 +177,7 @@ function processImage(sourceImageUrl) {
             // alert("test");
             // console.log(JSON.stringify(data, null, 2));
             // var json = JSON.stringify(data, null, 2);
-
+            alert("#tags"+data.categories[0].name);
             $("#tags").replaceWith(data.categories[0].name);
             $("#category").replaceWith(data.description.tags);
             $("#colors").replaceWith(data.color.accentColor);
