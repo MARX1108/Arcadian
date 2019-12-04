@@ -71,6 +71,9 @@ elseif($route == 'event_order')
 {
   $nc->event_order();
 }
+elseif ($route == 'post_on_plugin') {
+  $nc->post_on_plugin();
+}
 
 
 
@@ -393,6 +396,42 @@ class ContentController {
 
   }
 
+  public function post_on_plugin()
+  {
+    $title = $_POST['title'];
+    $url = $_POST['url'];
+    $img_url = $_POST['img_url'];
+    $description = $_POST['description'];
+    $tags = $_POST['tags'];
+    $creator_id = $POST['userid'];
+    $story = new PictureStory();
+
+
+    $story-> title = $title;
+    $story-> url = $url;
+    $story-> img_url = $img_url;
+
+    $story-> description = $description;
+    $story-> creator_id = $creator_id;
+    
+    if($tags == "") $tags = "#This-is-no-tag tag";
+    $story-> tags = $tags;
+
+    $story->author = $_SESSION['username'];
+    $story = PictureStory::insertStory($story);
+
+    // log the event
+    $ev = new Event();
+    $ev->event_type = Event::EVENT_TYPE['add_story'];
+    $ev->user_1_id = $story->creator_id;
+    $ev->story_1_id = $story->id;
+    $ev = Event::insertEvent($ev);
+    // echo $ev;
+    $url = "'.BASE_URL.'/detail/'.$story->id";
+    array("content" => 'post success', "url" => $url);
+    // header('Location: '.BASE_URL.'/detail/'.$story->id); exit();
+
+  }
   public function save_editing_process()
   {
     $storyID = $_GET['storyID'];

@@ -64,7 +64,7 @@ class SiteController {
     } elseif($user->password != $password) {
       echo json_encode(array("content" => 'Login failed. Your password is incorrect.', "username" => 'none'));
     } else {
-      echo json_encode(array("content" => 'Login successful!'. $user->username, "username" => $user->username, "userid" => $user->id));
+      echo json_encode(array("content" => 'Login successful! '. $user->username, "username" => $user->username, "userid" => $user->id));
       // $_SESSION['username'] = $user->username;
       // $_SESSION['loggedInUserID'] = $user->id;
       // $_SESSION['loggedInUserRole'] = $user->role;
