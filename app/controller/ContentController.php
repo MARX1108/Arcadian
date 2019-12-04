@@ -398,7 +398,7 @@ class ContentController {
 
   public function post_on_plugin()
   {
-    $description = $POST['post'];
+    $description = $POST['description_2'];
     $title = $_POST['title'];
     $url = $_POST['url'];
     $img_url = $_POST['img_url'];
