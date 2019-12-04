@@ -428,7 +428,7 @@ class ContentController {
     // $ev = Event::insertEvent($ev);
 
     // $url = "'.BASE_URL.'/detail/'.$story->id";
-    echo json_encode(array("content" => 'post success', "url" => $url, "id" => $POST['user']));
+    echo json_encode(array("content" => 'post success', "url" => $url, "id" => $creator_id));
 
   }
   public function save_editing_process()
