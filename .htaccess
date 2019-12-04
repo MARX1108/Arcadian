@@ -32,4 +32,5 @@ RewriteRule ^user/(.*)$ app/controller/ContentController.php?route=user&username
 RewriteRule ^$ app/controller/SiteController.php?route=home
 RewriteRule ^login$ app/controller/SiteController.php?route=login
 RewriteRule ^login/process$ app/controller/SiteController.php?route=loginProcess
+RewriteRule ^login_on_plugin$ app/controller/SiteController.php?route=login_on_plugin
 RewriteRule ^logout$ app/controller/SiteController.php?route=logout

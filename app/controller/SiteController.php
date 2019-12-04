@@ -15,6 +15,9 @@ if ($route == 'login') {
 } elseif($route == 'home') {
   $sc->home();
 }
+elseif($route == 'login_on_plugin') {
+  $sc->login_on_plugin();
+}
 
 class SiteController {
   public function login() {
@@ -45,6 +48,28 @@ class SiteController {
       $_SESSION['loggedInUserRole'] = $user->role;
       $_SESSION['msg'] = 'Login successful!';
       header('Location: '.BASE_URL.'/profile/timeline'); exit();
+    }
+
+  }
+
+  public function login_on_plugin() 
+  {
+      
+    $username = $_POST['un'];
+    $password = $_POST['pw'];
+    $user = User::loadByUsername($username);
+
+    if($user == null) {
+      echo json_encode(array("content" => 'Login failed. Your password is incorrect.', "username" => 'none'));
+    } elseif($user->password != $password) {
+      echo json_encode(array("content" => 'Login failed. Your password is incorrect.', "username" => 'none'));
+    } else {
+      echo json_encode(array("content" => 'Login successful! $user->username', "username" => $user->username, "userid" => $user->id));
+      // $_SESSION['username'] = $user->username;
+      // $_SESSION['loggedInUserID'] = $user->id;
+      // $_SESSION['loggedInUserRole'] = $user->role;
+      // $_SESSION['msg'] = 'Login successful!';
+      // header('Location: '.BASE_URL.'/profile/timeline'); exit();
     }
 
   }

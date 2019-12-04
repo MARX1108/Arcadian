@@ -43,6 +43,7 @@ function reorder(order)
         url: base_url+'/app/controller/ContentController.php?route=event_order',
         data: {
             order: order
+            
         },
         method: 'get',
         dataType: 'json',
