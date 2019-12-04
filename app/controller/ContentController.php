@@ -398,7 +398,7 @@ class ContentController {
 
   public function post_on_plugin()
   {
-    $description = $POST['description_2'];
+    $description = $_POST['description_2'];
     $title = $_POST['title'];
     $url = $_POST['url'];
     $img_url = $_POST['img_url'];
@@ -407,27 +407,27 @@ class ContentController {
     $story = new PictureStory();
 
 
-    // $story-> title = $title;
-    // $story-> url = $url;
-    // $story-> img_url = $img_url;
+    $story-> title = $title;
+    $story-> url = $url;
+    $story-> img_url = $img_url;
 
-    // $story-> description = $description;
-    // $story-> creator_id = $creator_id;
+    $story-> description = $description;
+    $story-> creator_id = $creator_id;
     
-    // if($tags == "") $tags = "#This-is-no-tag tag";
-    // $story-> tags = $tags;
+    if($tags == "") $tags = "#This-is-no-tag tag";
+    $story-> tags = $tags;
 
-    // $story->author = $POST['username'];
-    // $story = PictureStory::insertStory($story);
+    $story->author = $POST['username'];
+    $story = PictureStory::insertStory($story);
 
-    // // log the event
-    // $ev = new Event();
-    // $ev->event_type = Event::EVENT_TYPE['add_story'];
-    // $ev->user_1_id = $story->creator_id;
-    // $ev->story_1_id = $story->id;
-    // $ev = Event::insertEvent($ev);
+    // log the event
+    $ev = new Event();
+    $ev->event_type = Event::EVENT_TYPE['add_story'];
+    $ev->user_1_id = $story->creator_id;
+    $ev->story_1_id = $story->id;
+    $ev = Event::insertEvent($ev);
 
-    // $url = "'.BASE_URL.'/detail/'.$story->id";
+    $url = "'.BASE_URL.'/detail/'.$story->id";
     echo json_encode(array("content" => 'post success', "url" => $url, "id" => $creator_id, "description" => $description));
 
   }
