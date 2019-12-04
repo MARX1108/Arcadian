@@ -398,12 +398,12 @@ class ContentController {
 
   public function post_on_plugin()
   {
+    $creator_id = $POST['post_id'];
     $title = $_POST['title'];
     $url = $_POST['url'];
     $img_url = $_POST['img_url'];
     $description = $_POST['description'];
     $tags = $_POST['tags'];
-    $creator_id = $POST['user'];
     $story = new PictureStory();
 
 
