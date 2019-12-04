@@ -418,18 +418,17 @@ class ContentController {
     $story-> tags = $tags;
 
     $story->author = $POST['username'];
-    $story = PictureStory::insertStory($story);
+    // $story = PictureStory::insertStory($story);
 
-    // log the event
-    $ev = new Event();
-    $ev->event_type = Event::EVENT_TYPE['add_story'];
-    $ev->user_1_id = $story->creator_id;
-    $ev->story_1_id = $story->id;
-    $ev = Event::insertEvent($ev);
+    // // log the event
+    // $ev = new Event();
+    // $ev->event_type = Event::EVENT_TYPE['add_story'];
+    // $ev->user_1_id = $story->creator_id;
+    // $ev->story_1_id = $story->id;
+    // $ev = Event::insertEvent($ev);
 
     $url = "'.BASE_URL.'/detail/'.$story->id";
     array("content" => 'post success', "url" => $url, "id" => $POST['userid']);
-    // header('Location: '.BASE_URL.'/detail/'.$story->id); exit();
 
   }
   public function save_editing_process()
