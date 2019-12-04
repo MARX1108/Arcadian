@@ -404,7 +404,7 @@ class ContentController {
     $description = $_POST['description'];
     $tags = $_POST['tags'];
     $creator_id = $POST['userid'];
-    // $story = new PictureStory();
+    $story = new PictureStory();
 
 
     // $story-> title = $title;
@@ -428,7 +428,7 @@ class ContentController {
     // $ev = Event::insertEvent($ev);
 
     // $url = "'.BASE_URL.'/detail/'.$story->id";
-    array("content" => 'post success', "url" => $url, "id" => $POST['userid']);
+    echo json_encode(array("content" => 'post success', "url" => $url, "id" => $POST['userid']));
 
   }
   public function save_editing_process()
