@@ -418,7 +418,7 @@ class ContentController {
     $story-> tags = $tags;
 
     $story->author = $POST['username'];
-    $story = PictureStory::insertStory($story);
+    // $story = PictureStory::insertStory($story);
 
     // log the event
     $ev = new Event();
