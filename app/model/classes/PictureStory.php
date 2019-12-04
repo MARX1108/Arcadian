@@ -95,6 +95,7 @@ class PictureStory {
 
           $result = $GLOBALS['conn']->query($query);
           // echo("Error description: " . mysqli_error($con));
+          echo($story->creator_id); 
           echo($query); 
           if($result) {
             $storyID = $GLOBALS['conn']->insert_id;
