@@ -404,20 +404,20 @@ class ContentController {
     $description = $_POST['description'];
     $tags = $_POST['tags'];
     $creator_id = $POST['userid'];
-    $story = new PictureStory();
+    // $story = new PictureStory();
 
 
-    $story-> title = $title;
-    $story-> url = $url;
-    $story-> img_url = $img_url;
+    // $story-> title = $title;
+    // $story-> url = $url;
+    // $story-> img_url = $img_url;
 
-    $story-> description = $description;
-    $story-> creator_id = $creator_id;
+    // $story-> description = $description;
+    // $story-> creator_id = $creator_id;
     
-    if($tags == "") $tags = "#This-is-no-tag tag";
-    $story-> tags = $tags;
+    // if($tags == "") $tags = "#This-is-no-tag tag";
+    // $story-> tags = $tags;
 
-    $story->author = $POST['username'];
+    // $story->author = $POST['username'];
     // $story = PictureStory::insertStory($story);
 
     // // log the event
@@ -427,7 +427,7 @@ class ContentController {
     // $ev->story_1_id = $story->id;
     // $ev = Event::insertEvent($ev);
 
-    $url = "'.BASE_URL.'/detail/'.$story->id";
+    // $url = "'.BASE_URL.'/detail/'.$story->id";
     array("content" => 'post success', "url" => $url, "id" => $POST['userid']);
 
   }
