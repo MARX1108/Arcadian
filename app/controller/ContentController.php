@@ -417,7 +417,7 @@ class ContentController {
     if($tags == "") $tags = "#This-is-no-tag tag";
     $story-> tags = $tags;
 
-    $story->author = $_SESSION['username'];
+    $story->author = $POST['username'];
     $story = PictureStory::insertStory($story);
 
     // log the event
@@ -428,7 +428,7 @@ class ContentController {
     $ev = Event::insertEvent($ev);
     // echo $ev;
     $url = "'.BASE_URL.'/detail/'.$story->id";
-    array("content" => 'post success', "url" => $url);
+    array("content" => 'post success', "url" => $url, "id" => $POST['userid']);
     // header('Location: '.BASE_URL.'/detail/'.$story->id); exit();
 
   }
