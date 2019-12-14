@@ -9,10 +9,10 @@
     <title>Arcadian</title>
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/global.css" />
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/css/<?=$stylesheet?>" />
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
     <script src="<?= BASE_URL ?>/public/js/jquery.js"></script>
     <script src="<?= BASE_URL ?>/public/js/topnews.js"></script>
-    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 
     <!-- Credit to Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
