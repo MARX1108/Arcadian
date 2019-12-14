@@ -1,13 +1,15 @@
 <?php if(isset($_SESSION['username'])): ?>
 
 <div class="main">
-    <?=$notification?>
-    <?php foreach($users as $user): ?>
     <div class="row  p-4 mx-1 mt-1">
         <div id="mainBubble" style="height: 760px;">
             <svg class="mainBubbleSVG" width="1085.28" height="760"></svg>
         </div>
     </div>
+
+    <?=$notification?>
+    <?php foreach($users as $user): ?>
+    
     <form id="post" method="POST" action="<?= BASE_URL ?>/admin/admin_confirm_change/<?= $user->id?>">
         <div class="row  p-4 mx-1 mt-1">
             <div class="card col-2  p-4 mx-2 ">
