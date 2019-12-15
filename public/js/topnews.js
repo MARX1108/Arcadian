@@ -7,15 +7,12 @@ $(document).ready(function() {
         if(this.checked) {
             confirm("Ordered by Event?");
             reorder("event");
-            // alert(base_url);
-            // $(this).prop("checked", returnVal);
         }
         else
         {
             confirm("Ordered by Time?");
             reorder("");
         }
-        // $('#textbox1').val(this.checked);        
     });
 
     var timer;
@@ -29,7 +26,9 @@ $(document).ready(function() {
         clearTimeout(timer);
     });
 
-});
+
+
+
 // data visualization
 var w = window.innerWidth * 0.68 * 0.95;
 var h = Math.ceil(w * 0.7);
@@ -417,6 +416,8 @@ function activateBubble(d, i) {
 
 window.onresize = resetBubbles;
 // 
+
+});
 function reorder(order)
 {
     $.ajax({

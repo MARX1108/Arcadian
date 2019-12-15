@@ -1,10 +1,9 @@
 <?php if(isset($_SESSION['username'])): ?>
 
 <div class="main">
-    <div class="row  p-4 mx-1 mt-1">
-        <div id="mainBubble" style="height: 760px;">
-            <svg class="mainBubbleSVG" width="1085.28" height="760"></svg>
-        </div>
+    <div id="mainBubble" style="height: 760px;">
+            
+        <svg class="mainBubbleSVG" width="1085.28" height="760"></svg>
     </div>
 
     <?=$notification?>
