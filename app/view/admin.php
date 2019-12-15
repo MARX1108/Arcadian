@@ -4,7 +4,54 @@
     <div class = "container card" id="mainBubble" >
         <!-- <svg class="mainBubbleSVG"></svg> -->
     </div>
+    <div class = "container card" id = "quickAction">
+        <div class="row  p-2 mx-1 mt-1">
+            <div class="col-1  p-4 mx0">
+                ID
+                <input id="id" name="id" type="text" placeholder="<?=$user->id?>" class="form-control mt-1"
+                    disabled>
+            </div>
+            <div class=" col-2 p-4 mx-1">
+                Username:
+                <input id="username" name="username" type="text" placeholder="<?=$user->username?>" class="form-control mt-1"
+                    required>
+            </div>
+            <div class=" col-2 p-4 mx-1">
+                First Name:
+                <input id="firstname" name="username" type="text" placeholder="<?=$user->username?>" class="form-control mt-1"
+                    required>
+            </div>
 
+            <div class=" col-2 p-4 mx-1">
+                Last Name:
+                <input id="lastname" name="username" type="text" placeholder="<?=$user->username?>" class="form-control mt-1"
+                    required>
+            </div>
+
+            <div class=" col-2 p-4 mx-1">
+                Role:
+                <select class='form-control mt-1' id = 'role_select' name='role' required>
+                    <option disabled></option>
+                    <option id = "regular_user" >0 - regular user</option>
+                    <option id = "site_user">1 - site admin</option>
+                </select>
+            </div>
+
+            <div class=" col-2 p-4 mx-2">
+                Date Registered:
+                <input id="date" name="username" type="text" placeholder="<?=$user->date_registered?>"
+                    class="form-control mt-1" disabled>
+            </div>
+            <div class=" col-10 p-4 mx-4 ">
+                Quick Action
+                <button id="save" class="btn btn-primary mt-1 mx-4">Save Current Changes</button>
+                <button id="delete" class="btn btn-primary mt-1 mx-4">Delete Current User</button>
+                <button id="create"  class="btn btn-primary mt-1 mx-4">Create a New User</button>
+            </div>
+            </div>
+        <!-- <svg class="mainBubbleSVG"></svg> -->
+    </div>
+    
     <?=$notification?>
     <?php foreach($users as $user): ?>
     
@@ -32,7 +79,7 @@
             </div>
             <div class="card col-3 p-4 mx-2">
                 Date Registered:
-                <input id="title" name="username" type="text" placeholder="<?=$user->date_registered?>"
+                <input name="username" type="text" placeholder="<?=$user->date_registered?>"
                     class="form-control mt-1" disabled>
             </div>
             <div class="card col-2 p-4 mx-2">

@@ -15,6 +15,7 @@ class PictureStory {
     public $creator_id;
     const DB_TABLE = "news_list";
 
+    // load all stories
     public static function loadAllStories()
     {
         $stories = array();
@@ -33,6 +34,7 @@ class PictureStory {
         return $stories;
     }
 
+    // load story by id
     public static function loadByID($storyID) {
         $query = sprintf("SELECT * FROM %s WHERE id = %d",
             self::DB_TABLE,

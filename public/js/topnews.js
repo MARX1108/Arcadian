@@ -41,6 +41,7 @@ $(document).ready(function() {
 
     // data visualization
     // define svg
+    // source http://sunsp.net/demo/BubbleMenu/
     svgContainer = d3.select("#mainBubble")
     .style("height", h + "px");
 
@@ -61,7 +62,7 @@ $(document).ready(function() {
     .attr("alignment-baseline", "middle")
     .style("fill", "#888888")
     .text(function (d) {
-        return "click bubbles to view/edit/delete users";
+        return "Hovering on bubbles to view/edit/delete users";
     });
     fetch_bubble();
     //create bubbles
@@ -80,7 +81,7 @@ $(document).ready(function() {
         svg.attr("height", h);
 
         d3.select("#bubbleItemNote").text(
-            "click bubbles to view/edit/delete users"
+            "Hovering on bubbles to view/edit/delete users"
         );
 
         var t = svg.transition()
@@ -129,10 +130,151 @@ $(document).ready(function() {
     }
     window.onresize = resetBubbles;
 // end of data visualization
+    save_bubble();
+    create_bubble();
+    delete_bubble();
+
 
 });
-//TODO: 
-// 
+
+
+//check if any of the input field is empty
+function check_empty_field()
+{
+
+        if( !$("#username").val() ) {
+            $("#username").parent('div').addClass('alert-danger');
+            return false;
+        }
+
+        if( !$("#firstname").val() ) {
+            $("#firstname").parent('div').addClass('alert-danger');
+            return false;
+        }
+
+        if( !$("#lastname").val() ) {
+            $("#lastname").parent('div').addClass('alert-danger');
+            return false;
+        }
+
+    return true;
+}
+
+//edit and save users to database using bubble
+function save_bubble()
+{
+    $("#save").on("click", function(){
+
+        if(check_empty_field())
+        {
+            // alert($("#role_select").val());
+            $.ajax({
+                url: base_url+'/app/controller/ContentController.php?route=change_bubble',
+                data: {
+                    mode: 'save',
+                    user_ID: $("#id").val(),
+                    username: $("#username").val(),
+                    firstname: $("#firstname").val(),
+                    lastname: $("#lastname").val(),
+                    role: $("#role_select").val()
+                },
+                method: 'post',
+                dataType: 'json',
+                success: function(output){
+                    // alert(output.id);
+                    $('div').removeClass('alert-danger');
+                    $(".mainBubbleSVG g").remove();
+                    fetch_bubble();
+                    alert("Your changes are saved successfully !")
+                    // alert(output.children[0].children.name);
+                    // $("#event_home").replaceWith(output.event);
+                },
+                error: function (xhr, status, error) {
+                    alert("error: "+xhr.responseText);
+                }
+            });
+
+            
+            // alert("ready to save");
+        }
+        
+        
+    });
+}
+
+//create new users using bubble
+function create_bubble()
+{
+    $("#create").on("click", function(){
+        if($("#id").val())
+        {
+            alert("user already exists !");
+        }
+        else if(check_empty_field())
+        {
+            $.ajax({
+                url: base_url+'/app/controller/ContentController.php?route=change_bubble',
+                data: {
+                    mode: 'create',
+                    username: $("#username").val(),
+                    password: $("#username").val(),
+                    firstname: $("#firstname").val(),
+                    lastname: $("#lastname").val(),
+                    role: $("#role_select").val()
+                },
+                method: 'post',
+                dataType: 'json',
+                success: function(output){
+                    // alert(output.id);
+                    $('div').removeClass('alert-danger');
+                    $(".mainBubbleSVG g").remove();
+                    fetch_bubble();
+                    alert("New user created ! Default password is the same as username")
+                },
+                error: function (xhr, status, error) {
+                    alert("error: "+xhr.responseText);
+                }
+            });
+        }
+    });
+}
+
+
+//delete users using bubble
+function delete_bubble()
+{
+    $("#delete").on("click", function(){
+        if (confirm('Are you sure you want to delete this user ?')) {
+            $.ajax({
+                url: base_url+'/app/controller/ContentController.php?route=change_bubble',
+                data: {
+                    mode: 'delete',
+                    user_ID: $("#id").val(),
+                    username: $("#username").val(),
+                    firstname: $("#firstname").val(),
+                    lastname: $("#lastname").val(),
+                    role: $("#role_select").val()
+                },
+                method: 'post',
+                dataType: 'json',
+                success: function(output){
+                    // alert(output.id);
+                    $(".mainBubbleSVG g").remove();
+                    fetch_bubble();
+                    alert("Deleted successfully !")
+                   
+                },
+                error: function (xhr, status, error) {
+                    alert("error: "+xhr.responseText);
+                }
+            });
+        } else {
+            alert('Why did you press cancel? You should have confirmed');
+        }
+    });
+}
+
+// fetch data from the database and populate the bubble
 function fetch_bubble()
 {
     $.ajax({
@@ -143,7 +285,7 @@ function fetch_bubble()
         dataType: 'json',
         success: function(output){
             // alert(output.name);
-            alert(output.children[0].children.name);
+            // alert(output.children[0].children.name);
             bubble(output);
             // $("#event_home").replaceWith(output.event);
         },
@@ -153,7 +295,8 @@ function fetch_bubble()
     });
 }
 
-
+//source http://sunsp.net/demo/BubbleMenu/
+// d3.js library
 function bubble(root)
 {
     bubbleObj = svg.selectAll(".topBubble")
@@ -189,8 +332,39 @@ function bubble(root)
         }) // #1f77b4
         .style("opacity", 0.3)
         .on("mouseover", function (d, i) {
+            // var noteText = "";
+            // if (d.info == null || d.info == "") {
+            //     noteText = "d.address";
+            // } else {
+            //     noteText = d.info;
+            // }
+            // d3.select("#bubbleItemNote").text(noteText);
+
+            $('#id').val(d.info.ID);
+            $('#username').val( d.info.Username);
+            $('#firstname').val(d.info.Firstname);
+            
+            if(d.info.Role === '1')
+            {
+
+                $('#site_user').prop('selected', 'selected').change();
+                $('#regular_user').removeAttr("selected");      
+
+            }
+            else
+            {
+                $('#regular_user').prop('selected', 'selected').change();
+                $('#site_user').removeAttr("selected");      
+                // alert(d.info.Role);
+            }
+
+            $('#lastname').val(d.info.LastName);
+            $('#date').attr("placeholder", d.info.Date);
+
+
             return activateBubble(d, i);
-        });
+        })
+        ;
 
 
     bubbleObj.append("text")
@@ -212,76 +386,10 @@ function bubble(root)
         .on("mouseover", function (d, i) {
             return activateBubble(d, i);
         });
-
-
-    for (var iB = 0; iB < nTop; iB++) {
-        var childBubbles = svg.selectAll(".childBubble" + iB)
-            .data(root.children[iB].children)
-            .enter().append("g");
-        childBubbles.append("circle")
-            .attr("class", "childBubble" + iB)
-            .attr("id", function (d, i) {
-                return "childBubble_" + iB + "sub_" + i;
-            })
-            .attr("r", function (d) {
-                return oR / 3.0;
-            })
-            .attr("cx", function (d, i) {
-                return (oR * (3 * (iB + 1) - 1) + oR * 1.5 * Math.cos((i - 1) * 45 / 180 * 3.1415926));
-            })
-            .attr("cy", function (d, i) {
-                return ((h + oR) / 3 + oR * 1.5 * Math.sin((i - 1) * 45 / 180 * 3.1415926));
-            })
-            .attr("font-size", 3)
-            .attr("cursor", "pointer")
-            .style("opacity", 0.5)
-            .style("fill", "#eee")
-            .on("click", function (d, i) {
-                window.open(d.address);
-            })
-            .on("mouseover", function (d, i) {
-                //window.alert("say something");
-                var noteText = "";
-                if (d.note == null || d.note == "") {
-                    noteText = d.address;
-                } else {
-                    noteText = d.note;
-                }
-                d3.select("#bubbleItemNote").text(noteText);
-            })
-            .append("svg:title")
-            .text(function (d) {
-                return d.address;
-            });
-
-        childBubbles.append("text")
-            .attr("class", "childBubbleText" + iB)
-            .attr("x", function (d, i) {
-                return (oR * (3 * (iB + 1) - 1) + oR * 1.5 * Math.cos((i - 1) * 45 / 180 * 3.1415926));
-            })
-            .attr("y", function (d, i) {
-                return ((h + oR) / 3 + oR * 1.5 * Math.sin((i - 1) * 45 / 180 * 3.1415926));
-            })
-            .style("opacity", 0.5)
-            .attr("text-anchor", "middle")
-            .style("fill", function (d, i) {
-                return colVals(iB);
-            }) // #1f77b4
-            .attr("font-size", 3)
-            .attr("cursor", "pointer")
-            .attr("dominant-baseline", "middle")
-            .attr("alignment-baseline", "middle")
-            .text(function (d) {
-                return d.name
-            })
-            .on("click", function (d, i) {
-                window.open(d.address);
-            });
-
-    }
 }
 
-
+//source http://sunsp.net/demo/BubbleMenu/
+// from d3.js library
 function activateBubble(d, i) {
     // increase this bubble and decrease others
     var t = svg.transition()
@@ -369,7 +477,7 @@ function activateBubble(d, i) {
     }
 }
 
-
+// reorder the event list without refresh
 function reorder(order)
 {
     $.ajax({
@@ -388,7 +496,7 @@ function reorder(order)
     });
 }
 
-
+// delete a news story
 function delete_(id, BASE_URL, userid){
     // alert("test");
 
@@ -423,10 +531,12 @@ function delete_(id, BASE_URL, userid){
     }
 }
 
+//resize the home page element
 $(window).resize(function() {
       checkSize();
 });
 
+// check the home page element
 function checkSize(){
     console.log($(document).width());
     if ($(document).width() <= 800){
@@ -457,7 +567,7 @@ function checkSize(){
 
 
 
-
+// machine learning api
 function processImage(sourceImageUrl) {
     // **********************************************
     // *** Update or verify the following values. ***

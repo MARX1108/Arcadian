@@ -78,10 +78,17 @@ elseif($route == 'user_bubble')
 {
   $nc->user_bubble();
 }
+elseif($route == 'change_bubble')
+{
+  $nc->change_bubble();
+}
+
+
 
 
 
 class ContentController {
+  // build and load admin page
   public function admin($notification) {
 
     $stories = PictureStory::loadAllStories();
@@ -110,7 +117,7 @@ class ContentController {
     include_once SYSTEM_PATH.'/view/admin.php';
     include_once SYSTEM_PATH.'/view/footer.php';
   }
-
+  // build and load the home page
   public function all() {
 
     $stories = PictureStory::loadAllStories();
@@ -126,7 +133,7 @@ class ContentController {
     include_once SYSTEM_PATH.'/view/home.php';
     include_once SYSTEM_PATH.'/view/footer.php';
   }
-
+  // build and load discover page
   public function discover() 
   {
     $all_state = "";
@@ -141,7 +148,7 @@ class ContentController {
     include_once SYSTEM_PATH.'/view/discover.php';
     include_once SYSTEM_PATH.'/view/footer.php';
   }
-
+  // build and load signup page
   public function signup()
   {
     $all_state = "";
@@ -155,7 +162,7 @@ class ContentController {
     include_once SYSTEM_PATH.'/view/signup.php';
     include_once SYSTEM_PATH.'/view/footer.php';
   }
-
+  // build and load user profile page
   public function userProfile()
   {
     $username = $_GET['username'];
@@ -217,7 +224,7 @@ class ContentController {
       }
       
   }
-
+  // process event reorder ajax request
   public function event_order()
   {
     // $content = Event::generateContent($user->id);
@@ -229,6 +236,8 @@ class ContentController {
       array("message" => "generateContent", "event" => $content)
     );
   }
+
+    // build and load my profile page
   public function myProfile($notification)
   {
     $all_state = "";
@@ -282,6 +291,7 @@ class ContentController {
     include_once SYSTEM_PATH.'/view/footer.php';
   }
 
+    // build and load timeline page
   public function profile_timeline($note) 
   {
     
@@ -317,7 +327,7 @@ class ContentController {
     // echo $notification;
   }
 
-
+  // build and load following page
   public function profile_following($notification) 
   {
     $all_state = "";
@@ -343,7 +353,7 @@ class ContentController {
   }
 
 
-
+  // build and load detail story page
   public function detail() {
     $storyID = $_GET['storyID'];
 
@@ -364,7 +374,7 @@ class ContentController {
 
     include_once SYSTEM_PATH.'/view/footer.php';
   }
-
+  // process and add a new picture to the database
   public function addnewpicture()
   {
     $title = $_POST['title'];
@@ -400,6 +410,7 @@ class ContentController {
 
   }
 
+  // process chrome plugin
   public function post_on_plugin()
   {
     $description = $_POST['description_2'];
@@ -434,6 +445,9 @@ class ContentController {
     $url = BASE_URL."/detail/".$story->id;
     echo json_encode(array("content" => 'post success', "url" => $url, "id" => $creator_id, "description" => $description));
   }
+
+
+  // save the edited story to the database
   public function save_editing_process()
   {
     $storyID = $_GET['storyID'];
@@ -469,6 +483,7 @@ class ContentController {
     header('Location: '.BASE_URL.'/detail/'.$story->id); exit();
   }
 
+  //  save and create a new user on the database
   public function confirm_registration()
   {
 
@@ -569,7 +584,7 @@ class ContentController {
     
   }
 
-
+  //  save the change of user profile to the database
   public function confirm_profile_change()
   {
     $id = $_GET['user_ID'];
@@ -639,6 +654,7 @@ class ContentController {
 
   }
 
+  // confirm the change and save the user profile change to the database
   function admin_confirm_change()
   {
     $id = $_GET['user_ID'];
@@ -650,31 +666,42 @@ class ContentController {
     User::update_role($id, $role);
     // echo $role;
 
-
-
-
     header('Location: '.BASE_URL.'/admin/success'); exit();
 
   }
 
+  // create new nodes and bubbles
   function user_bubble()
   {
     $nodes = array();
 
-    $children = array(
-      'name' => "test",
-      'address' => "test",
-      'note' => 1 // users
-
-    );
-
     // create user nodes
     $users = User::loadAllUsers();
     foreach($users as $user) {
+      
+      //place holder
+      $childrens = array();
+      $childrens[0] = array( 'name' => 'role','address' => "1",'note' => 'n');
+      $childrens[1] = array( 'name' => 'email','address' => "2",'note' => 'u');
+      $childrens[2] = array( 'name' => 'class standing','address' => "3",'note' => 'e');
+
+      //user info
+
+      $info = array( 
+        'ID' => $user->id,
+        'Username' => $user->username,
+        'Firstname' => $user->firstname,
+        'LastName' =>$user->lastname,
+        'Role' => $user->role,
+        'Date' => $user->date_registered,
+      );
+      
       $userNode = array(
+        //username & userid
         'name' => $user->username,
         'id' => $user->id,
-        'children' => $children // users
+        'children' => $childrens,
+        'info' => $info
       );
       $nodes[] = $userNode;
     }
@@ -686,13 +713,63 @@ class ContentController {
 
     header('Content-Type: application/json');
     echo json_encode($json);
-
-
-  // echo json_encode(
-  //       array("name" => "bubble", "children" => $children)
-  //       // array("name" => "bubble")
-  //     );
-
   }
 
+  // make changes to the bubbles
+  function change_bubble()
+  {
+    if($_POST['mode'] == 'save')
+    {
+
+
+      $id = $_POST['user_ID'];
+      // echo $id ;
+      $newUserName = $_POST['username'];
+      User::update_Username($id, $newUserName);
+  
+      $newlastname = $_POST['lastname'];
+      User::update_Lastname($id, $newlastname);
+
+
+      $newfirstname= $_POST['firstname'];
+      User::update_Firstname($id, $newfirstname);
+
+      $role = $_POST['role'];
+      User::update_role($id, $role);
+
+
+      $json = array(
+        "id" => $id,
+        "msg" => "saved in php"
+      );
+    }
+    else if($_POST['mode'] == 'delete')
+    {
+      $id = $_POST['user_ID'];
+      User::delete_by_UserId($id);
+    }
+    else
+    {
+      $user = new User();
+      if(isset($_POST['username'])) $username = $_POST['username'];
+      if(isset($_POST['password'])) $password = $_POST['password'];
+      if(isset($_POST['firstname'])) $firstname = $_POST['firstname'];
+      if(isset($_POST['lastname'])) $lastname = $_POST['lastname'];
+      $username = mysqli_real_escape_string($GLOBALS['conn'], $username);
+      $password = mysqli_real_escape_string($GLOBALS['conn'], $password);
+      $firstname = mysqli_real_escape_string($GLOBALS['conn'], $firstname);
+      $lastname = mysqli_real_escape_string($GLOBALS['conn'], $lastname);
+      
+      $user-> username = $username;
+      $user-> password = $password;
+      $user-> firstname = $firstname;
+      $user-> lastname = $lastname;
+      $user-> email = '';
+      $user-> class_standing = 0;
+      User::create_new($user);
+    }
+
+
+    echo json_encode($json);
+  }
 }

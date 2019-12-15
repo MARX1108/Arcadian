@@ -21,6 +21,7 @@ class Event {
     'admin_update_role' => 207,
     );
 
+    // load all events
   public static function loadAllEvents() {
 
     $events = array();
@@ -39,7 +40,7 @@ class Event {
 
 
 
-
+  // generate event list for the home page
   public function generateContent($id)
   {
     $content = "<div id = 'event_home'>";
@@ -136,6 +137,7 @@ class Event {
     return $content;
   }
 
+  // load events by id
   public static function loadByID($eventID) {
     $query = sprintf("SELECT * FROM %s WHERE id = %d",
         self::DB_TABLE,
@@ -161,6 +163,7 @@ class Event {
     }
   }
 
+  // check a event exists
   private static function checkIfNull($val) {
     if($val == null) {
       return 'NULL';
@@ -171,6 +174,7 @@ class Event {
     }
   }
 
+  // insert a new event
   public static function insertEvent($event) {
 
     $query = sprintf("INSERT INTO %s (event_type, user_1_id, user_2_id, story_1_id, story_2_id, data_type, data_value) VALUES (%d, %d, %s, %s, %s, %s, %s) ",

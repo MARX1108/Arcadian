@@ -20,6 +20,7 @@ elseif($route == 'login_on_plugin') {
 }
 
 class SiteController {
+  // build and load login page
   public function login() {
     $stylesheet = "style.css";
     $pageTitle = 'Log In';
@@ -28,6 +29,7 @@ class SiteController {
     include_once SYSTEM_PATH.'/view/footer.php';
   }
 
+  // process login page
   public function loginProcess() 
   {
       
@@ -51,7 +53,8 @@ class SiteController {
     }
 
   }
-
+  
+  // process login from the plugin
   public function login_on_plugin() 
   {
       
@@ -74,12 +77,14 @@ class SiteController {
 
   }
 
+  // process logout
   public function logout(){
     unset($_SESSION['loggedInUserID']); // unset session variable
     session_destroy(); // destroy session
     header('Location: '.BASE_URL.'/home'); exit(); // redirect to login page
   }
 
+  // build and load home page
   public function home() {
     $pageTitle = 'Home';
     include_once SYSTEM_PATH.'/view/header.php';

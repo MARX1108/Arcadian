@@ -17,6 +17,7 @@ class User {
     'admin' => 1
     );
 
+    // load all users
   public static function loadAllUsers() {
 
     $users = array();
@@ -34,6 +35,7 @@ class User {
 
   }
 
+  // load user by username
   public static function loadByUsername($username) {
     $query = sprintf("SELECT id FROM %s WHERE username = '%s'",
         self::DB_TABLE,
@@ -48,6 +50,7 @@ class User {
     }
   }
 
+  // load user by id
   public static function loadByID($userID) {
     $query = sprintf("SELECT * FROM %s WHERE id = %d",
         self::DB_TABLE,
@@ -73,6 +76,7 @@ class User {
     }
   }
 
+  // save username to the database
   public static function update_Username($id, $newUserName)
   {
     $newUserName = mysqli_real_escape_string($GLOBALS['conn'], $newUserName);
@@ -86,6 +90,25 @@ class User {
     $ev = Event::insertEvent($ev);
   }
 
+  // save lastname to the database
+  public static function update_Lastname($id, $newUserName)
+  {
+    $newUserName = mysqli_real_escape_string($GLOBALS['conn'], $newUserName);
+    $query = "UPDATE `user` 
+    SET `lastname`='$newUserName'WHERE id = '$id'";
+    $result = $GLOBALS['conn']->query($query);
+  }
+
+  // save firstname to the database
+  public static function update_Firstname($id, $newUserName)
+  {
+    $newUserName = mysqli_real_escape_string($GLOBALS['conn'], $newUserName);
+    $query = "UPDATE `user` 
+    SET `firstname`='$newUserName'WHERE id = '$id'";
+    $result = $GLOBALS['conn']->query($query);
+  }
+
+  // save role to the database
   public static function update_role($id, $role)
   {
     if($role == "1 - site admin") $role = 1;
@@ -100,54 +123,68 @@ class User {
     $ev->user_1_id = $id;
     $ev = Event::insertEvent($ev);
 
-}
-    public static function create_new($user)
-    {
-      $username = $user-> username;
+  }
+
+  // create new user 
+  public static function create_new($user)
+  {
+    $username = $user-> username;
+    $password = $user-> password;
+    $firstname = $user-> firstname;
+    $lastname = $user-> lastname;
+    $email = $user-> email;
+    $class_standing = $user-> class_standing;
+
+    $query = "INSERT INTO `user`
+    (`username`, `password`, `role`, `firstname`, `lastname`, `email`, `class_standing`)
+    VALUES(
+    '$username',
+    '$password',
+    0,
+    '$firstname',
+    '$lastname',
+    '$email',
+    '$class_standing')";
+    //  echo $query;   
+    $result = $GLOBALS['conn']->query($query);
+
+    
+    return $result;
+  }
+
+  // delete a user in the database
+  public static function delete_by_UserId($id)
+  {
+    
+    $query = "DELETE FROM `user` WHERE id = '$id'";
+    //  echo $query;   
+    $result = $GLOBALS['conn']->query($query);
+
+    
+    return $result;
+  }
+
+  // save user profile to the database
+  public static function update_profile($user)
+  {
+
+      $id = $user-> id;
       $password = $user-> password;
       $firstname = $user-> firstname;
       $lastname = $user-> lastname;
       $email = $user-> email;
       $class_standing = $user-> class_standing;
 
-      $query = "INSERT INTO `user`
-      (`username`, `password`, `role`, `firstname`, `lastname`, `email`, `class_standing`)
-      VALUES(
-      '$username',
-      '$password',
-      0,
-      '$firstname',
-      '$lastname',
-      '$email',
-      '$class_standing')";
+      $query = "UPDATE `user` 
+      SET 
+      `password`='$password',
+      `firstname`='$firstname',
+      `lastname`='$lastname',
+      `email`='$email',
+      `class_standing`='$class_standing' WHERE id = '$id'";
       //  echo $query;   
       $result = $GLOBALS['conn']->query($query);
-
-      
       return $result;
-    }
-
-
-    public static function update_profile($user)
-    {
-
-        $id = $user-> id;
-        $password = $user-> password;
-        $firstname = $user-> firstname;
-        $lastname = $user-> lastname;
-        $email = $user-> email;
-        $class_standing = $user-> class_standing;
-
-        $query = "UPDATE `user` 
-        SET 
-        `password`='$password',
-        `firstname`='$firstname',
-        `lastname`='$lastname',
-        `email`='$email',
-        `class_standing`='$class_standing' WHERE id = '$id'";
-        //  echo $query;   
-        $result = $GLOBALS['conn']->query($query);
-        return $result;
-    }
+  }
 
 }

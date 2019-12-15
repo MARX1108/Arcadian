@@ -18,12 +18,6 @@
                     <p><a href="#">Description</a></p>
                     <p> <?=$story->description?></p>
                 </div>
-
-                <div class="card ml-5 p-3" id="post_win">
-                    <textarea id="post_box" placeholder=" Post Something" class = "form-control m-3"></textarea>
-                    <button id="btn-post" class = "btn btn-primary mb-2">Post</button>
-                    <button id="btn-upload"  class = "btn btn-primary">Upload</button>
-                </div>
             </div>
 
             <div class = "card col-md-4  m-3 p-3">
