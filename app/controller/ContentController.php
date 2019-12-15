@@ -74,6 +74,10 @@ elseif($route == 'event_order')
 elseif ($route == 'post_on_plugin') {
   $nc->post_on_plugin();
 }
+elseif($route == 'user_bubble')
+{
+  $nc->user_bubble();
+}
 
 
 
@@ -652,4 +656,43 @@ class ContentController {
     header('Location: '.BASE_URL.'/admin/success'); exit();
 
   }
+
+  function user_bubble()
+  {
+    $nodes = array();
+
+    $children = array(
+      'name' => "test",
+      'address' => "test",
+      'note' => 1 // users
+
+    );
+
+    // create user nodes
+    $users = User::loadAllUsers();
+    foreach($users as $user) {
+      $userNode = array(
+        'name' => $user->username,
+        'id' => $user->id,
+        'children' => $children // users
+      );
+      $nodes[] = $userNode;
+    }
+
+    $json = array(
+      "name" => "bubble",
+      'children' => $nodes
+    );
+
+    header('Content-Type: application/json');
+    echo json_encode($json);
+
+
+  // echo json_encode(
+  //       array("name" => "bubble", "children" => $children)
+  //       // array("name" => "bubble")
+  //     );
+
+  }
+
 }
